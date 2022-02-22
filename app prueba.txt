@@ -1,0 +1,38 @@
+
+DISEÑO
+	adobeXD y adobe illustrator
+
+BACKEND
+	Docker + docker-compose
+	Node.js
+	MAMP
+	PWA
+		serviceWorkers
+		spinner mientras carga
+	Redux??
+	react router
+	
+
+
+FRONT END
+	Sass 
+	Bit
+	Bootstrap + React
+	Apache-echarts
+
+View elementos
+	Ventana Modal
+
+TEST
+	unit testing (JEST, mocha, jasmine)
+	pruebas de interfaz de usuario   https://es.reactjs.org/docs/testing-recipes.html#setup--teardown
+
+=================================================================
+
+=========================PONER EN MARCHA=========================
+
+arrancar app --> npm start (puerto 3000)
+arrancar modulos de mongodb y mongo-express (puerto 8080) --> 	docker-compose -f mongo.yaml up 
+											docker-compose -f mongo.yaml down
+llamadas a mongoDB --> definir en server.js
+
