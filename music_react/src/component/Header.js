@@ -7,26 +7,18 @@ import MusicReact from "../assets/MusicReact.svg"
 const Header = ({}) => {
 
     return (
-      <div>
-          
-            
-          <img src={MusicReact} alt="Music React"/>
-            {/**
-            <object data="../../assets/MusicReact.svg" width="300" height="300"> </object>
-             <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-              <text transform="translate(0 80.57)" style="font-size:40px;fill:#fff;font-family:Impact">M
-                <tspan x="64.51" y="0" style={{fill: '#01ffb0'}}>R</tspan>
-              </text>
-            </svg> */}
+      <div >
 
-          <Navbar bg="light" expand="lg">
+          <img style={{width : '10%'}} src={MusicReact} alt="Music React"/>
+
+          <Navbar bg="light" expand="lg" style={{display: 'inline'}}>
             <Container>
               <Nav>
-                <Nav.Link href="">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="">Songs</Nav.Link>
-                <Nav.Link href="">Artist</Nav.Link>
+                <Nav.Link href="/artists">Artist</Nav.Link>
                 <Nav.Link href="">Genres</Nav.Link>
-                <Nav.Link href="">About</Nav.Link>
+                <Nav.Link href="/about">About</Nav.Link>
               </Nav>
             </Container>
           </Navbar>

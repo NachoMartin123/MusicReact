@@ -5,7 +5,13 @@ const Footer = ({}) => {
 
     return (
       <div>
-          <h1>Esto es el footer</h1>
+          <div id="footer_song_div">
+              <h2 id="song_title_footer">Song title</h2>
+              <h2 id="artist_name_footer">Artist</h2>
+          </div>
+          <div>
+
+          </div>
       </div>
     );
 }
