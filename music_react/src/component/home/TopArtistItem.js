@@ -5,7 +5,7 @@ const TopArtistItem = ({}) => {
 
     return (
       <div>
-         
+         <h1>TopArtistItem </h1>
       </div>
     );
 }

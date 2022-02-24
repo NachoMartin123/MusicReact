@@ -6,35 +6,62 @@ import VideoClipItem from './VideoClipItem';
 import Slider from './Slider';
 
 import VideoPromo from '../../assets/video_app_Promo.mp4';
+import NoticiaImg from '../../assets/SHM_worldTour.png';
+
+
+import {Button, Container, Row, Col} from 'react-bootstrap';
 
 const Home = ({}) => {
 
     return (
         <div>
             <section id="noticia">
-                <h1>Estamos en Home</h1>
+                <Row>
+                    <Col style={{width:'75%'}}>
+                        <img src={NoticiaImg}></img>
+                    </Col>
+                    <Col style={{width:'25%'}}>
+                        <h1>SWEDISH HOUSE MAFFIA <span className="customGreen">WORLD TOUR</span></h1>
+                        <p>Swedish House Mafia announced their first official tour since 2013, planning 44 dates in North America and the UK/Europe in 2022. The group timed the announcement of the Paradise Again tour dates with the release of a new swingle, featuring The Weeknd.</p>
+                    </Col>
+                </Row>
             </section>
             <section id="slider">
-                <h1>Estamos en Home</h1>
-                <Slider></Slider>
+                <Container>
+                    <Slider></Slider>
+                </Container>
             </section>
             <section id="top_artist">
-                <h1>TOP ARTIST</h1>
-                <h2>Most streamed artist of the week</h2>
-                <TopArtistItem></TopArtistItem>
-                <TopArtistItem></TopArtistItem>
-                <TopArtistItem></TopArtistItem>
+                <div>
+                    <div className="inlineElements">
+                        <hr />
+                        <h1 style={{display : 'inline'}}>TOP ARTIST</h1>
+                        <hr/>
+                        <h2>Most streamed artist of the week</h2>
+                    </div>
+                    <Row lg="9"> 
+                        <Col>
+                            <TopArtistItem songName="" artistName="" videoUrl=""/>
+                        </Col>
+                        <Col>
+                            <TopArtistItem songName="" artistName="" videoUrl=""/>
+                        </Col>
+                        <Col>
+                            <TopArtistItem songName="" artistName="" videoUrl=""/>
+                        </Col>
+                    </Row>
+                </div>
             </section>
             <section id="hot_videoclips">
                 <div> Esto es el video frame</div>
-                <VideoClipItem></VideoClipItem>
-                <VideoClipItem></VideoClipItem>
-                <VideoClipItem></VideoClipItem> 
+                <VideoClipItem/>
+                <VideoClipItem/>
+                <VideoClipItem/> 
             </section>
             <section id="join_our_app">
-                <div>
-                    <h1 style={{display : 'inline'}}>Join our</h1>
-                    <h1 style={{display : 'inline'}}> app</h1>
+                <div className="centerElements">
+                    <h1 style={{display : 'inline'}}>Join our <span className="customGreen">app</span></h1>
+                    {/*<h1 style={{display : 'inline'}}> </h1>*/}
                 </div>
                 <video src={VideoPromo} width="100%"  autoPlay loop muted>
                     <source src={VideoPromo} type="video/mp4"/>
