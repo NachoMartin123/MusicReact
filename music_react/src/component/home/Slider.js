@@ -12,37 +12,35 @@ const Slider = ({}) => {
     return (
         <Carousel>
             <Carousel.Item>
+                <h2>Ultra Music Festival <span className="customGreen">Miami Friday 25th</span></h2>
                 <img
                 className="d-block w-100"
                 src={SliderImg1}
                 alt="Ultra Music Festival"
                 />
                 <Carousel.Caption>
-                <h1>Ultra Music Festival <span className="customGreen">Miami Firday 25th</span></h1>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
+                <h2>David Guetta <span className="customGreen">new single</span></h2>
                 <img
                 className="d-block w-100"
                 src={SliderImg2}
                 alt="David Guetta"
                 />
-
                 <Carousel.Caption>
-                <h1>David Guetta <span className="customGreen">new single</span></h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
+                <h2>Bruno Mars & theWeekend<span className="customGreen"> new collab</span></h2>
                 <img
                 className="d-block w-100"
                 src={SliderImg3}
                 alt="Collab"
                 />
-
                 <Carousel.Caption>
-                <h1>Bruno Mars & the weekend<span className="customGreen"> secret collab</span></h1>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </Carousel.Caption>
             </Carousel.Item>

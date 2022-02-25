@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import {Button, Container, Row, Col} from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
+
+import TiestoImg from '../../assets/top_artist/tiesto.png';
+
 const TopArtistItem = ({}) => {
 
     return (
-      <div>
-         <h1>TopArtistItem </h1>
-      </div>
+        <Container>
+            <div id="backGrisFuerte-whiteBorder">
+                <div col={3}  styles={{ backgroundImage:`url(${TiestoImg})` }}>
+                    <Image src={TiestoImg} alt="Tiesto" style={{width:'100%'}}/>
+                </div>
+                <p>Artist name</p>
+                <Button className="topArtistViewButton">Button</Button>
+            </div>
+      </Container>
     );
 }
 

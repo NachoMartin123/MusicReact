@@ -14,13 +14,13 @@ const Header = ({}) => {
               <Navbar.Brand href="#home">
               <img
                 src={MusicReact}
-                width="40"
-                height="40"
+                width="90"
+                height="90"
                 className="d-inline-block align-top"
                 alt="React Bootstrap logo"
               />
             </Navbar.Brand>
-                <Nav>
+                <Nav className="centerElementsX">
                   <Nav.Link style={{color: 'white'}} href="/">Home</Nav.Link>
                   <Nav.Link style={{color: 'white'}} href="">Songs</Nav.Link>
                   <Nav.Link style={{color: 'white'}} href="/artists">Artist</Nav.Link>

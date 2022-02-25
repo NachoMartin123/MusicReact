@@ -1,0 +1,60 @@
+#buttonShmTour
+    width: 50%
+
+.buttonMR
+    display: block
+    color: $negro
+    background-color: $customVerde
+    border-width: 3px
+    padding-left: 2em
+    padding-right: 2em
+    border-color: $customVerde
+    border-radius: 30px
+    font-family: $fontTitles
+    font-size: 30px
+    &:hover
+        border-color: $customVerde
+        background-color: $blanco
+        color: $negro
+        margin-left: 2px
+        .svgHoverParent //icono flecha
+            transform: rotate( -180deg )          
+            transition: transform 150ms ease
+            right: .25rem
+    &:active //cuando esta click sin soltar
+        background-color: lighten($customVerde, 5%) !important
+        border-color: lighten($customVerde, 10%) !important
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        color: $negro
+        background-color: $customVerde
+        padding-left: 2em
+        padding-right: 2em
+        border-color: $customVerde
+        border-radius: 30px
+
+
+.buttonMR-transition     //rectangulo transicion
+    color: $blanco
+    position: relative
+    overflow: hidden //esconde la parte que excede de los bordes del rectangulo
+    z-index: 1 //pone rectangulo por debajo del texto
+    transition: all .5s ease //transicion del rectangulo
+    &.before
+        content: ""
+        z-index: -1 //pone el texto debajo
+        width: 0 //ancho inicial (escondido)
+        height: 100%
+        background: $blanco
+        position: absolute
+        left: 50% //centrado
+        top: 0
+        transform: skew(45deg, 0) //rotacion rectangulo ejeX y ejeY
+        transition: all .4s ease
+    &.active, &.focus, &.active
+        &.before
+            width: 130%
+            left: -15%
+
+
+
+

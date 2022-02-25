@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-
 import {Button, Container, Row, Col} from 'react-bootstrap';
-import {BsArrowUp} from "react-icons/bs";
 
-const VideoClipItem = ({}) => {
+import {BsFillArrowRightCircleFill} from "react-icons/bs"
+
+
+
+const ButtonMR = ({}) => {
 
     return (
-      <Row className="backGrisFuerte centerElementsY centerElementsX" style={{width:'100%', marginBottom:'1em'}}>
-          <div className="centerElementsY" style={{width:'30%'}}>
-              <span>1</span>
-              <hr/>
-              <BsArrowUp/>
-          </div>
-          <div className="centerElementsY" style={{width:'60%'}}>
-                <p>Song name - artist</p>  
-          </div>
-      </Row>
+        <Button className="buttonMR">See events <BsFillArrowRightCircleFill className="svgHoverParent"/>
+        </Button>      
     );
 }
 
@@ -42,4 +36,4 @@ const mapDispatchToProps = {}
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(VideoClipItem);
+)(ButtonMR);

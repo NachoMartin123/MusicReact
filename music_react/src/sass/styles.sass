@@ -5,9 +5,12 @@
 @import './artist_detail/allArtistDetail'
 @import './artists/allArtists'
 @import './home/allHome'
+@import './common'
 
 .inlineElements
-    display: inline
+    display: flex
+    flex-direction: row
+    align-items: center
         
 .customGreen
     color: $customVerde
@@ -18,20 +21,34 @@ body
     p
         font-family: $fontSecondary
         color: $blanco
+        text-align: center
 
     h1, h2
         font-family: $fontTitles
         color: $blanco
+        text-align: center
     h1
-        font-size: 80px    
+        font-size: 75px    
+    h2
+        font-size: 60px    
     section
         margin-bottom:5em
-    hr
-        width:15%
-        color:$blanco
-        border-width: 90px
 
-.centerElements
+
+.centerElementsX
     width:100%
     display: flex
     justify-content: center
+
+.centerElementsY
+    margin: 0
+    top: 50%
+
+.alignRight
+    margin-left: auto 
+    margin-right: 0
+
+.titleSecondary
+    font-family: $fontSecondary
+    font-weight: 300
+

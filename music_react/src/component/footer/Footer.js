@@ -11,21 +11,21 @@ import { ImVolumeMute2, ImVolumeLow, ImVolumeMedium, ImVolumeHigh} from "react-i
 const Footer = ({}) => {
 
     return (
-      <Row>
-          <Col style={{width:"75%"}}>
-              <Container id="footer_song_div">
-                <h2 id="song_title_footer">Song title</h2>
-                <span> - </span>
-                <h2 id="artist_name_footer">Artist</h2>
-              </Container>
-          </Col>
-          <Col id="buttons_play" style={{width:"25%"}}>
-                <Button id="volume" className="roundedButton"><i><ImVolumeHigh/></i></Button>
-                <Button id="back" className="roundedButton"><i><ImPrevious2/></i></Button>
-                <Button id="play" className="roundedButton"><i><ImPlay3/></i></Button>
-                <Button id="next" className="roundedButton"><i><ImNext2/></i></Button>
-          </Col>
-      </Row>
+        <Row>
+            <Col lg={7}>
+                <Container id="footer_song_div" className='centerElementsX'>
+                    <h2 id="song_title_footer">Song title</h2>
+                    <span> - </span>
+                    <h2 id="artist_name_footer">Artist</h2>
+                </Container>
+            </Col>
+            <Col id="buttons_play" lg={4} >
+                <Button id="volume" className="roundedButton"><i><ImVolumeHigh /></i></Button>
+                <Button id="back" className="roundedButton"><i><ImPrevious2 /></i></Button>
+                <Button id="play" className="roundedButton"><i><ImPlay3 /></i></Button>
+                <Button id="next" className="roundedButton"><i><ImNext2 /></i></Button>
+            </Col>
+        </Row>
     );
 }
 

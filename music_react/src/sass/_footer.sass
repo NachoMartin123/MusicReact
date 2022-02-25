@@ -9,12 +9,23 @@
     background: $customVerde
     display: flex
     padding: 0.5em
+    margin-right: 10em
     align-items: center
     text-align: center
     *
         align-items: center
         text-align: center
         font-size: 30px
+    &.before
+        content: ""
+        position: absolute
+        background: $customVerde
+        top:0
+        bottom: 0
+        left:-100%
+        right: -100%
+        transform: skewX(45deg)
+
 
 .roundedButton
     background: $grisFuerte
