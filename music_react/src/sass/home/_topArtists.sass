@@ -1,22 +1,76 @@
 
-#top_artist
-    padding: 10em 0 10em 0
-    background-color: $grisFuerte
+#top_artist > div
+        padding: 10em 0 10em 0
+        background-color: $negroAzulado1
 
-hr
-    margin-left: 5%
-    margin-right: 5%
-    width:15%
+.hr
     color:$blanco
-    height: 20px
+    &-width15
+        @extend .hr
+        width:15%
+        margin-left: 5%
+        margin-right: 5%
 
 .backGrisFuerte
-    background-color: $grisSuave
-    &-whiteBorder
-        border-color: $blanco
-        border-radius: 10px
-        border-width: 10px
+    background-color: $grisFuerte
     p
+        margin-top: 8%
+        margin-bottom: 2%
         font-family: $fontTitles
         font-size: 25px
 
+.whiteBorder
+    border-style: solid
+    border-color: $blanco
+    border-radius: 10px
+    border-width: 3px
+    
+
+
+.topArtImgContainer
+    background-position: center
+    border-radius: 10px
+    //background-repeat: no-repeat
+    background-size: 145%
+    background-position-y: -1%
+
+
+.parentMoveChild
+    position: static
+    width: 100%
+
+.moveChildOnParent
+    position: relative
+    z-index: 1 
+    top: -50px   // set the value to move the icons over down 
+    padding-top: 20%
+    padding-right: 10%
+    padding-left: 10%
+    
+
+.topArtistViewButton
+    color: $blanco
+    background-color: $negro
+    border-color: $negro
+    border-width: 3px
+    padding-left: 2em
+    padding-right: 2em
+    border-radius: 10px
+    font-family: $fontTitles
+    font-size: 20px
+    padding-top: 0em
+    padding-bottom: 0em
+    &:hover
+        border-color: $customVerde
+        border-width: 3px
+        background-color: $blanco
+        color: $negro
+    &:active //cuando esta click sin soltar
+        background-color: lighten($negro, 5%) !important
+        border-color: lighten($negro, 10%) !important
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        color: $blanco
+        background-color: $negro
+        padding-left: 2em
+        padding-right: 2em
+        border-color: $negro

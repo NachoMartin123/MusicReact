@@ -5,19 +5,21 @@ import {Button, Container, Row, Col} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 
 import TiestoImg from '../../assets/top_artist/tiesto.png';
+import backColors from '../../assets/top_artist/backColors.png';
 
-const TopArtistItem = ({}) => {
+const TopArtistItem = (props) => {
 
     return (
-        <Container>
-            <div id="backGrisFuerte-whiteBorder">
-                <div col={3}  styles={{ backgroundImage:`url(${TiestoImg})` }}>
-                    <Image src={TiestoImg} alt="Tiesto" style={{width:'100%'}}/>
-                </div>
-                <p>Artist name</p>
-                <Button className="topArtistViewButton">Button</Button>
+        <Container className="parentMoveChild">
+            <div style={{backgroundImage:`url(${backColors})`}} 
+            className="centerElementsX topArtImgContainer" >
+                <Image src={TiestoImg} alt={props.artistName} style={{width:'75%', margin:'15% 20% 10% 20%', borderRadius:'5px'}}/>
             </div>
-      </Container>
+            <div  className="backGrisFuerte whiteBorder moveChildOnParent">
+                <p className="">{props.artistName} </p>
+                <Button className="topArtistViewButton">VIEW</Button>
+            </div>
+        </Container>
     );
 }
 

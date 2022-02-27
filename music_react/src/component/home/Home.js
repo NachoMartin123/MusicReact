@@ -21,11 +21,11 @@ const Home = ({}) => {
     return (
         <div>
             <section id="noticia">
-                <Row lg="auto">
+                <Row>
                     <Col lg={8} style={{paddinRight:'5em'}}>
                         <Image src={NoticiaImg} alt="SHM World tour" style={{width:'100%'}}/>
                     </Col>
-                    <Col lg={4} style={{paddingTop:'1em'}} style={{textAlign: 'center'}}>
+                    <Col lg={4} style={{paddingTop:'1em', textAlign: 'center'}}>
                         <h1>SWEDISH HOUSE MAFFIA <span className="customGreen">WORLD TOUR</span></h1>
                         <p>Swedish House Mafia announced their first official tour since 2013, planning 44 dates in North America and the UK/Europe in 2022. The group timed the announcement of the Paradise Again tour dates with the release of a new swingle, featuring The Weeknd.</p>
                         <ButtonMR id="buttonShmTour" className="centerElementsX"/>
@@ -33,37 +33,41 @@ const Home = ({}) => {
                 </Row>
             </section>
             <section id="slider">
-                <Container >
-                    <Slider></Slider>
+                <Container style={{width:'80%'}}>
+                    <Slider ></Slider>
                 </Container>
             </section>
-            <section id="top_artist" >
-                <div>
+            <section id="top_artist">
+                <div className="backAzulFuerte">
                     <Container>
-                        <div className="inlineElements centerElementsX">
-                            <hr/>
+                        <div className="inlineElements centerElementsX" >
+                            <hr className="hr-width15"/>
                             <h1>TOP ARTIST</h1>
-                            <hr/>
+                            <hr className="hr-width15"/>
                         </div>
                     </Container>
-                    <h2 className="titleSecondary" >Most streamed artist of the week</h2>
-                    <Row lg="9"> 
-                        <Col>
-                            <TopArtistItem songName="" artistName="" videoUrl=""/>
-                        </Col>
-                        <Col>
-                            <TopArtistItem songName="" artistName="" videoUrl=""/>
-                        </Col>
-                        <Col>
-                            <TopArtistItem songName="" artistName="" videoUrl=""/>
-                        </Col>
-                    </Row>
+                    <h2 className="titleSecondary" style={{paddingBottom:'1em'}}>Most streamed artist of the week</h2>
+                    <Container>
+                        <Row  className="centerElementsX" > 
+                            <Col>
+                                <TopArtistItem artistName="Tiesto"/>
+                            </Col>
+                            <Col>
+                                <TopArtistItem artistName="Avicii"/>
+                            </Col>
+                            <Col>
+                                <TopArtistItem artistName="Daft Punk"/>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
             </section>
-            <section id="hot_videoclips">
+            <section id="hot_videoclips" >
                 <h1 id="titleHotVideos" className="titleSecondary" style={{marginLeft:'10%', textAlign: 'left'}}>HOT <span className="customGreen">VIDEOCLIPS</span></h1>
                 <Container> 
-                    <HotVideoclips/>
+                    <hr className="hr"/>
+                    <HotVideoclips />
+                    <hr className="hr"/>
                 </Container>
             </section>
             <section id="join_our_app">

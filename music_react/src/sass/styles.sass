@@ -7,19 +7,11 @@
 @import './home/allHome'
 @import './common'
 
-.inlineElements
-    display: flex
-    flex-direction: row
-    align-items: center
-        
-.customGreen
-    color: $customVerde
 
 body
     background: $negro
 
     p
-        font-family: $fontSecondary
         color: $blanco
         text-align: center
 
@@ -33,12 +25,14 @@ body
         font-size: 60px    
     section
         margin-bottom:5em
+        padding-bottom: 5em
 
 
 .centerElementsX
     width:100%
     display: flex
     justify-content: center
+    text-align: center
 
 .centerElementsY
     margin: 0
@@ -52,3 +46,11 @@ body
     font-family: $fontSecondary
     font-weight: 300
 
+
+.inlineElements
+    display: flex
+    flex-direction: row
+    align-items: center
+        
+.customGreen
+    color: $customVerde
