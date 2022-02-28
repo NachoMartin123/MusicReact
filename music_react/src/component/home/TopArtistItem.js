@@ -10,13 +10,14 @@ import backColors from '../../assets/top_artist/backColors.png';
 const TopArtistItem = (props) => {
 
     return (
-        <Container className="parentMoveChild">
-            <div style={{backgroundImage:`url(${backColors})`}} 
-            className="centerElementsX topArtImgContainer" >
+        <Container>
+            <div className="centerElementsX topArtImgContainer" 
+            style={{width:'90%', position: 'relative', zIndex: '2' , backgroundImage:`url(${backColors})`}}>
                 <Image src={TiestoImg} alt={props.artistName} style={{width:'75%', margin:'15% 20% 10% 20%', borderRadius:'5px'}}/>
             </div>
-            <div  className="backGrisFuerte whiteBorder moveChildOnParent">
-                <p className="">{props.artistName} </p>
+            <div  className="backGrisFuerteTopArt whiteBorder moveChildOnParent"
+                style={{position: 'relative', zIndex: '1' }}>
+                <p style={{textAlign:'center'}}>{props.artistName} </p>
                 <Button className="topArtistViewButton">VIEW</Button>
             </div>
         </Container>

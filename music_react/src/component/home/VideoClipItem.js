@@ -8,14 +8,14 @@ import {BsArrowUp} from "react-icons/bs";
 const VideoClipItem = ({}) => {
 
     return (
-      <Row className="backGrisFuerte centerElementsY centerElementsX" style={{width:'100%', marginBottom:'1em'}}>
-          <div className="centerElementsY" style={{width:'30%'}}>
+      <Row className="backGrisFuerteHotVideo centerElementsY centerElementsX" style={{width:'100%', marginBottom:'1em'}}>
+          <div className="centerElementsY" style={{width:'20%'}}>
               <span>1</span>
-              <hr/>
+              <hr style={{margin:'0', border:'3', opacity:'1'}}/>
               <BsArrowUp/>
           </div>
-          <div className="centerElementsY" style={{width:'60%'}}>
-                <p>Song name - artist</p>  
+          <div style={{width:'80%'}}>
+                <p className='centerElementsY'>Song name - artist</p>  
           </div>
       </Row>
     );

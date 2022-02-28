@@ -1,17 +1,21 @@
 
 #top_artist > div
-        padding: 10em 0 10em 0
+        padding: 10em 0 0em 0
         background-color: $negroAzulado1
 
 .hr
     color:$blanco
     &-width15
         @extend .hr
+        opacity: 1
+        border-style: solid
+        border-width: 2px
+        border-radius: 3px
         width:15%
         margin-left: 5%
         margin-right: 5%
 
-.backGrisFuerte
+.backGrisFuerteTopArt
     background-color: $grisFuerte
     p
         margin-top: 8%
@@ -35,17 +39,14 @@
     background-position-y: -1%
 
 
-.parentMoveChild
-    position: static
-    width: 100%
+
 
 .moveChildOnParent
-    position: relative
-    z-index: 1 
-    top: -50px   // set the value to move the icons over down 
-    padding-top: 20%
-    padding-right: 10%
-    padding-left: 10%
+    top: -15em 
+    left: -2em
+    padding-top: 60%
+    padding-bottom: 5%
+    width:110%
     
 
 .topArtistViewButton

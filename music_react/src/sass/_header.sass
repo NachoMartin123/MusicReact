@@ -5,5 +5,16 @@
 nav 
     background-color: $negro 
     a
-        color: $blanco
+        //color: $blanco
         font-size: 25px
+
+
+#navMR a
+    margin-right: 1em
+    color: $blanco
+    &:hover
+        color: $customVerde
+        border-color: $customVerde
+        border-width: 3px
+    &:active //cuando esta click sin soltar
+        color: lighten($customVerde, 10%) !important

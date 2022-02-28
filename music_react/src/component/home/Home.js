@@ -63,8 +63,9 @@ const Home = ({}) => {
                 </div>
             </section>
             <section id="hot_videoclips" >
-                <h1 id="titleHotVideos" className="titleSecondary" style={{marginLeft:'10%', textAlign: 'left'}}>HOT <span className="customGreen">VIDEOCLIPS</span></h1>
-                <Container> 
+                 <Container> 
+                    <h1 id="titleHotVideos" className="titleSecondary" style={{ 
+                        textAlign: 'left'}}>HOT <span className="customGreen">VIDEOCLIPS</span></h1>
                     <hr className="hr"/>
                     <HotVideoclips />
                     <hr className="hr"/>

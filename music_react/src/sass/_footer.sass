@@ -1,3 +1,15 @@
+#footerMR
+    margin: 0
+    padding: 0
+    width:100%
+    position: fixed
+    left: 0
+    bottom: 0
+    z-index: 5
+    
+#buttons_play
+    background: $negro
+    
 #song_title_footer
     color:$negro
     font-family: $fontSecondary
@@ -39,15 +51,24 @@
     line-height: 1.42857
     margin-right:1em
     text-align: center
-    & .btn-xl
-        width: 70px
-        height: 70px
-        padding: 10px 16px
-        border-radius: 35px
-        font-size: 24px
-        line-height: 1.33
-    i *
+    &:hover, &:active //cuando esta click sin soltar
+        background: $grisSuave
+        border-color: $grisSuave
+        border-color: $grisSuave
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        background: $grisFuerte
+        border-color: $grisFuerte
+        border-width: 0px
+    i * //iconos
         text-align: center
         width: 30px
         height: 30px
         color: $blanco
+
+.btn-xl
+    width: 70px
+    height: 70px
+    padding: 10px 16px
+    border-radius: 35px
+    font-size: 24px
+    line-height: 1.33

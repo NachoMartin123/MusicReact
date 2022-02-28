@@ -11,21 +11,21 @@ import VideoClipItem from './VideoclipItem';
 const HotVideoclips = ({}) => {
 
     return (
-      <Row>
+      <Row style={{height:'150%'}}>
             <Col lg={8}>
                 <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
                             width="100%"
-                            height="450px"
+                            height="400em"
                             id="currentVideoclip"
                             className=""
                             display="initial"
                             position="relative"/>
             </Col>
             <Col lg={4} style={{height:'100%'}}>
+                <VideoClipItem songName="" artistName="" videoUrl="" />
                 <VideoClipItem songName="" artistName="" videoUrl=""/>
-                <VideoClipItem songName="" artistName="" videoUrl=""/>
-                <VideoClipItem songName="" artistName="" videoUrl=""/> 
-                <VideoClipItem songName="" artistName="" videoUrl=""/> 
+                <VideoClipItem songName="" artistName="" videoUrl="" /> 
+                <VideoClipItem songName="" artistName="" videoUrl="" /> 
             </Col>
       </Row>
     );
