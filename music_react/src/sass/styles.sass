@@ -8,6 +8,17 @@
 @import './common'
 
 
+$xs576: 576px 
+//$md: 768px
+//$lg: 992px
+//$xl: 1200px
+//$xxl: 1400px
+
+$px1300: 1300px
+
+//  @media screen and (max-width: $small) {
+//  @media screen and (min-width: $medium) {
+
 body
     background: $negro
 
@@ -20,16 +31,27 @@ body
         color: $blanco
         text-align: center
     h1
-        font-size: 75px    
+        font-size: 75px
+        @media screen and (max-width: $px1300)
+            font-size: 65px 
     h2
-        font-size: 60px    
+        font-size: 60px
+        @media screen and (max-width: $px1300)
+            font-size: 50px 
+    h3
+        font-size: 55px
+        font-family: $fontSecondary
+        color: $blanco
+        text-align: center
+        @media screen and (max-width: $px1300)
+            font-size: 40px 
     section
         margin-bottom:5em
         padding-bottom: 5em
 
 
 .centerElementsX
-    width:100%
+    //width:100%
     display: flex
     justify-content: center
     text-align: center
@@ -54,3 +76,6 @@ body
         
 .customGreen
     color: $customVerde
+
+.colorNegro
+    color: $negro

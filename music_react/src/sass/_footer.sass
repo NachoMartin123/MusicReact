@@ -1,14 +1,20 @@
 #footerMR
-    margin: 0
+    margin: 0   //section tiene margin y padding en general
     padding: 0
     width:100%
     position: fixed
     left: 0
     bottom: 0
-    z-index: 5
+    z-index: 5 //esta por encima de todos los otros elementos
+    background: $negro
     
 #buttons_play
     background: $negro
+    padding-top: 0.5em
+    @media screen and (max-width: 576px)
+        width: 100%
+    button
+        vertical-align: middle
     
 #song_title_footer
     color:$negro
@@ -16,54 +22,73 @@
 
 #artist_name_footer
     color:$negro
+    font-family: $fontTitles
 
 #footer_song_div
     background: $customVerde
-    display: flex
-    padding: 0.5em
-    margin-right: 10em
+    padding-top: 0.5em
+    padding-bottom: 0.5em
     align-items: center
     text-align: center
+    padding-left: 0  
+    @media screen and (min-width: 576px)//skew si viewport > 576px
+        transform: skewX(45deg)
+        margin-left: -1.5em
+    @media screen and (max-width: 576px) //fila si viewport < 576px
+        width: 100%
     *
-        align-items: center
-        text-align: center
-        font-size: 30px
+        @media screen and (min-width: 576px)
+            transform: skewX(-45deg)
+            align-items: center
+            text-align: center
+            font-size: 30px
     &.before
-        content: ""
-        position: absolute
-        background: $customVerde
+        content: "."
+        position: relative
+        background: $blanco
         top:0
         bottom: 0
-        left:-100%
-        right: -100%
-        transform: skewX(45deg)
+        //left:-100%
+        //right: -100%
+        z-index: 4
+
+
 
 
 .roundedButton
-    background: $grisFuerte
-    border-color: $grisFuerte
-    width: 40px
-    height: 40px
-    padding: 6px 0px
-    border-radius: 20px
-    text-align: center
+    background: $negroAzulado1
+    border-color: $negroAzulado1
+    width: 45px
+    height: 45px
+    border-radius: 25px
     font-size: 12px
     line-height: 1.42857
     margin-right:1em
+    justify-content: center
     text-align: center
+    //background-origin: padding-box
+    //background-position-y: center
     &:hover, &:active //cuando esta click sin soltar
         background: $grisSuave
         border-color: $grisSuave
         border-color: $grisSuave
     &:focus //despues de click tiene foco, click fuera y lo pierde
-        background: $grisFuerte
-        border-color: $grisFuerte
+        background: $negroAzulado1
+        border-color: $negroAzulado1
         border-width: 0px
     i * //iconos
         text-align: center
         width: 30px
         height: 30px
-        color: $blanco
+        vertical-align: middle
+
+#play
+    @extend .roundedButton
+    width: 60px
+    height: 60px
+    border-radius: 30px
+    font-size: 14px
+
 
 .btn-xl
     width: 70px

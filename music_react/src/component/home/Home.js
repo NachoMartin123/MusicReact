@@ -23,7 +23,7 @@ const Home = ({}) => {
             <section id="noticia">
                 <Row>
                     <Col lg={8} style={{paddinRight:'5em'}}>
-                        <Image src={NoticiaImg} alt="SHM World tour" style={{width:'100%'}}/>
+                        <Image fluid src={NoticiaImg} alt="SHM World tour" style={{width:'100%'}}/>
                     </Col>
                     <Col lg={4} style={{paddingTop:'1em', textAlign: 'center'}}>
                         <h1>SWEDISH HOUSE MAFFIA <span className="customGreen">WORLD TOUR</span></h1>
@@ -46,7 +46,7 @@ const Home = ({}) => {
                             <hr className="hr-width15"/>
                         </div>
                     </Container>
-                    <h2 className="titleSecondary" style={{paddingBottom:'1em'}}>Most streamed artist of the week</h2>
+                    <h3 className="titleSecondary" style={{paddingBottom:'1em'}}>Most streamed artist of the week</h3>
                     <Container>
                         <Row  className="centerElementsX" > 
                             <Col>
