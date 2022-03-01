@@ -13,10 +13,10 @@ const Footer = ({}) => {
     return (
         <section  id="footerMR" >
             <Row >
-                <Col id="footer_song_div" xs={7} className='centerElementsX'>    
+                <Col id="footer_song_div" xs={7} lg={8} className='centerElementsX'>    
                     <h3><span id="song_title_footer">Song title</span> <span className="colorNegro"> - </span><span id="artist_name_footer"> Artist</span></h3> 
                 </Col>
-                <Col xs={5}  id="buttons_play" style={{paddingRight:'0', paddingLeft:'0'}} className='centerElementsX'>
+                <Col xs={5} lg={4} id="buttons_play" style={{paddingRight:'0', paddingLeft:'0'}} className='centerElementsX'>
                     <Button id="volume" className="roundedButton"><i><ImVolumeHigh /></i></Button>
                     <Button id="back" className="roundedButton"><i><ImPrevious2 /></i></Button>
                     <Button id="play" ><i><ImPlay3 /></i></Button>

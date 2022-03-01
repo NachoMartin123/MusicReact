@@ -49,13 +49,13 @@ const Home = ({}) => {
                     <h3 className="titleSecondary" style={{paddingBottom:'1em'}}>Most streamed artist of the week</h3>
                     <Container>
                         <Row  className="centerElementsX" > 
-                            <Col>
+                            <Col md={4}>
                                 <TopArtistItem artistName="Tiesto"/>
                             </Col>
-                            <Col>
+                            <Col md={4}>
                                 <TopArtistItem artistName="Avicii"/>
                             </Col>
-                            <Col>
+                            <Col md={4}>
                                 <TopArtistItem artistName="Daft Punk"/>
                             </Col>
                         </Row>

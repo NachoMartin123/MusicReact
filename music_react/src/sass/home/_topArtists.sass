@@ -15,40 +15,7 @@
         margin-left: 5%
         margin-right: 5%
 
-.backGrisFuerteTopArt
-    background-color: $grisFuerte
-    p
-        margin-top: 8%
-        margin-bottom: 2%
-        font-family: $fontTitles
-        font-size: 25px
-
-.whiteBorder
-    border-style: solid
-    border-color: $blanco
-    border-radius: 10px
-    border-width: 3px
     
-
-
-.topArtImgContainer
-    background-position: center
-    border-radius: 10px
-    //background-repeat: no-repeat
-    background-size: 145%
-    background-position-y: -1%
-
-
-
-
-.moveChildOnParent
-    top: -15em 
-    left: -2em
-    padding-top: 60%
-    padding-bottom: 5%
-    width:110%
-    
-
 .topArtistViewButton
     color: $blanco
     background-color: $negro
@@ -75,3 +42,56 @@
         padding-left: 2em
         padding-right: 2em
         border-color: $negro
+
+
+.topArtImgContainer
+    width:90%
+    position: relative 
+    z-index: 2
+    background-position: center
+    border-radius: 10px
+    background-size: 145%
+    background-position-y: -1%
+    @media screen and (max-width: 767px)
+        width:70%
+        justify-content: center
+        text-align: center
+        margin:0
+        left: 2em
+    img
+        width: 75%
+        margin: 15% 20% 10% 20%
+        border-radius: 5px
+
+
+.backPanelTopArt
+    background-color: $grisFuerte
+    padding-top: 60%
+    padding-bottom: 5%
+    width:110%
+    top: -15em 
+    left: -2em
+    border-style: solid
+    border-color: $blanco
+    border-radius: 10px
+    border-width: 3px  
+    position: relative
+    z-index: 1
+    @media screen and (max-width: 1400px)
+        top: -13em 
+    @media screen and (max-width: 1200px)
+        top: -11em 
+    @media screen and (max-width: 992px)
+        top: -7em 
+        left: -1.1em
+    @media screen and (max-width: 767px)
+        padding-top: 40%
+        width:85%
+        top: -14em
+        left: 0em
+    p
+        margin-top: 8%
+        margin-bottom: 2%
+        font-family: $fontTitles
+        font-size: 25px
+

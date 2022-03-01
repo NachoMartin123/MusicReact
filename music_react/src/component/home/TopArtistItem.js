@@ -12,11 +12,10 @@ const TopArtistItem = (props) => {
     return (
         <Container>
             <div className="centerElementsX topArtImgContainer" 
-            style={{width:'90%', position: 'relative', zIndex: '2' , backgroundImage:`url(${backColors})`}}>
-                <Image src={TiestoImg} alt={props.artistName} style={{width:'75%', margin:'15% 20% 10% 20%', borderRadius:'5px'}}/>
+            style={{backgroundImage:`url(${backColors})`}}>
+                <Image src={TiestoImg} alt={props.artistName} />
             </div>
-            <div  className="backGrisFuerteTopArt whiteBorder moveChildOnParent"
-                style={{position: 'relative', zIndex: '1' }}>
+            <div  className="backPanelTopArt">
                 <p style={{textAlign:'center'}}>{props.artistName} </p>
                 <Button className="topArtistViewButton">VIEW</Button>
             </div>
