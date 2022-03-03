@@ -1,20 +1,19 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-    list: [],
-    loading: false,
-    error: '',
+    //artists:{
+        artistsNames: []
+    //}
 }
 
 const apiState = (state = initialState, action) => {
-    switch (action.type) {/*
-        case types.STORE_ALL: {
+    switch (action.type) {
+        case types.GET_ARTISTS_NAMES: {
             return {
                 ...state,
-                list: action.payload.list,
-                loading: action.payload.loading,
+                artistsNames: action.payload.artistsNames
             }
-        }
+        }/*
         case types.SENDING_REQUEST: {
             return {
                 ...state,

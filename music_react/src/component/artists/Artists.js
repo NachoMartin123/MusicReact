@@ -1,34 +1,47 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-const Artist = ({}) => {
+//import apiState from '../../redux/reducers/apiReducer';
+import {get_artist_names} from '../../redux/actions/apiActions';
+
+import {Button, Container, Row, Col} from 'react-bootstrap';
+import SearchBar from './search_bar/SearchBar';
+import ArtistItem from './artist_item/ArtistItem';
+
+
+const Artists = ({artistsNames, get_artist_names}) => {
+
+    useEffect( () => {
+        get_artist_names();  //llama a Action
+    }, [])
 
     return (
-      <div>
-          <h1>Estamos en Artist</h1>
+      <div id="artists">
+          <h1 id="titleArtists">ARTISTS</h1>
+          <SearchBar/>
+          <Container style={{marginBottom:'10em'}}>
+                <Row>
+                    {
+                    artistsNames && artistsNames.length ?
+                        artistsNames.map((item, index) => {
+                            return <ArtistItem nombre= {item.nombre} key={index}/>
+                        })
+                        : 'no se ha leido artistNames'
+                    }
+                </Row>
+          </Container>
       </div>
     );
 }
 
 
-
-
 const mapStateToProps = (state) => {
     return {
-
+        artistsNames: state.apiState.artistsNames
     }
 }
 
-/*recibe un “state” y obtiene las propiedades de este que vaya a utilizar el componente */
-const mapDispatchToProps = {}
-
-/**
- * La función connect() de la librería React Redux genera un componente 
- * que utiliza store.subscribe() para leer una parte del árbol de estado 
- * en Redux y suministrar los props a un componente de presentación que 
- * renderiza
- */
 export default connect(
     mapStateToProps, 
-    mapDispatchToProps
-)(Artist);
+    {get_artist_names}
+)(Artists);

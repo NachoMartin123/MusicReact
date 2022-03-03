@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Artist_detail = ({}) => {
+import { useParams } from "react-router-dom";
+
+const Artist_detail = ({props}) => {
+
+    const { artistName } = useParams();//hook para recoger params
 
     return (
       <div>
-          <h1>Estamos en Artist detail</h1>
+          <h1>Estamos en Artist detail de { artistName }</h1>
       </div>
     );
 }

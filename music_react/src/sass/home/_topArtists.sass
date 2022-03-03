@@ -36,12 +36,16 @@
     &:active //cuando esta click sin soltar
         background-color: lighten($negro, 5%) !important
         border-color: lighten($negro, 10%) !important
+        &:focus
+            box-shadow: none
     &:focus //despues de click tiene foco, click fuera y lo pierde
         color: $blanco
         background-color: $negro
         padding-left: 2em
         padding-right: 2em
         border-color: $negro
+        box-shadow: 0 0 0 .1rem lighten($customVerde, 0%)
+
 
 
 .topArtImgContainer

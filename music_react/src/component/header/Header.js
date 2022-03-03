@@ -23,7 +23,7 @@ const Header = ({}) => {
                 <Nav id="navMR" style={{width:'100%'}} className="centerElementsX">
                   <Nav.Link style={{color: 'white'}} href="/">Home</Nav.Link>
                   <Nav.Link style={{color: 'white'}} href="">Songs</Nav.Link>
-                  <Nav.Link style={{color: 'white'}} href="/artists">Artist</Nav.Link>
+                  <Nav.Link style={{color: 'white'}} href="/artists">Artists</Nav.Link>
                   <Nav.Link style={{color: 'white'}} href="">Genres</Nav.Link>
                   <Nav.Link style={{color: 'white'}} href="/about">About</Nav.Link>
                 </Nav>

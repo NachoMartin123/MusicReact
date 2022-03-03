@@ -1,5 +1,22 @@
 import * as types from './actionTypes';
-import axios from "axios";
+//import axios from "axios";
+
+export const get_artist_names = () => ({
+    type: types.GET_ARTISTS_NAMES, 
+    payload: {
+        artistsNames: [
+            {nombre:'Avicii', canciones: 5},
+            {nombre:'Tiesto', canciones: 5}, 
+            {nombre:'Daft Punk', canciones: 5},
+            {nombre:'Martin Garrix', canciones: 5},
+            {nombre:'artist1', canciones: 5},
+            {nombre:'artist2', canciones: 5},
+            {nombre:'artist3', canciones: 5},
+            {nombre:'artist4', canciones: 5},
+            {nombre:'The Chainsmokersaaaaaaa', canciones: 5},
+            {nombre:'artist6', canciones: 5}]
+    }
+})
 
 /*
 export const store_all = data => ({

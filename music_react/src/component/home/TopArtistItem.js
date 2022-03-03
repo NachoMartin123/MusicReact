@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-/*recibe un “state” y obtiene las propiedades de este que vaya a utilizar el componente */
+//recibe un “state” y obtiene las propiedades de este que vaya a utilizar el componente
 const mapDispatchToProps = {}
 
 /**

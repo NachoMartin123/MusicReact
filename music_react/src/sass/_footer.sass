@@ -68,14 +68,26 @@
     text-align: center
     //background-origin: padding-box
     //background-position-y: center
-    &:hover, &:active //cuando esta click sin soltar
+    &:active //active=cuando esta click sin soltar
         background: $grisSuave
         border-color: $grisSuave
         border-color: $grisSuave
+        &:focus
+            box-shadow: none
+    &:hover //hover=al pasar por encima
+        background: lighten($grisSuave, 10%)
+        border-color: lighten($grisSuave, 10%)
+        border-color: lighten($grisSuave, 10%)
+        &:focus
+            box-shadow: none
     &:focus //despues de click tiene foco, click fuera y lo pierde
         background: $negroAzulado1
         border-color: $negroAzulado1
-        border-width: 0px
+        box-shadow: none
+        &:hover, &:active //cuando esta click sin soltar
+            background: $grisSuave
+            border-color: $grisSuave
+            border-color: $grisSuave
     i * //iconos
         text-align: center
         width: 30px
@@ -88,6 +100,8 @@
     height: 60px
     border-radius: 30px
     font-size: 14px
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        box-shadow: none
 
 
 .btn-xl

@@ -1,4 +1,6 @@
-export const NAV_CLICK = 'Navclick';
+export const GET_ARTISTS_NAMES = 'ArtitsNames';
+
+/*export const NAV_CLICK = 'Navclick';
 
 export const STORE_ALL = 'StoreAll';
 
@@ -7,3 +9,4 @@ export const REQUEST_DATA = 'RequestData';
 export const REQUEST_ERROR = 'RequestError';
 
 export const REQUEST_POST_DATA = 'RequestPostData';
+*/

@@ -1,0 +1,62 @@
+.artistItemImgContainer
+    background-color: $negro
+    background-position: center
+    border-radius: 15px
+    background-size: 110%
+    background-position-y: 0%
+    width: 100%
+    height: 15em
+    @media screen and (max-width: 1400px)
+        height: 13em
+        background-position-y: -20%
+    @media screen and (max-width: 1200px)
+        height: 11em
+        background-position-y: -40%
+    @media screen and (max-width: 992px)
+        height: 10em
+    @media screen and (max-width: 767px)
+        height: 10em
+        background-position-y: -180%
+    @media screen and (max-width: 576px)
+        height: 15em
+        width: 80%
+        background-position-y: 15%
+        margin: 0 auto //center div cuando width < 100%
+    img
+        width: 75%
+        height: 70%
+        margin: 15% 20% 10% 20%
+        object-fit: cover //según el tamaño recorta img, en vez de estrechar
+        background-position-x: -10%
+        
+
+.resizeArtistItem
+    margin-top: 2em 
+    width: 16% 
+    //margin-bottom: 1em
+    @media screen and (max-width: 992px)
+        margin-top: 1em 
+        margin-bottom: 0em
+        width: 20%
+    @media screen and (max-width: 767px)
+        width: 25%
+    @media screen and (max-width: 576px)
+        width: 50%
+    a
+        color: $blanco
+        font-family: $fontTitles
+        font-size: 30px
+        word-break: break-all
+        text-decoration: none
+        @media screen and (max-width: 1400px)
+            font-size: 30px
+        @media screen and (max-width: 1200px)
+            font-size: 25px
+        @media screen and (max-width: 992px)
+            font-size: 25px
+        @media screen and (max-width: 767px)
+            font-size: 25px
+        &:hover
+            color: $customVerde
+            &:focus
+                box-shadow: none

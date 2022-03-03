@@ -17,12 +17,12 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <div style={{marginTop:'10%'}}>
+      <div >
         <Router>
           <Routes >
             <Route path="/" element={<Home/>}/>
             <Route path="/artists" element={<Artists/>}/>
-            <Route path="/artist_detail" element={<ArtistDetail/>}/>
+            <Route path="/artist_detail/:artistName" element={<ArtistDetail/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path='*' element={<NotFound/>}/>
           </Routes>
