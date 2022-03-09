@@ -1,4 +1,4 @@
-import * as types from './actionTypes';
+import * as types from './actionTypes'; 
 
 /*
 export const nav_click = data => ({
@@ -8,3 +8,13 @@ export const nav_click = data => ({
     }
 })
 */
+
+export const nav_current_song = data => ({
+    type: types.NAV_CURRENT_SONG,
+    payload: {
+        currentSong: data,
+    }
+})
+
+
+

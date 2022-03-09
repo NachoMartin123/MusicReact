@@ -1,13 +1,14 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { connect } from 'react-redux';
 
 import {Button, Container, Row, Col} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap/Modal';
 
 import {BsFillArrowRightCircleFill} from "react-icons/bs"
 
 
 
-const ButtonMR = ({}) => {
+const ModalSoon = ({}) => {
 
     return (
         <Button className="buttonMR">See events <BsFillArrowRightCircleFill className="svgHoverParent"/>
@@ -31,4 +32,4 @@ const mapDispatchToProps = {}
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(ButtonMR);
+)(ModalSoon);

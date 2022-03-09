@@ -4,21 +4,21 @@ import { connect } from 'react-redux';
 //import apiState from '../../redux/reducers/apiReducer';
 import {get_artist_names} from '../../redux/actions/apiActions';
 
-import {Button, Container, Row, Col} from 'react-bootstrap';
+import {Container, Row} from 'react-bootstrap';
 import SearchBar from './search_bar/SearchBar';
 import ArtistItem from './artist_item/ArtistItem';
 
 
-const Artists = ({artistsNames, get_artist_names}) => {
+const Artists = ({artistsNames, get_artist_names, artistsFilter}) => {
 
     useEffect( () => {
-        get_artist_names();  //llama a Action
+        get_artist_names({artistsFilter});  //llama a Action
     }, [])
 
     return (
       <div id="artists">
           <h1 id="titleArtists">ARTISTS</h1>
-          <SearchBar/>
+          <SearchBar artistFilter={artistsFilter}/>
           <Container style={{marginBottom:'10em'}}>
                 <Row>
                     {
@@ -37,7 +37,8 @@ const Artists = ({artistsNames, get_artist_names}) => {
 
 const mapStateToProps = (state) => {
     return {
-        artistsNames: state.apiState.artistsNames
+        artistsNames: state.apiState.artistsNames,
+        artistsFilter: state.navState.artistsFilter
     }
 }
 

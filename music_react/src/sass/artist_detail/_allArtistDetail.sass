@@ -1,0 +1,40 @@
+#imgBackArtistDetail
+    background-size: 60%
+    background-color: $customVerde
+    background-repeat: no-repeat
+    //background-position-x: 50%
+    background-position: center 
+    background-blend-mode: darken
+    *
+        text-align: left
+
+
+#tableArtistDetail 
+    padding-bottom: 5em 
+    margin-left: 0px
+    background-color: $negroAzulado1
+    table
+        color: $blanco
+        thead
+            tr
+                th
+                    padding-top: 1em
+                    padding-bottom: 1em
+                    //border-bottom: 1px solid $blanco 
+                    //border-collapse: separate
+                    //border-spacing: 5px 5px
+        tbody
+            tr
+                td
+                    border-color: inherit
+                    border-style: hidden
+                &:hover
+                    background-color: $grisSuave
+                    td
+                        &:first-child 
+                            border-radius: 25px
+                            border-radius: 5px 0 0 5px
+                        &:last-child 
+                            border-radius: 25px
+                            border-radius: 0 5px 5px 0
+

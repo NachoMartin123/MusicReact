@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 
 import {Button, Container, Row, Col} from 'react-bootstrap';
 
-import {BsFillArrowRightCircleFill} from "react-icons/bs"
+import {BsFillPlayFill, BsFillPauseFill} from "react-icons/bs";
 
 
+const ButtonPlay = ({}) => {
 
-const ButtonMR = ({}) => {
+    
 
     return (
-        <Button className="buttonMR">See events <BsFillArrowRightCircleFill className="svgHoverParent"/>
+        <Button ><BsFillPlayFill className=""/>
         </Button>      
     );
 }
@@ -31,4 +32,4 @@ const mapDispatchToProps = {}
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(ButtonMR);
+)(ButtonPlay);

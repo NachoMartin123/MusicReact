@@ -1,38 +1,70 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect } from "react-redux";
 
 import { useParams } from "react-router-dom";
+import {get_artist_songs} from '../../redux/actions/apiActions';
 
-const Artist_detail = ({props}) => {
+import ButtonPlay from '../common/ButtonPlay';
+import { Button, Container, Row, Col } from "react-bootstrap";
+import Table from "react-bootstrap/Table";
 
-    const { artistName } = useParams();//hook para recoger params
+import { BsClockFill } from "react-icons/bs";
+
+import TiestoImg from '../../assets/top_artist/tiesto.png';
+
+const Artist_detail = ({artistSongs, get_artist_songs}) => {
+    const { artistName } = useParams(); //hook para recoger params
+
+    useEffect( () => {
+        get_artist_songs();  //llama a 
+    }, [])
 
     return (
-      <div>
-          <h1>Estamos en Artist detail de { artistName }</h1>
-      </div>
+        <Container style={{paddingRight:'0', paddingLeft:'0'}}>
+            <Row id="imgBackArtistDetail" style={{backgroundImage:`url(${TiestoImg})`}}>
+                <h1 style={{paddingTop:'2em'}}>{artistName}</h1>
+                <div>
+                    <ButtonPlay/>
+                    <p>Total songs: 23, total duartion: 4h 3min</p>
+                </div>
+            </Row>
+            <Row id="tableArtistDetail">
+                <Table responsive >
+                    <thead>
+                        <tr>
+                            <th style={{textAlign:'center'}}>#</th>
+                            <th>Name</th>
+                            <th>Album</th>
+                            <th ><BsClockFill/></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { 
+                            artistSongs && artistSongs.length > 0 ?
+                                artistSongs.map((item, index) => {
+                                    return <tr key={index}>
+                                                <td style={{textAlign:'center'}}>{index}</td>
+                                                <td>{item.title}</td>
+                                                <td>{item.album}</td>
+                                                <td>{item.duration}</td>
+                                            </tr> 
+                                })
+                                : <tr><td>No songs found</td></tr>
+                        }
+                    </tbody>
+                </Table>
+            </Row>
+        </Container>
     );
-}
-
-
-
+};
 
 const mapStateToProps = (state) => {
     return {
+        artistSongs: state.apiState.artistSongs
+    };
+};
 
-    }
-}
-
-/*recibe un “state” y obtiene las propiedades de este que vaya a utilizar el componente */
-const mapDispatchToProps = {}
-
-/**
- * La función connect() de la librería React Redux genera un componente 
- * que utiliza store.subscribe() para leer una parte del árbol de estado 
- * en Redux y suministrar los props a un componente de presentación que 
- * renderiza
- */
 export default connect(
     mapStateToProps, 
-    mapDispatchToProps
+    {get_artist_songs}
 )(Artist_detail);

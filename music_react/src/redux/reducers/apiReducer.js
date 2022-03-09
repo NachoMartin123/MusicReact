@@ -1,19 +1,70 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-    //artists:{
-        artistsNames: []
-    //}
+    topArtists: [],
+    news:[],
+    hotVideoClips:[],  
+    artistsNames: [],
+    artistSongs:[],
+    isArtistCreated: false,
+    artistsFilter: ''
 }
+
+function filterArtistNames(oldArtitstNames, nameFilter) {
+    console.log(nameFilter);
+    console.log("========= oldArtitstNames: =========");
+    oldArtitstNames.map((item, index) => {
+        console.log("oldArtitstNames: "+item.nombre);
+    })
+    
+    let filteredArtistsNames = oldArtitstNames;
+
+    if (typeof nameFilter !== "undefined")
+        filteredArtistsNames = oldArtitstNames.filter(artist => artist.nombre.toLowerCase().includes(nameFilter));
+
+
+    console.log("========= filteredArtitstNames: =========");
+    filteredArtistsNames.map((item, index) => {
+        console.log("filteredArtitstNames: "+item.nombre);
+    })
+
+    return filteredArtistsNames;
+}
+
 
 const apiState = (state = initialState, action) => {
     switch (action.type) {
         case types.GET_ARTISTS_NAMES: {
             return {
                 ...state,
-                artistsNames: action.payload.artistsNames
+                artistsFilter: action.payload.artistsFilter,
+                artistsNames: filterArtistNames(action.payload.artistsNames, action.payload.artistsFilter)
+
             }
-        }/*
+        }
+        case types.GET_ARTIST_SONGS: {
+            return {
+                ...state,
+                artistSongs: action.payload.artistSongs
+            }
+        }
+        
+        case types.CREATE_ARTIST: {
+            return {
+                ...state, 
+                isArtistCreated: action.payload.isArtistCreated
+            }
+        }
+
+        /* case types.API_FILTER_ARTISTS: {
+            return {
+                ...state, 
+                artistsFilter: action.payload.artistsFilter,
+                artistsNames: filterArtistNames(state.artistsNames, action.payload.artistsFilter)
+            }
+        } */
+        
+        /*
         case types.SENDING_REQUEST: {
             return {
                 ...state,

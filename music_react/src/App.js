@@ -7,6 +7,7 @@ import Home from "./component/home/Home";
 import Artists from "./component/artists/Artists";
 import ArtistDetail from "./component/artist_detail/ArtistDetail";
 import About from "./component/about/About";
+import CreateArtist from "./component/forms/CreateArtist";
 import NotFound from "./component/NotFound";
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/artists" element={<Artists/>}/>
             <Route path="/artist_detail/:artistName" element={<ArtistDetail/>}/>
             <Route path="/about" element={<About/>}/>
+            {/*<Route path="/createArtist" element={<CreateArtist/>}/>*/}
             <Route path='*' element={<NotFound/>}/>
           </Routes>
         </Router>
