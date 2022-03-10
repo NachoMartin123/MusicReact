@@ -33,7 +33,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                 <Table responsive >
                     <thead>
                         <tr>
-                            <th style={{textAlign:'center'}}>#</th>
+                            <th style={{textAlign:'center', width:'10%'}}>#</th>
                             <th>Name</th>
                             <th>Album</th>
                             <th ><BsClockFill/></th>
@@ -43,16 +43,9 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                         { 
                             artistSongs && artistSongs.length > 0 ?
                                 artistSongs.map((item, index) => {
-                                    return <tr key={index}>
-                                                <td style={{textAlign:'center', width:'10%'}} index={index}>
-                                                    <ButtonTable indice={index} artistName={artistName} song={item}/>
-                                                </td>
-                                                <td>{item.title}</td>
-                                                <td>{item.album}</td>
-                                                <td>{item.duration}</td>
-                                            </tr> 
+                                    return <ButtonTable key={index} indice={index} artistName={artistName} song={item}/>
                                 })
-                                : <tr><td>No songs found</td></tr>
+                                : <tr><td>No songs found, check another artist!</td></tr>
                         }
                     </tbody>
                 </Table>
