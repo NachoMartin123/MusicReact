@@ -8,6 +8,8 @@ export const API_FILTER_ARTISTS = 'ApiFilterArtists';
 
 //navState actions
 export const NAV_CURRENT_SONG = 'NavCurrentSong';
+export const NAV_CURRENT_ARTIST = 'NavCurrentArtist';
+
 
 
 /* export const CREATE_TUTORIAL = "CREATE_TUTORIAL";

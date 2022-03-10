@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
+import ButtonTable from "./button_table/ButtonTable";
 
 import { useParams } from "react-router-dom";
 import {get_artist_songs} from '../../redux/actions/apiActions';
@@ -16,7 +17,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const { artistName } = useParams(); //hook para recoger params
 
     useEffect( () => {
-        get_artist_songs();  //llama a 
+        get_artist_songs();
     }, [])
 
     return (
@@ -43,7 +44,9 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                             artistSongs && artistSongs.length > 0 ?
                                 artistSongs.map((item, index) => {
                                     return <tr key={index}>
-                                                <td style={{textAlign:'center'}}>{index}</td>
+                                                <td style={{textAlign:'center', width:'10%'}} index={index}>
+                                                    <ButtonTable indice={index} artistName={artistName} song={item}/>
+                                                </td>
                                                 <td>{item.title}</td>
                                                 <td>{item.album}</td>
                                                 <td>{item.duration}</td>

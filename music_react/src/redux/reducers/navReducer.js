@@ -7,10 +7,10 @@ const initialState = {
         totalMin: ''
     },
     currentSong: {
-        nameSong: '',
-        albumSong: '',
-        duration: ''
-
+        title: '',
+        artist:'',
+        album: '',
+        duration: '' 
     }
 }
 
@@ -20,7 +20,14 @@ const navState = (state = initialState, action) => {
         case types.NAV_CURRENT_SONG: {
             return {
                 ...state,
-                currentSong: action.payload.currentSong,
+                currentSong: action.payload.currentSong
+            }
+        }
+
+        case types.NAV_CURRENT_ARTIST: {
+            return {
+                ...state,
+                currentArtist: {...state.currentArtist, artistName: action.payload.currentArtist}
             }
         }
 

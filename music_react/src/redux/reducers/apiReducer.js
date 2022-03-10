@@ -1,9 +1,9 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-    topArtists: [],
-    news:[],
-    hotVideoClips:[],  
+    //topArtists: [],
+    //news:[],
+    //hotVideoClips:[],  
     artistsNames: [],
     artistSongs:[],
     isArtistCreated: false,
@@ -11,23 +11,9 @@ const initialState = {
 }
 
 function filterArtistNames(oldArtitstNames, nameFilter) {
-    console.log(nameFilter);
-    console.log("========= oldArtitstNames: =========");
-    oldArtitstNames.map((item, index) => {
-        console.log("oldArtitstNames: "+item.nombre);
-    })
-    
     let filteredArtistsNames = oldArtitstNames;
-
     if (typeof nameFilter !== "undefined")
         filteredArtistsNames = oldArtitstNames.filter(artist => artist.nombre.toLowerCase().includes(nameFilter));
-
-
-    console.log("========= filteredArtitstNames: =========");
-    filteredArtistsNames.map((item, index) => {
-        console.log("filteredArtitstNames: "+item.nombre);
-    })
-
     return filteredArtistsNames;
 }
 
