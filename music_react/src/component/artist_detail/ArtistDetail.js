@@ -17,7 +17,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const { artistName } = useParams(); //hook para recoger params
 
     useEffect( () => {
-        get_artist_songs();
+        get_artist_songs(artistName);
     }, [])
 
     return (
@@ -31,16 +31,16 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
             </Row>
             <Row id="tableArtistDetail">
                 <Table responsive >
-                    <thead>
+                    <thead >
                         <tr>
                             <th style={{textAlign:'center', width:'10%'}}>#</th>
                             <th>Name</th>
                             <th>Album</th>
                             <th ><BsClockFill/></th>
-                        </tr>
+                        </tr >
                     </thead>
-                    <tbody>
-                        { 
+                    <tbody >
+                        {
                             artistSongs && artistSongs.length > 0 ?
                                 artistSongs.map((item, index) => {
                                     return <ButtonTable key={index} indice={index} artistName={artistName} song={item}/>

@@ -20,14 +20,12 @@
                 th
                     padding-top: 1em
                     padding-bottom: 1em
-                    //border-bottom: 1px solid $blanco 
-                    //border-collapse: separate
-                    //border-spacing: 5px 5px
         tbody
             tr
                 td
                     border-color: inherit
                     border-style: hidden
+                    margin-top:5em
                 &:hover
                     background-color: $grisSuave
                     td
@@ -37,6 +35,11 @@
                         &:last-child 
                             border-radius: 25px
                             border-radius: 0 5px 5px 0
+            &:before 
+                content:""
+                //display: block
+                line-height:10px
+                text-indent:-99999px
 
 
 .ButtonTable

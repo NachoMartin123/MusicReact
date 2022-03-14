@@ -21,7 +21,7 @@ export const get_artist_names = (data) => ({
     },
 });
 
-export const get_artist_songs = () => ({
+export const get_artist_songs = (artistName) => ({
     type: types.GET_ARTIST_SONGS,
     payload: {
         artistSongs: [
@@ -36,7 +36,44 @@ export const get_artist_songs = () => ({
             {title: "Addicted to you",artist: "Avicii",album: "Album2",duration: "3:23"},
             {title: "I could be the one",artist: "Avicii",album: "Album1",duration: "3:23"},
             {title: "Sunset Jesus",artist: "Avicii",album: "Album2",duration: "3:23"},
-        ],
+            {title: "The Nights",artist: "Avicii",album: "Album2",duration: "3:23"},
+            {title: "Fade Into Darkness",artist: "Avicii",album: "Album2",duration: "3:23"},
+            {title: "You make me",artist: "Avicii",album: "Album2",duration: "3:23"},
+            {title: "Broken Arrows",artist: "Avicii",album: "Album2",duration: "3:23"},
+            {title: "For A Better Day",artist: "Avicii",album: "Album2",duration: "3:23"},
+            {title: "Seek Bromance",artist: "Avicii",album: "Album2",duration: "3:23"},
+
+            {title: "One More Time",artist: "Daft Punk",album: "Album3",duration: "3:23"},
+            {title: "Get Lucky",artist: "Daft Punk",album: "Album3",duration: "3:23"},
+            {title: "Around the world",artist: "Daft Punk",album: "Album3",duration: "3:23"},
+            {title: "Harder, Better, Faster, Stronger",artist: "Daft Punk",album: "Album4",duration: "3:23"},
+            {title: "I Feel It Coming",artist: "Daft Punk",album: "Album4",duration: "3:23"},
+            {title: "Da funk",artist: "Daft Punk",album: "Album4",duration: "3:23"},
+
+            {title: "Red lights",artist: "Tiesto",album: "Album5",duration: "3:23"},
+            {title: "Wasted",artist: "Tiesto",album: "Album5",duration: "3:23"},
+            {title: "Ritual",artist: "Tiesto",album: "Album6",duration: "3:23"},
+            {title: "The Business",artist: "Tiesto",album: "Album6",duration: "3:23"},
+            {title: "Boom",artist: "Tiesto",album: "Album5",duration: "3:23"},
+            {title: "Jackie Chan",artist: "Tiesto",album: "Album6",duration: "3:23"},
+
+            {title: "Together",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "Animals",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "Scare to be lonely",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
+            {title: "Summer days",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
+            {title: "Home",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "High on life",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
+            {title: "No sleep",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "These are the times",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
+            {title: "So far away",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "Pizza",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
+            {title: "The Only Way Is Up",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "Forbidden voices",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "Dont look down",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+            {title: "In the Name of Love",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
+        ].filter(obj => {
+            return obj.artist === artistName;
+          }),
     },
 });
 

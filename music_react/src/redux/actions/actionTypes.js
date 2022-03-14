@@ -9,6 +9,11 @@ export const API_FILTER_ARTISTS = 'ApiFilterArtists';
 //navState actions
 export const NAV_CURRENT_SONG = 'NavCurrentSong';
 export const NAV_CURRENT_ARTIST = 'NavCurrentArtist';
+export const NAV_CURRENT_SONGLIST = 'NavCurrentSongList';
+export const NAV_CHANGE_SONG_STATUS = 'NavChangeSongStatus';
+export const NAV_NEXT_SONG = 'NavNextSong';
+export const NAV_PREVIOUS_SONG = 'NavPreviousSong';
+
 
 
 

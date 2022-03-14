@@ -1,14 +1,5 @@
 import * as types from './actionTypes'; 
 
-/*
-export const nav_click = data => ({
-    type: types.NAV_CLICK,
-    payload: {
-        title: data.title,
-    }
-})
-*/
-
 export const nav_current_song = data => ({
     type: types.NAV_CURRENT_SONG,
     payload: {
@@ -22,4 +13,35 @@ export const nav_current_artist = data => ({
         currentArtist: data
     }
 })
+
+export const nav_current_songList = data => ({
+    type: types.NAV_CURRENT_SONGLIST,
+    payload: {
+        currentSongList: data
+    }
+})
+
+export const nav_change_song_status = data => ({
+    type: types.NAV_CHANGE_SONG_STATUS,
+    payload: { 
+        currentSongStatus: data.status
+    }
+})
+
+export const nav_next_song = () => ({
+    type: types.NAV_NEXT_SONG,
+    payload: { 
+        
+    }
+})
+
+export const nav_previous_song = () => ({
+    type: types.NAV_PREVIOUS_SONG,
+    payload: { 
+       
+    }
+})
+
+
+
 
