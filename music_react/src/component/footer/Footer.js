@@ -40,16 +40,16 @@ const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_so
                         <span id="artist_name_footer">{currentArtist.artistName}</span>
                     </h3> 
                 </Col>
-                <Col xs={5} lg={4} id="buttons_play" style={{paddingRight:'0', paddingLeft:'0'}} className='centerElementsX'>
-                    <Button id="volume" className="roundedButton"><i><ImVolumeHigh /></i></Button>
-                    <Button id="back" onClick={previousSong} className="roundedButton"><i><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></i></Button>
+                <Col xs={5} lg={4} id="buttons_play" className='centerElementsX footerButtons'>
+                    <Button id="volume" className="roundedButton"><ImVolumeHigh /></Button>
+                    <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>
                     <Button id="play" onClick={changeStatus}>{
                         currentSong.status==="play" ?
-                        <i><BsFillPlayFill/></i>
-                         :  <i><BsFillPauseFill/></i>
+                        <BsFillPlayFill/>
+                         :  <BsFillPauseFill/>
                     }
                     </Button>
-                    <Button id="next" onClick={nextSong} className="roundedButton"><i><BsSkipEndFill /></i></Button>
+                    <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
                 </Col>
             </Row>
         </section>

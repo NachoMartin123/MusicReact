@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import {get_artist_songs} from '../../redux/actions/apiActions';
 
 import ButtonPlay from '../common/ButtonPlay';
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 
 import { BsClockFill } from "react-icons/bs";

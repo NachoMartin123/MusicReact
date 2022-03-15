@@ -66,8 +66,9 @@
     margin-right:1em
     justify-content: center
     text-align: center
-    //background-origin: padding-box
-    //background-position-y: center
+    display: flex
+    align-items: center
+    justify-content: center
     &:active //active=cuando esta click sin soltar
         background: $grisSuave
         border-color: $grisSuave
@@ -88,11 +89,13 @@
             background: $grisSuave
             border-color: $grisSuave
             border-color: $grisSuave
-    i * //iconos
+    * //iconos
         text-align: center
-        width: 30px
-        height: 30px
+        width: 140%
+        height: 140%
         vertical-align: middle
+        align-items: center
+        justify-content: center
 
 #play
     @extend .roundedButton
@@ -111,3 +114,12 @@
     border-radius: 35px
     font-size: 24px
     line-height: 1.33
+
+.footerButtons
+    padding-right: 0 
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+    padding-left: 0 
+    display: flex
+    align-items: center
+    justify-content: center
