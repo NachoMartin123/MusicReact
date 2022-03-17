@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import TopArtistItem from './TopArtistItem';
@@ -8,9 +8,9 @@ import ButtonMR from '../common/ButtonMR'
 
 import VideoPromo from '../../assets/video_app_Promo.mp4';
 import NoticiaImg from '../../assets/SHM_worldTour.png';
-import AviciiImg from '../../assets/top_artist/avicii.jpg';
-import DaftPunkImg from '../../assets/top_artist/daft_punk.jpg';
-import TiestoImg from '../../assets/top_artist/tiesto.png';
+import AviciiImg from '../../assets/artistPictures/avicii.jpg';
+import DaftPunkImg from '../../assets/artistPictures/daft_punk.jpg';
+import TiestoImg from '../../assets/artistPictures/tiesto.jpg'; 
 
 import {Button, Container, Row, Col} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';

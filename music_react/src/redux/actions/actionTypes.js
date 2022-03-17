@@ -14,6 +14,9 @@ export const NAV_CHANGE_SONG_STATUS = 'NavChangeSongStatus';
 export const NAV_NEXT_SONG = 'NavNextSong';
 export const NAV_PREVIOUS_SONG = 'NavPreviousSong';
 
+export const NAV_SHOW_MODAL = 'NavShowModal';
+
+
 
 
 

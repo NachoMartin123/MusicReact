@@ -1,35 +1,64 @@
-import {React, useState} from 'react';
+import {React, useEffect} from 'react';
 import { connect } from 'react-redux';
 
-import {Button, Container, Row, Col} from 'react-bootstrap';
-import {Modal} from 'react-bootstrap/Modal';
+import {nav_show_modal} from "../../redux/actions/navActions";
 
-import {BsFillArrowRightCircleFill} from "react-icons/bs"
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
+const ModalSoon = ({showModal, nav_show_modal}) => {
 
-const ModalSoon = ({}) => {
+    function showModalTrigger(){
+        nav_show_modal(true);
+    }
+
+    function hideModalTrigger(){
+        nav_show_modal(false);
+    }
+
+     useEffect( () => {
+      nav_show_modal(false);
+    }, [])
 
     return (
-        <Button className="buttonMR">See events <BsFillArrowRightCircleFill className="svgHoverParent"/>
-        </Button>      
+        /* show={modalShow} onHide={nav_show_modal} */
+        <Modal
+          /* {...ownProps} */
+          show={showModal}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Coming soon
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Available views: Home, Artist and About</h4>
+            <p>
+              Check available views: Home, Artist and About 
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={hideModalTrigger}>Close</Button>
+          </Modal.Footer>
+        </Modal>  
     );
+
 }
 
 
 
 
 const mapStateToProps = (state) => {
-    return {
-
+    return { 
+        showModal: state.navState.showModal
     }
 }
 
-/*recibe un “state” y obtiene las propiedades de este que vaya a utilizar el componente */
-const mapDispatchToProps = {}
-
-
 export default connect(
     mapStateToProps, 
-    mapDispatchToProps
+    {nav_show_modal}
 )(ModalSoon);

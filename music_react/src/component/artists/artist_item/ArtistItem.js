@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {Button, Container, Row, Col} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 
-import TiestoImg from '../../../assets/top_artist/tiesto.png';
+import TiestoImg from '../../../assets/artistPictures/tiesto.jpg';
 import backVolumen from '../../../assets/artists/backVolumen.png';
 
 import {Link} from 'react-router-dom';

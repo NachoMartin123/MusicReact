@@ -12,7 +12,7 @@ const ButtonTable = ({indice, artistName, song,nav_current_song, nav_current_art
     const [isHover, setIsHover] = useState(false);//initial state value
     const [isClicked, setIsClicked] = useState(false);
 
-     useEffect( () => {
+    useEffect( () => {
          if(currentSong.title!==song.title){         
             setIsClicked(false); // only the currentSong can have icons (has focus)
         }else{

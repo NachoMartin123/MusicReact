@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { } from 'react';
 import { connect } from 'react-redux';
 
 import Iframe from 'react-iframe';
@@ -13,19 +13,20 @@ const HotVideoclips = ({}) => {
     return (
       <Row style={{height:'150%'}}>
             <Col lg={8}>
-                <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+                <Iframe url="https://www.youtube.com/embed/ovdm2yX4MA"
                             width="100%"
                             height="400em"
                             id="currentVideoclip"
                             className=""
                             display="initial"
-                            position="relative"/>
+                            position="relative"
+                            allowfullscreen />
             </Col>
-            <Col lg={4} style={{height:'100%'}}>
-                <VideoClipItem songName="" artistName="" videoUrl="" />
-                <VideoClipItem songName="" artistName="" videoUrl=""/>
-                <VideoClipItem songName="" artistName="" videoUrl="" /> 
-                <VideoClipItem songName="" artistName="" videoUrl="" /> 
+            <Col lg={4} style={{height:'100%'}} >
+                <VideoClipItem songName="Levels" artistName="Avicii" videoUrl="https://www.youtube.com/embed/watch?v=_ovdm2yX4MA" position="1" status="down"/>
+                <VideoClipItem songName="Sun is Shining" artistName="Axwell /\ Ingrosso" videoUrl="https://www.youtube.com/watch?v=nbXgHAzUWB0" position="2" status="up"/>
+                <VideoClipItem songName="Pizza" artistName="Martin Garrix" videoUrl="https://www.youtube.com/watch?v=JsKIAO11q1Y" position="3" status="up"/> 
+                <VideoClipItem songName="Stole The Show ft Parson James" artistName="Kygo" videoUrl="https://www.youtube.com/watch?v=BgfcToAjfdc" position="4" status="down"/> 
             </Col>
       </Row>
     );

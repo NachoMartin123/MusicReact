@@ -42,6 +42,14 @@ export const nav_previous_song = () => ({
     }
 })
 
+export const nav_show_modal = (value) => ({
+    type: types.NAV_SHOW_MODAL,
+    payload: { 
+       showModal: value
+    }
+})
+
+
 
 
 

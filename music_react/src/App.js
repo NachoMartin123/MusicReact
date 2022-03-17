@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from "./component/header/Header";
 import Footer from "./component/footer/Footer";
@@ -10,13 +10,16 @@ import About from "./component/about/About";
 import CreateArtist from "./component/forms/CreateArtist";
 import NotFound from "./component/NotFound";
 
-
+import ModalSoon from "./component/common/ModalSoon";
 
 import './css/styles.css';
 
+
 function App() {
+  
   return (
     <div className="App">
+      <ModalSoon/>
       <Header/>
       <div >
         <Router>

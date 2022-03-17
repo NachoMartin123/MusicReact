@@ -1,0 +1,26 @@
+MOBILE VIEW WHEN VIEWPORT < 300
+
+ArtistDetail
+    - Gradient background
+    - CSS dissapear effect spotify
+    - correct border png img artists
+
+Home
+    - set TopArtist links + imgs 
+    - hot videoclips CSS + links
+    - sliders description
+
+Footer
+    - Progressbar song
+    - duration song
+    - volume slide control
+
+About
+    - graphic about technologies in project
+    - user opinions section 
+    - buy me a coffe section
+
+
+Docker + MongoDB 
+    persist data with images
+    link reducer to BBDD

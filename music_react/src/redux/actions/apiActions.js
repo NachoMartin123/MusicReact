@@ -2,6 +2,8 @@ import * as types from "./actionTypes";
 //import axios from "axios";
 import ArtistDataService from "../../services/artist.service";
 
+import TiestoImg from '../../assets/artistPictures/tiesto.jpg';
+
 export const get_artist_names = (data) => ({
     type: types.GET_ARTISTS_NAMES,
     payload: {
@@ -72,25 +74,16 @@ export const get_artist_songs = (artistName) => ({
             {title: "Dont look down",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
             {title: "In the Name of Love",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
         ].filter(obj => {
-            return obj.artist === artistName;
+            return obj.artist.toLowerCase().replace(/\s/g, '_') === artistName.toLowerCase().replace(/\s/g, '_');
           }),
     },
 });
-
-/* export const api_filter_artists = data => ({
-    type: types.API_FILTER_ARTISTS,
-    payload: {
-        artistsFilter: data.artistsFilter,
-    }
-}) */
 
 export const createArtist = (artistToInsert) => (dispatch) => {
     return ArtistDataService.create(artistToInsert).then((data) => {
         dispatch(request_post_data(artistToInsert));
     });
 };
-
-
 
 export const request_post_data = (data) => ({
     type: types.CREATE_ARTIST,

@@ -13,7 +13,8 @@ const initialState = {
         duration: '',
         status:'pause'
     },
-    currentSongList: []
+    currentSongList: [], 
+    showModal: false
 }
 
 
@@ -43,6 +44,7 @@ function getNextOrPreviousSong(value, currentSongList, currentSong){
                 status:'play'}; 
     }
 }
+
 
 
 const navState = (state = initialState, action) => {
@@ -99,6 +101,13 @@ const navState = (state = initialState, action) => {
             return {
                 ...state,
                 currentSong: getNextOrPreviousSong(1, state.currentSongList, state.currentSong),              
+            }
+        }
+
+        case types.NAV_SHOW_MODAL: {
+            return {
+                ...state,
+                showModal: action.payload.showModal
             }
         }
 

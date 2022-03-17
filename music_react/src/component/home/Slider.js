@@ -2,9 +2,9 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 
 import Carousel from 'react-bootstrap/Carousel';
-import SliderImg1 from "../../assets/slider/ultra-music.jpg";
-import SliderImg2 from "../../assets/slider/david-guetta.jpg";
-import SliderImg3 from "../../assets/slider/collab.jpg";
+import SliderImg1 from "../../assets/home/slider/ultra-music.jpg";
+import SliderImg2 from "../../assets/home/slider/david-guetta.jpg";
+import SliderImg3 from "../../assets/home/slider/collab.jpg";
 
 import {Container} from 'react-bootstrap'
 
