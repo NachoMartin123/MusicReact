@@ -22,13 +22,12 @@ const ModalSoon = ({showModal, nav_show_modal}) => {
     }, [])
 
     return (
-        /* show={modalShow} onHide={nav_show_modal} */
         <Modal
-          /* {...ownProps} */
           show={showModal}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
+          className="myModal"
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
@@ -38,7 +37,7 @@ const ModalSoon = ({showModal, nav_show_modal}) => {
           <Modal.Body>
             <h4>Available views: Home, Artist and About</h4>
             <p>
-              Check available views: Home, Artist and About 
+              Check available views: Home, Artists and About 
             </p>
           </Modal.Body>
           <Modal.Footer>

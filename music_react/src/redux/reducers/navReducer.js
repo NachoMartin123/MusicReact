@@ -14,7 +14,12 @@ const initialState = {
         status:'pause'
     },
     currentSongList: [], 
-    showModal: false
+    showModal: false, 
+    currentVideoclip:{
+        songName:'', 
+        artistName:'',
+        videoUrl:'', //'https://www.youtube.com/embed/ovdm2yX4MA'
+    }
 }
 
 
@@ -44,7 +49,6 @@ function getNextOrPreviousSong(value, currentSongList, currentSong){
                 status:'play'}; 
     }
 }
-
 
 
 const navState = (state = initialState, action) => {
@@ -110,6 +114,20 @@ const navState = (state = initialState, action) => {
                 showModal: action.payload.showModal
             }
         }
+
+        case types.NAV_CURRENT_VIDEOCLIP: { 
+            return {
+                ...state,
+                currentVideoclip: action.payload.currentVideoclip
+                /* currentVideoclip:{ */
+                    /* ...state.currentVideoclip,  */
+                       /*  songName: action.payload.currentVideoclip.songName, 
+                        artistName: action.payload.currentVideoclip.artistName,
+                        videoUrl: action.payload.currentVideoclip.videoUrl */
+                /* }  */
+            }
+        }
+
 
         default: return state;
     }

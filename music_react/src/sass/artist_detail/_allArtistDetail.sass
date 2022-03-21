@@ -1,12 +1,17 @@
 #imgBackArtistDetail
-    background-size: 60%
+    ////////////background-size: 60%
     //background-color: $customVerde
     background-repeat: no-repeat
     //background-position-x: 50%
-    background-position: center 
+    background-position: 50% 60%
     background-blend-mode: darken
     *
         text-align: left
+
+.gradientBack
+    background: rgb(50,76,71)
+    background: linear-gradient(0deg, rgba(50,76,71,1) 55%, rgba(134,201,190,1) 100%)
+    
 
 .ballSeparator
     width: 0.5em  
@@ -21,7 +26,9 @@
     margin-left: 0px
     padding-left: 2em
     padding-right: 2em
-    background-color: $negroAzulado1
+    //background-color: $negroAzulado1
+    background: rgb(38,38,38)
+    background: linear-gradient(0deg, rgba(38,38,38,1) 55%, rgba(50,78,71,1) 100%)
     width: 100%
     table
         color: $blanco
@@ -31,13 +38,13 @@
                     padding-top: 1em
                     padding-bottom: 1em
                     position: sticky
-                    top: 0
+                    top: -1px
         tbody
             tr
                 td
                     border-color: inherit
                     border-style: hidden
-                    margin-top:5em
+                    margin-top: 5em
                 &:hover
                     background-color: $grisSuave
                     td

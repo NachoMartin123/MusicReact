@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import TopArtistItem from './TopArtistItem';
 import HotVideoclips from './HotVideoclips';
 import Slider from './Slider';
-import ButtonMR from '../common/ButtonMR'
+import ButtonMR from '../common/ButtonMR' 
 
 import VideoPromo from '../../assets/video_app_Promo.mp4';
 import NoticiaImg from '../../assets/SHM_worldTour.png';

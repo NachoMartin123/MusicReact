@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import {get_artist_songs} from '../../redux/actions/apiActions';
 
 import ButtonPlay from '../common/ButtonPlay';
-import { Container, Row} from "react-bootstrap";
+import { Row} from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 
 import { BsClockFill, BsCircleFill } from "react-icons/bs";
@@ -17,17 +17,34 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const { artistName } = useParams(); //hook para recoger params
 
     const [totalDuration, setTotalDuration] = useState("0 hr 0 min");//initial state value
-
-    const [imgBack, setImageBack] = useState()
+    const [backOpacity, setBackOpacity] = useState(0);
+    const [backSize, setBackSize] = useState("60%");
+    //const [imgBack, setImageBack] = useState()
 
     useEffect( () => {
         get_artist_songs(artistName);
-        setImageBack("url("+"../../assets/artistPictures/" + artistName.toLowerCase().replace(/\s/g, '_') + "_PNG.png" + ")");
+        //setImageBack("url("+"../../assets/artistPictures/" + artistName.toLowerCase().replace(/\s/g, '_') + "_PNG.png" + ")");
     }, [])
 
     useEffect( () => {
         getTotalDuration();
     })
+
+    useEffect( () => {//control opacity
+        const scrollFun = () => {              
+            if (window.pageYOffset === 0)     {setBackOpacity("rgba(50, 77, 71, 0)"); setBackSize("60%");}
+            if (window.pageYOffset === 50)    {setBackOpacity("rgba(50, 77, 71, 0.25)"); setBackSize("55%");}
+            if (window.pageYOffset === 100)   {setBackOpacity("rgba(50, 77, 71, 0.5)"); setBackSize("50%");}
+            if (window.pageYOffset === 150)   {setBackOpacity("rgba(50, 77, 71, 0.75)");}
+            if (window.pageYOffset === 200)   {setBackOpacity("rgba(50, 77, 71, 0.85)");}
+            if (window.pageYOffset === 250)   {setBackOpacity("rgba(50, 77, 71, 1)");}
+        }
+        window.addEventListener("scroll", scrollFun);
+
+        return () => {
+            window.removeEventListener("scroll", scrollFun);
+        };
+    }, [])
 
     function getTotalDuration(){
         var varTotalTimeSeconds =0;
@@ -37,24 +54,28 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
             varTotalTimeSeconds += parseInt(arrayDeCadenas[0])*60+parseInt(arrayDeCadenas[1]);
         }
         
-        if(artistSongs.length!==0){
-            var hours = Math.floor(varTotalTimeSeconds/60/60);
-            varTotalTimeSeconds -= hours*60*60;
-            var min= Math.floor(varTotalTimeSeconds/60);
-            varTotalTimeSeconds -= min*60;
-            setTotalDuration(hours+" hr "+min+" min");
-        }
-    }
+        var hours = 0;
+        var min = 0;
 
+        if(artistSongs.length!==0){
+            hours = Math.floor(varTotalTimeSeconds/60/60);
+            varTotalTimeSeconds -= hours*60*60;
+            min= Math.floor(varTotalTimeSeconds/60);
+            varTotalTimeSeconds -= min*60;
+        }
+        setTotalDuration(hours+" hr "+min+" min");
+    }
     
     return (
-        <div style={{}}> 
-            <Row id="imgBackArtistDetail" style={{marginLeft:"10%", backgroundImage:`url(${(AviciiImg)})`}}>
-                <h1 style={{paddingTop:'2em'}}>{artistName}</h1>
-                <div>
-                    <ButtonPlay/>
-                    <div style={{display:"flex"}}>
-                        <p style={{fontWeight: "bold"}}>Total songs:&nbsp;</p><p> {artistSongs.length}</p><BsCircleFill className="ballSeparator"/><p style={{fontWeight: "bold"}}> Total duration:&nbsp;</p><p>{totalDuration}</p>
+        <div className="gradientBack"> 
+            <Row id="imgBackArtistDetail" style={{backgroundSize: backSize, backgroundImage:`url(${(AviciiImg)})`}}>
+                <div style={{paddingLeft:"10%", background: backOpacity}}>
+                    <h1 style={{paddingTop:'2em'}}>{artistName}</h1>
+                    <div>
+                    {/*  <ButtonPlay/> */}
+                        <div style={{display:"flex"}}>
+                            <p style={{fontWeight: "bold"}}>Total songs:&nbsp;</p><p> {artistSongs.length}</p><BsCircleFill className="ballSeparator"/><p style={{fontWeight: "bold"}}> Total duration:&nbsp;</p><p>{totalDuration}</p>
+                        </div>
                     </div>
                 </div>
             </Row>
@@ -74,7 +95,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                                 artistSongs.map((item, index) => {
                                     return <ButtonTable key={index} indice={index} artistName={artistName} song={item}/>
                                 })
-                                : <tr><td>No songs found, check another artist!</td></tr>
+                                : <tr><td colSpan="4">No songs found, check another artist!</td></tr>
                         }
                     </tbody>
                 </Table>

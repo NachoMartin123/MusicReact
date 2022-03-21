@@ -1,3 +1,40 @@
+# To Do
+MOBILE VIEW WHEN VIEWPORT < 300
+
+artists
+    - artists images dinamiclly by name
+
+ArtistDetail
+    - Gradient background
+    - CSS dissapear effect spotify
+    - correct border png img artists
+    - dinamic artist image
+    - sticky header table
+
+Home
+    - set TopArtist links + imgs 
+    - hot videoclips CSS + links
+    - sliders description
+
+Footer
+    - Progressbar song
+    - duration song
+    - volume slide control
+
+About
+    - graphic about technologies in project
+    - user opinions section 
+    - buy me a coffe section
+
+Modal
+    - style CSS
+
+
+Docker + MongoDB 
+    persist data with images
+    link reducer to BBDD
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

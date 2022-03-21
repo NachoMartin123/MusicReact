@@ -16,6 +16,8 @@ export const NAV_PREVIOUS_SONG = 'NavPreviousSong';
 
 export const NAV_SHOW_MODAL = 'NavShowModal';
 
+export const NAV_CURRENT_VIDEOCLIP = 'NavCurrentVideoclip';
+
 
 
 

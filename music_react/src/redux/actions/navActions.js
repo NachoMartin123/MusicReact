@@ -46,10 +46,13 @@ export const nav_show_modal = (value) => ({
     type: types.NAV_SHOW_MODAL,
     payload: { 
        showModal: value
-    }
+    } 
 })
 
 
-
-
-
+export const nav_current_videoclip = data => ({
+    type: types.NAV_CURRENT_VIDEOCLIP,
+    payload: {
+        currentVideoclip: data
+    }
+})
