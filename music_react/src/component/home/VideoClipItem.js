@@ -10,7 +10,7 @@ import {nav_current_videoclip} from "../../redux/actions/navActions";
 const VideoClipItem = ({songName, artistName, videoUrl, position, status, nav_current_videoclip}) => {
 
     useEffect(() => {
-         if(position===1)
+         if(position==1)
             nav_current_videoclip({
                 songName: songName, 
                 artistName: artistName,
@@ -28,7 +28,7 @@ const VideoClipItem = ({songName, artistName, videoUrl, position, status, nav_cu
     
     return (
       <Row onClick={onClickItem} className="hotVideoItem centerElementsY centerElementsX" style={{width:'100%', height:'20%', marginBottom:'5%'}}>
-          <div className="centerElementsY" style={{width:'20%'}}>
+          <div className="centerElementsY" style={{margin:"auto", width:'20%'}}>
               <span style={{}}>{position}</span>
               <hr style={{margin:'0', border:'3', opacity:'1'}}/>
               {

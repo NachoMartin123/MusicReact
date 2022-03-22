@@ -31,7 +31,6 @@ const ButtonTable = ({indice, artistName, song,nav_current_song, nav_current_art
 
         //change song, set play by default
  
-
         if(currentSong.status==="play"){//currentSong not changed, chaged status
             setIsClicked(true);
             nav_change_song_status({status:"pause"});

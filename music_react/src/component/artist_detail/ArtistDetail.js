@@ -30,7 +30,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
         getTotalDuration();
     })
 
-    useEffect( () => {//control opacity
+    useEffect( () => {//control opacity, 
         const scrollFun = () => {              
             if (window.pageYOffset === 0)     {setBackOpacity("rgba(50, 77, 71, 0)"); setBackSize("60%");}
             if (window.pageYOffset === 50)    {setBackOpacity("rgba(50, 77, 71, 0.25)"); setBackSize("55%");}

@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {Button, Container, Row, Col} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 import {BsFillArrowRightCircleFill} from "react-icons/bs"
 
 
 
-const ButtonMR = ({}) => {
+const ButtonMR = ({texto}) => {
 
     return (
-        <Button className="buttonMR">See events <BsFillArrowRightCircleFill className="svgHoverParent"/>
+        <Button className="buttonMR">{texto} <BsFillArrowRightCircleFill className="svgHoverParent"/>
         </Button>      
     );
 }
@@ -18,17 +18,13 @@ const ButtonMR = ({}) => {
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-
+        texto: ownProps.texto
     }
 }
 
-/*recibe un “state” y obtiene las propiedades de este que vaya a utilizar el componente */
-const mapDispatchToProps = {}
-
-
 export default connect(
     mapStateToProps, 
-    mapDispatchToProps
+    {}
 )(ButtonMR);
