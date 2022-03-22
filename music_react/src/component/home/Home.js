@@ -1,18 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import TopArtistItem from './TopArtistItem';
+import TopArtist from './TopArtist';
 import HotVideoclips from './HotVideoclips';
 import Slider from './Slider';
 import ButtonMR from '../common/ButtonMR' 
 
 import VideoPromo from '../../assets/video_app_Promo.mp4';
 import NoticiaImg from '../../assets/SHM_worldTour.png';
-import AviciiImg from '../../assets/artistPictures/avicii.jpg';
-import DaftPunkImg from '../../assets/artistPictures/daft_punk.jpg';
-import TiestoImg from '../../assets/artistPictures/tiesto.jpg'; 
 
-import {Button, Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 
 
@@ -38,29 +35,7 @@ const Home = ({}) => {
                 </Container>
             </section>
             <section id="top_artist">
-                <div className="backAzulFuerte">
-                    <Container>
-                        <div className="inlineElements centerElementsX" >
-                            <hr className="hr-width15"/>
-                            <h1>TOP ARTIST</h1>
-                            <hr className="hr-width15"/>
-                        </div>
-                    </Container>
-                    <h3 className="titleSecondary" style={{paddingBottom:'1em'}}>Most streamed artist of the week</h3>
-                    <Container>
-                        <Row  className="centerElementsX" > 
-                            <Col md={4}>
-                                <TopArtistItem artistName="Tiesto"/>
-                            </Col>
-                            <Col md={4}>
-                                <TopArtistItem artistName="Avicii"/>
-                            </Col>
-                            <Col md={4}>
-                                <TopArtistItem artistName="Daft Punk"/>
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
+               <TopArtist/>
             </section>
             <section id="hot_videoclips" >
                  <Container> 
