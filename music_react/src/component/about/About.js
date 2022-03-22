@@ -13,7 +13,7 @@ import MethologiesChart from "./usedTechnologies/MethologiesChart";
 const About = ({}) => {
     return (
         <div>
-			<div className="back1" style={{height:"50%", paddingTop:"4em", paddingBottom:"4em", backgroundImage:`url(${(back1)})`}}>
+			<div className="back1About" style={{height:"50%", paddingTop:"4em", paddingBottom:"4em", backgroundImage:`url(${(back1)})`}}>
 				<Container style={{backdropFilter: "blur(1px)"}}>
 					<h2  className="titleSecondary">USED <span className="customGreen">TECHNOLOGIES</span></h2>
 					<Row>
@@ -26,18 +26,18 @@ const About = ({}) => {
 					</Row>
 				</Container>
 			</div>
-			<div className="back2" style={{backgroundImage:`url(${(back2)})`}}>
+			<div className="back2About" style={{backgroundImage:`linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%), url(${(back2)})`}}>
 				<Container className="backFilter" style={{paddingTop:"6em", paddingBottom:"9em"}}>
-					<h2 className="titleSecondary" style={{paddinTop:"9em"}}>
+					<h2 className="titleSecondary" style={{marginTop:"2em"}}>
 						OUR <span className="customGreen">NUMBERS</span>
 					</h2>
-					<Row style={{marginTop:"2em", marginBottom:"2em"}}>
+					<Row style={{marginTop:"5em", marginBottom:"2em"}}>
 						<Badge iconType="test"/>
 						<Badge iconType="users"/>
 						<Badge iconType="satisfaction"/>
-						<Badge iconType="speed"/>
+						<Badge iconType="award"/>
 					</Row>
-					<Container style={{textAlign:"center", marginTop:"2em", marginBottom:"2em"}}>
+					<Container style={{textAlign:"center", marginTop:"3em", marginBottom:"2em"}}>
 						<h1>Do you want to support?</h1>
 						<ButtonMR texto="Buy a coffe" />
 					</Container>

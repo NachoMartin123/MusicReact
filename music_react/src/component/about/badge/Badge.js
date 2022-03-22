@@ -2,40 +2,54 @@ import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 
 import {Container, Col, Row} from 'react-bootstrap';
-
-import {BsFillBugFill, BsPeopleFill, BsHandThumbsUpFill, BsSpeedometer} from "react-icons/bs"
+import CountUp, { useCountUp } from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
+import {BsFillBugFill, BsPeopleFill, BsHandThumbsUpFill, BsAwardFill} from "react-icons/bs"
 
 const Badge = ({iconType}) => {
-    const [texto1, setTexto1] = useState("");//initial state value
-    const [texto2, setTexto2] = useState("");//initial state value
+    const [myNumber, setMyNumber1] = useState();//initial state value
+    const [texto, setTexto] = useState();//initial state value
+    const [prefix, setPrefix] = useState("");//initial state value
+    const [sufix, setSufix] = useState("");//initial state value
 
     useEffect(() => {
         if(iconType=="test"){
-            setTexto1(">90");
-            setTexto2("Test");
+            setPrefix(">");
+            setMyNumber1(90);
+            setTexto("Test");
         }else if(iconType=="users"){
-            setTexto1("15M");
-            setTexto2("Users per month");
+            setSufix("M");
+            setMyNumber1(15);
+            setTexto("Users per month");
         }else if(iconType=="satisfaction"){
-            setTexto1("100%");
-            setTexto2("User satisfaction");
-        }else if(iconType=="speed"){
-            setTexto1("Speed");
-            setTexto2("Instant load");
+            setSufix("%");
+            setMyNumber1(100);
+            setTexto("User satisfaction");
+        }else if(iconType=="award"){
+            setMyNumber1(12);
+            setTexto("Award winner");
         }
     }, []);
 
     return (
         <Col className="badge">
            {
-               texto1=="test" ? <BsFillBugFill/>
-               : texto1=="users" ? <BsPeopleFill/>
-               : texto1=="satisfaction" ? <BsHandThumbsUpFill/>
-               : texto1=="speed" ? <BsSpeedometer/>
-               : <BsSpeedometer/>
+               iconType=="test" ? <BsFillBugFill/>
+               : iconType=="users" ? <BsPeopleFill/>
+               : iconType=="satisfaction" ? <BsHandThumbsUpFill/>
+               : iconType=="award" ? <BsAwardFill/>
+               : <BsAwardFill/>
            }
-            <h3>{texto1}</h3>
-            <h4 style={{color:"white", textAlign:"center"}}>{texto2}</h4>
+            <div style={{marginTop:"1em"}}>
+                <CountUp redraw={true} end={myNumber} prefix={prefix} suffix={sufix}>
+                {({ countUpRef, start }) => (
+                    <VisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                    </VisibilitySensor>
+                )}
+                </CountUp>
+            </div>
+            <h4 style={{marginBottom:"1.5em", color:"white", textAlign:"center"}}>{texto}</h4>
             <div className="badge-linea"></div>
         </Col>    
     );
