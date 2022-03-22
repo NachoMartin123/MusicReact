@@ -5,16 +5,12 @@ artists
     - artists images dinamiclly by name
 
 ArtistDetail
-    - Gradient background
     - CSS dissapear effect spotify
-    - correct border png img artists
     - dinamic artist image
     - sticky header table
-    - Fix fade out img artist when scrolling
+    - Smooth fade out img artist when scrolling
 
 Home
-    - set TopArtist links + imgs 
-    - hot videoclips CSS + links
     - sliders description
 
 Footer
@@ -23,8 +19,6 @@ Footer
     - volume slide control
 
 About
-    - graphic about technologies in project
-    - user opinions section 
     - buy me a coffe section
 
 Modal
