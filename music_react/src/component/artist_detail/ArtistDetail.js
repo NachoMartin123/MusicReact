@@ -46,8 +46,6 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                 setBackOpacity("rgba(50, 77, 71, 1)");
                 setBackSize(48);
             }
-            console.log("window.pageYOffset "+window.pageYOffset)
-
         }
         window.addEventListener("scroll", scrollFun);
 

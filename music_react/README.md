@@ -2,9 +2,10 @@
 MOBILE VIEW WHEN VIEWPORT < 300
     - Nav change display
 
+TEST
+
 ArtistDetail
     - sticky header table
-    - Smooth fade out img artist when scrolling
     - resizable
 
 Home
