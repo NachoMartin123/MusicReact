@@ -12,6 +12,7 @@ ArtistDetail
 
 Home
     - sliders description
+    - link SHM
 
 Footer
     - Progressbar song
@@ -19,7 +20,7 @@ Footer
     - volume slide control
 
 About
-    - buy me a coffe section
+    - buy me a coffe link
 
 Modal
     - style CSS

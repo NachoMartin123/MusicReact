@@ -12,6 +12,7 @@ import Table from "react-bootstrap/Table";
 import { BsClockFill, BsCircleFill } from "react-icons/bs";
 
 import AviciiImg from '../../assets/artistPictures/avicii_PNG.png';
+import DefaultImg from '../../assets/artistPictures/default.png';
  
 const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const { artistName } = useParams(); //hook para recoger params
@@ -19,11 +20,20 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const [totalDuration, setTotalDuration] = useState("0 hr 0 min");//initial state value
     const [backOpacity, setBackOpacity] = useState(0);
     const [backSize, setBackSize] = useState("60%");
-    //const [imgBack, setImageBack] = useState()
+    const [profileIMG, setProfileIMG] = useState();
 
+    function loadImage () {//set img dinamiclly
+        try{
+           const images = require.context('../../assets/artistPictures', true);
+           setProfileIMG(images('./' +artistName.toLowerCase().replace(/\s/g, '_')+'_PNG.png'));
+       }catch{
+           setProfileIMG(DefaultImg);
+       } 
+   };
+    
     useEffect( () => {
         get_artist_songs(artistName);
-        //setImageBack("url("+"../../assets/artistPictures/" + artistName.toLowerCase().replace(/\s/g, '_') + "_PNG.png" + ")");
+        loadImage();
     }, [])
 
     useEffect( () => {
@@ -68,7 +78,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     
     return (
         <div className="gradientBack"> 
-            <Row id="imgBackArtistDetail" style={{backgroundSize: backSize, backgroundImage:`url(${(AviciiImg)})`}}>
+            <Row id="imgBackArtistDetail" style={{backgroundSize: backSize, backgroundImage:`url(${(profileIMG)})`}}>
                 <div style={{paddingLeft:"10%", background: backOpacity}}>
                     <h1 style={{paddingTop:'2em'}}>{artistName}</h1>
                     <div>

@@ -9,7 +9,7 @@ import SearchBar from './search_bar/SearchBar';
 import ArtistItem from './artist_item/ArtistItem';
 
 
-const Artists = ({artistsNames, get_artist_names, artistsFilter}) => {
+const Artists = ({artistsNames, get_artist_names, artistsFilter}) => { 
 
     useEffect( () => {
         get_artist_names({artistsFilter});  //llama a Action
