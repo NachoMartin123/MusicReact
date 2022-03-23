@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {  } from 'react';
 import { connect } from 'react-redux';
 
 import Iframe from 'react-iframe';
@@ -10,10 +10,6 @@ import VideoClipItem from './VideoclipItem';
 
 
 const HotVideoclips = ({currentVideoclip}) => {
-
-    /* useEffect(() => {
-        
-    }, [currentVideoclip]); */
 
     return (
       <Row style={{height:'150%'}}>

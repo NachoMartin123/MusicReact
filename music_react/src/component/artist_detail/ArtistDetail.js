@@ -11,7 +11,6 @@ import Table from "react-bootstrap/Table";
 
 import { BsClockFill, BsCircleFill } from "react-icons/bs";
 
-import AviciiImg from '../../assets/artistPictures/avicii_PNG.png';
 import DefaultImg from '../../assets/artistPictures/default.png';
  
 const Artist_detail = ({artistSongs, get_artist_songs}) => {
@@ -19,7 +18,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
 
     const [totalDuration, setTotalDuration] = useState("0 hr 0 min");//initial state value
     const [backOpacity, setBackOpacity] = useState(0);
-    const [backSize, setBackSize] = useState("60%");
+    const [backSize, setBackSize] = useState(50); 
     const [profileIMG, setProfileIMG] = useState();
 
     function loadImage () {//set img dinamiclly
@@ -34,20 +33,21 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     useEffect( () => {
         get_artist_songs(artistName);
         loadImage();
-    }, [])
+        const scrollFun = () => {   
+            if(window.pageYOffset == 0) {
+                setBackOpacity("rgba(50, 77, 71, 0)");
+                setBackSize(50);
+            }
+            if(window.pageYOffset == 100) {//1 scroll down with mouse
+                setBackOpacity("rgba(50, 77, 71, 0.5)");
+                setBackSize(49);
+            }
+            if(window.pageYOffset == 200) {//1 scroll down with mouse
+                setBackOpacity("rgba(50, 77, 71, 1)");
+                setBackSize(48);
+            }
+            console.log("window.pageYOffset "+window.pageYOffset)
 
-    useEffect( () => {
-        getTotalDuration();
-    })
-
-    useEffect( () => {//control opacity, 
-        const scrollFun = () => {              
-            if (window.pageYOffset === 0)     {setBackOpacity("rgba(50, 77, 71, 0)"); setBackSize("60%");}
-            if (window.pageYOffset === 50)    {setBackOpacity("rgba(50, 77, 71, 0.25)"); setBackSize("55%");}
-            if (window.pageYOffset === 100)   {setBackOpacity("rgba(50, 77, 71, 0.5)"); setBackSize("50%");}
-            if (window.pageYOffset === 150)   {setBackOpacity("rgba(50, 77, 71, 0.75)");}
-            if (window.pageYOffset === 200)   {setBackOpacity("rgba(50, 77, 71, 0.85)");}
-            if (window.pageYOffset === 250)   {setBackOpacity("rgba(50, 77, 71, 1)");}
         }
         window.addEventListener("scroll", scrollFun);
 
@@ -55,6 +55,10 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
             window.removeEventListener("scroll", scrollFun);
         };
     }, [])
+
+    useEffect( () => {
+        getTotalDuration();
+    })
 
     function getTotalDuration(){
         var varTotalTimeSeconds =0;
@@ -75,11 +79,17 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
         }
         setTotalDuration(hours+" hr "+min+" min");
     }
+
+    const dinamicStyles = {
+        
+    }
+
+
     
     return (
         <div className="gradientBack"> 
-            <Row id="imgBackArtistDetail" style={{backgroundSize: backSize, backgroundImage:`url(${(profileIMG)})`}}>
-                <div style={{paddingLeft:"10%", background: backOpacity}}>
+            <Row id="imgBackArtistDetail" style={{ backgroundSize: backSize+"%", transition: "all 0.25s",  backgroundImage:`url(${(profileIMG)})`}}>
+                <div style={{paddingLeft:"10%", background: backOpacity, transition: "all 0.15s"}}>
                     <h1 style={{paddingTop:'2em'}}>{artistName}</h1>
                     <div>
                     {/*  <ButtonPlay/> */}

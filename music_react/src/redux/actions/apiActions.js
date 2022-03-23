@@ -17,7 +17,7 @@ export const get_artist_names = (data) => ({
             { nombre: "artist2"},
             { nombre: "artist3"},
             { nombre: "artist4"},
-            { nombre: "The Chainsmokersaaaaaaa"},
+            { nombre: "The Chainsmokers"},
             { nombre: "artist6"},
         ],
     },

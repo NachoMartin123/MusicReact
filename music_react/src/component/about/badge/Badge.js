@@ -32,7 +32,7 @@ const Badge = ({iconType}) => {
     }, []);
 
     return (
-        <Col className="badge">
+        <Col className="badge" md={3} xs={6}>
            {
                iconType=="test" ? <BsFillBugFill/>
                : iconType=="users" ? <BsPeopleFill/>
@@ -41,7 +41,7 @@ const Badge = ({iconType}) => {
                : <BsAwardFill/>
            }
             <div style={{marginTop:"1em"}}>
-                <CountUp redraw={true} end={myNumber} prefix={prefix} suffix={sufix}>
+                <CountUp end={myNumber} prefix={prefix} suffix={sufix}>
                 {({ countUpRef, start }) => (
                     <VisibilitySensor onChange={start} delayedCall>
                         <span ref={countUpRef} />

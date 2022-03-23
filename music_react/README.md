@@ -1,18 +1,14 @@
 # To Do
 MOBILE VIEW WHEN VIEWPORT < 300
-
-artists
-    - artists images dinamiclly by name
+    - Nav change display
 
 ArtistDetail
-    - CSS dissapear effect spotify
-    - dinamic artist image
     - sticky header table
     - Smooth fade out img artist when scrolling
+    - resizable
 
 Home
     - sliders description
-    - link SHM
 
 Footer
     - Progressbar song

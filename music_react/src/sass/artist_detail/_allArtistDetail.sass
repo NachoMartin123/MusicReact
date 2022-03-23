@@ -1,16 +1,21 @@
 #imgBackArtistDetail
-    ////////////background-size: 60%
-    //background-color: $customVerde
     background-repeat: no-repeat
     //background-position-x: 50%
-    background-position: 50% 60%
+    background-position: 50% 55%
     background-blend-mode: darken
+    background-size: 50%
+    transition: all 1s
+    @media screen and (max-width: 780px)
+        background-size: 60% 
+    @media screen and (max-width: 690px)
+        background-size: 90% 
     *
         text-align: left
 
+    
 .gradientBack
     background: rgb(50,76,71)
-    background: linear-gradient(0deg, rgba(50,76,71,1) 55%, rgba(134,201,190,1) 100%)
+    background: linear-gradient(0deg, rgba(50,76,71,1) 75%, rgba(134,201,190,1) 100%)
     
 
 .ballSeparator
@@ -28,7 +33,7 @@
     padding-right: 2em
     //background-color: $negroAzulado1
     background: rgb(38,38,38)
-    background: linear-gradient(0deg, rgba(38,38,38,1) 55%, rgba(50,78,71,1) 100%)
+    background: linear-gradient(0deg, rgba(38,38,38,1) 85%, rgba(50,78,71,1) 100%)
     width: 100%
     table
         color: $blanco

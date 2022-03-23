@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Image from 'react-bootstrap/Image';
 
-import TiestoImg from '../../../assets/artistPictures/tiesto.jpg';
 import DefaultImg from '../../../assets/artistPictures/default.png';
 import backVolumen from '../../../assets/artists/backVolumen.png';
 

@@ -17,10 +17,10 @@ const About = ({}) => {
 				<Container style={{backdropFilter: "blur(1px)"}}>
 					<h2  className="titleSecondary">USED <span className="customGreen">TECHNOLOGIES</span></h2>
 					<Row>
-						<Col xs={6}>
+						<Col md={6} xs={12}>
 							<TechChart />
 						</Col>
-						<Col xs={6}>
+						<Col md={6} xs={12}>
 							<MethologiesChart/>
 						</Col>
 					</Row>

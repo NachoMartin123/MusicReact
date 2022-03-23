@@ -1,10 +1,10 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {  } from "react";
 import { connect } from "react-redux";
 
 import TopArtistItem from "./TopArtistItem";
 import { Container, Row, Col } from "react-bootstrap";
 
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 
 const TopArtist = (props) => {
     return (

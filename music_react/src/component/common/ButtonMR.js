@@ -7,10 +7,10 @@ import {BsFillArrowRightCircleFill} from "react-icons/bs"
 
 
 
-const ButtonMR = ({texto}) => {
+const ButtonMR = ({texto, myHref}) => {
 
     return (
-        <Button className="buttonMR">{texto} <BsFillArrowRightCircleFill className="svgHoverParent"/>
+        <Button className="buttonMR" href={myHref} >{texto} <BsFillArrowRightCircleFill className="svgHoverParent"/>
         </Button>      
     );
 }
@@ -20,7 +20,8 @@ const ButtonMR = ({texto}) => {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        texto: ownProps.texto
+        texto: ownProps.texto,
+        myHref: ownProps.myHref
     }
 }
 

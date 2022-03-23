@@ -25,7 +25,7 @@ const Home = ({}) => {
                     <Col lg={4} style={{paddingTop:'1em', textAlign: 'center'}}>
                         <h1>SWEDISH HOUSE MAFFIA <span className="customGreen">WORLD TOUR</span></h1>
                         <p>Swedish House Mafia announced their first official tour since 2013, planning 44 dates in North America and the UK/Europe in 2022. The group timed the announcement of the Paradise Again tour dates with the release of a new swingle, featuring The Weeknd.</p>
-                        <ButtonMR id="buttonShmTour" texto="See events"/>
+                        <ButtonMR id="buttonShmTour" texto="See events" myHref="https://swedishhousemafia.com/"/>
                     </Col>
                 </Row>
             </section>

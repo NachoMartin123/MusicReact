@@ -18,9 +18,9 @@ const Slider = ({}) => {
                 src={SliderImg1}
                 alt="Ultra Music Festival"
                 />
-                <Carousel.Caption>
+                {/* <Carousel.Caption>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
+                </Carousel.Caption> */}
             </Carousel.Item>
             <Carousel.Item>
                 <h2>David Guetta <span className="customGreen">new single</span></h2>
