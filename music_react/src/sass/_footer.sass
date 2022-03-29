@@ -7,18 +7,23 @@
     bottom: 0
     z-index: 5 //esta por encima de todos los otros elementos
     background: $negro
-    
+    @media screen and (max-width: $mobileView)
+        padding-bottom: 6em
+
 #buttons_play
     background: $negro
     padding-top: 0.5em
     @media screen and (max-width: 576px)
         width: 100%
+    @media screen and (max-width: $mobileView)
+        width: 50%
     button
         vertical-align: middle
     
 #song_title_footer
     color:$negro
     font-family: $fontSecondary
+    margin-right: 0.5em
 
 #artist_name_footer
     color:$negro
@@ -36,6 +41,8 @@
         margin-left: -1.5em
     @media screen and (max-width: 576px) //fila si viewport < 576px
         width: 100%
+    @media screen and (max-width: $mobileView)
+        width: 50%
     *
         @media screen and (min-width: 576px)
             transform: skewX(-45deg)

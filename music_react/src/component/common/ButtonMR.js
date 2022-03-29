@@ -8,7 +8,6 @@ import {BsFillArrowRightCircleFill} from "react-icons/bs"
 
 
 const ButtonMR = ({texto, myHref}) => {
-
     return (
         <Button className="buttonMR" href={myHref} >{texto} <BsFillArrowRightCircleFill className="svgHoverParent"/>
         </Button>      

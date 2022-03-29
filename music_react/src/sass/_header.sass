@@ -1,7 +1,8 @@
 #headerId
     background: $negro
     padding-bottom: 0
-    margin-bottom: 7em
+    @media screen and (min-width: $mobileView)
+        margin-bottom: 7em
 
 
 nav 
@@ -11,7 +12,12 @@ nav
 
 
 #navMR a
-    margin-right: 1em
+    @media screen and (max-width: $mobileView)//no margin in <a> movile view
+        width: 20%
+    @media screen and (max-width: 560px)
+        font-size: 20px
+    @media screen and (min-width: 800px)
+        margin-left: 1em
     color: $blanco
     &:hover
         color: $customVerde

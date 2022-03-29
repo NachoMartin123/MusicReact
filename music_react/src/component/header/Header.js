@@ -1,55 +1,70 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, {} from "react";
+import { connect } from "react-redux";
 
-import {Navbar, Nav, Container} from 'react-bootstrap'
-import MusicReact from "../../assets/MusicReact.svg"
+import { Navbar, Nav, Container } from "react-bootstrap";
+import MusicReact from "../../assets/MusicReact.svg";
+import useViewport from "../../hooks/useViewport";
 
-import {nav_show_modal} from "../../redux/actions/navActions";
+import { nav_show_modal } from "../../redux/actions/navActions";
 
-const Header = ({nav_show_modal}) => {
+import {BsFillHouseDoorFill, BsMusicNoteBeamed, BsFillPersonFill, BsListUl, BsInfoCircleFill} from "react-icons/bs";
 
-  function showModalTrigger(){
-    nav_show_modal(true);
-  }
+const Header = ({ nav_show_modal }) => {
+    const { heightViewport, widthViewport } = useViewport();
+
+    function showModalTrigger() {
+        nav_show_modal(true);
+    }
 
     return (
-      <section id="headerId">
-          <Container>
-            <Navbar fixed="top">
-              <Container >
-              <Navbar.Brand href="#home">
-              <img
-                src={MusicReact}
-                width="90"
-                height="90"
-                className="d-inline-block align-top"
-                alt="React Bootstrap logo"
-              />
-            </Navbar.Brand>
-                <Nav id="navMR" style={{width:'100%'}} className="centerElementsX">
-                  <Nav.Link style={{color: 'white'}} href="/">Home</Nav.Link>
-                  <Nav.Link style={{color: 'white'}} onClick={showModalTrigger}>Songs</Nav.Link>
-                  <Nav.Link style={{color: 'white'}} href="/artists">Artists</Nav.Link>
-                  <Nav.Link style={{color: 'white'}} onClick={showModalTrigger}>Genres</Nav.Link>
-                  <Nav.Link style={{color: 'white'}} href="/about">About</Nav.Link>
-                </Nav>
-              </Container>
-            </Navbar>
-          </Container>
-      </section>
+        <section id="headerId">
+            <Container>
+                <Navbar fixed={widthViewport >= 480 ? "top": "bottom"}>
+                    <Container fluid>
+                        {
+                        widthViewport >= 480 ? 
+                        <Navbar.Brand href="#home">
+                            <img
+                                src={MusicReact}
+                                width="90"
+                                height="90"
+                                className="d-inline-block align-top"
+                                alt="React Bootstrap logo"
+                            />
+                        </Navbar.Brand> 
+                        : ""
+                        }
+                        <Nav id="navMR" style={{ width: "100%" }} className="centerElementsX">
+                            <Nav.Link style={{ color: "white" }} href="/">
+                                { widthViewport >= 480 ? "" : <BsFillHouseDoorFill/>}
+                                Home
+                            </Nav.Link>
+                            <Nav.Link onClick={showModalTrigger}>
+                                { widthViewport >= 480 ? "" : <BsMusicNoteBeamed/>}
+                                Songs
+                            </Nav.Link>
+                            <Nav.Link href="/artists">
+                                { widthViewport >= 480 ? "" : <BsFillPersonFill/>}
+                                Artists
+                            </Nav.Link>
+                            <Nav.Link onClick={showModalTrigger}>
+                                { widthViewport >= 480 ? "" : <BsListUl/>}
+                                Genres
+                            </Nav.Link>
+                            <Nav.Link href="/about">
+                                { widthViewport >= 480 ? "" : <BsInfoCircleFill/>}
+                                About
+                            </Nav.Link>
+                        </Nav>
+                    </Container>
+                </Navbar>
+            </Container>
+        </section>
     );
-}
-
-
-
+};
 
 const mapStateToProps = (state) => {
-    return {
+    return {};
+};
 
-    }
-}
-
-export default connect(
-    mapStateToProps, 
-    {nav_show_modal}
-)(Header);
+export default connect(mapStateToProps, { nav_show_modal })(Header);

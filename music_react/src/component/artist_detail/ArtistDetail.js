@@ -8,6 +8,8 @@ import {get_artist_songs} from '../../redux/actions/apiActions';
 import ButtonPlay from '../common/ButtonPlay';
 import { Row} from "react-bootstrap";
 import Table from "react-bootstrap/Table";
+import useScrollVertical from "../../hooks/useScrollVertical";
+import useViewport from "../../hooks/useViewport";
 
 import { BsClockFill, BsCircleFill } from "react-icons/bs";
 
@@ -15,10 +17,13 @@ import DefaultImg from '../../assets/artistPictures/default.png';
  
 const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const { artistName } = useParams(); //hook para recoger params
+    const { scrollOffsetY } = useScrollVertical();
+    const { heightViewport, widthViewport } = useViewport();
 
     const [totalDuration, setTotalDuration] = useState("0 hr 0 min");//initial state value
     const [backOpacity, setBackOpacity] = useState(0);
-    const [backSize, setBackSize] = useState(50); 
+    const [backSize, setBackSize] = useState(); 
+    const [backOffsetFade, setOffsetFade] = useState(0); 
     const [profileIMG, setProfileIMG] = useState();
 
     function loadImage () {//set img dinamiclly
@@ -33,26 +38,47 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     useEffect( () => {
         get_artist_songs(artistName);
         loadImage();
-        const scrollFun = () => {   
-            if(window.pageYOffset == 0) {
-                setBackOpacity("rgba(50, 77, 71, 0)");
-                setBackSize(50);
-            }
-            if(window.pageYOffset == 100) {//1 scroll down with mouse
-                setBackOpacity("rgba(50, 77, 71, 0.5)");
-                setBackSize(49);
-            }
-            if(window.pageYOffset == 200) {//1 scroll down with mouse
-                setBackOpacity("rgba(50, 77, 71, 1)");
-                setBackSize(48);
-            }
-        }
-        window.addEventListener("scroll", scrollFun);
-
-        return () => {
-            window.removeEventListener("scroll", scrollFun);
-        };
+        //handleBackSizeByViewPort();//set initial value depending on viewport
     }, [])
+
+    function handleBackSizeByViewPort(){
+        if(widthViewport > 1500)
+            setBackSize(30-backOffsetFade);
+        if(widthViewport > 1000 && widthViewport <= 1500)
+            setBackSize(40-backOffsetFade);
+        if(widthViewport > 780 && widthViewport <= 1000)
+            setBackSize(50-backOffsetFade);
+        if(widthViewport > 691 && widthViewport <= 780)
+            setBackSize(60-backOffsetFade);
+        if(widthViewport > 501 && widthViewport <= 690)
+            setBackSize(80-backOffsetFade);
+        if(widthViewport <= 500)
+            setBackSize(120-backOffsetFade);
+    }
+
+    useEffect( () => { //controls de background image depending on window.width
+       handleBackSizeByViewPort();                
+    }, [widthViewport, backOffsetFade])
+
+
+
+
+    useEffect( () => {
+        if(scrollOffsetY == 0) {
+            setBackOpacity("rgba(50, 77, 71, 0)");
+            setOffsetFade(0);
+        }
+        else if(scrollOffsetY >= 100 && scrollOffsetY < 200) {//1 scroll down with mouse
+            setBackOpacity("rgba(50, 77, 71, 0.5)");
+            setOffsetFade(1);
+        }
+        else if(scrollOffsetY >= 200) {//1 scroll down with mouse
+            setBackOpacity("rgba(50, 77, 71, 1)");
+            setOffsetFade(2);
+        }
+
+    }, [scrollOffsetY])
+
 
     useEffect( () => {
         getTotalDuration();
@@ -78,12 +104,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
         setTotalDuration(hours+" hr "+min+" min");
     }
 
-    const dinamicStyles = {
-        
-    }
 
-
-    
     return (
         <div className="gradientBack"> 
             <Row id="imgBackArtistDetail" style={{ backgroundSize: backSize+"%", transition: "all 0.25s",  backgroundImage:`url(${(profileIMG)})`}}>
@@ -100,7 +121,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
             <Row id="tableArtistDetail">
                 <Table responsive >
                     <thead >
-                        <tr >
+                        <tr>
                             <th style={{textAlign:'center', width:'10%'}}>#</th>
                             <th>Name</th>
                             <th>Album</th>
