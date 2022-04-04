@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import {get_artist_names} from '../../redux/actions/apiActions';
 
 import {Container, Row} from 'react-bootstrap';
-import SearchBar from './search_bar/SearchBar';
-import ArtistItem from './artist_item/ArtistItem';
+import SearchBar from './artistsComponents/SearchBar';
+import ArtistItem from './artistsComponents/ArtistItem';
 
 
 const Artists = ({artistsNames, get_artist_names, artistsFilter}) => { 

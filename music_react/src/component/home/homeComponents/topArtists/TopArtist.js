@@ -1,15 +1,15 @@
-import React, {  } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import TopArtistItem from "./TopArtistItem";
+import TopArtistItem from "../topArtists/TopArtistItem";
 import { Container, Row, Col } from "react-bootstrap";
-
 import { Parallax } from "react-parallax";
 
 const TopArtist = (props) => {
+
     return (
-        <div /* className="backAzulFuerte" */>
-            <Parallax bgImage={require("../../assets/home/top_artist/back3.jpg")} 
+        <div>
+            <Parallax bgImage={require("../../../../assets/home/top_artist/back3.jpg")} 
             strength={600} 
             style={{paddingTop:"6em"}}>
                 <Container>

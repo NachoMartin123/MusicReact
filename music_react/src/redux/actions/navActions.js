@@ -1,21 +1,21 @@
 import * as types from './actionTypes'; 
 
-export const nav_current_song = data => ({
-    type: types.NAV_CURRENT_SONG,
+export const nav_set_current_song = data => ({
+    type: types.NAV_SET_CURRENT_SONG, 
     payload: {
         currentSong: data
     }
 })
 
-export const nav_current_artist = data => ({
-    type: types.NAV_CURRENT_ARTIST,
+export const nav_set_current_artist = data => ({
+    type: types.NAV_SET_CURRENT_ARTIST,
     payload: {
         currentArtist: data
     }
 })
 
-export const nav_current_songList = data => ({
-    type: types.NAV_CURRENT_SONGLIST,
+export const nav_set_current_songList = data => ({
+    type: types.NAV_SET_CURRENT_SONGLIST,
     payload: {
         currentSongList: data
     }
@@ -50,9 +50,16 @@ export const nav_show_modal = (value) => ({
 })
 
 
-export const nav_current_videoclip = data => ({
-    type: types.NAV_CURRENT_VIDEOCLIP,
+export const nav_set_current_videoclip = data => ({
+    type: types.NAV_SET_CURRENT_VIDEOCLIP,
     payload: {
         currentVideoclip: data
+    }
+})
+
+export const nav_set_volume = data => ({
+    type: types.NAV_SET_VOLUME,
+    payload: {
+        volume: data
     }
 })

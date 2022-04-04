@@ -5,7 +5,7 @@ import Footer from "./component/footer/Footer";
 
 import Home from "./component/home/Home";
 import Artists from "./component/artists/Artists";
-import ArtistDetail from "./component/artist_detail/ArtistDetail";
+import ArtistDetail from "./component/artists/artist_detail/ArtistDetail";
 import About from "./component/about/About";
 import CreateArtist from "./component/forms/CreateArtist";
 import NotFound from "./component/NotFound";

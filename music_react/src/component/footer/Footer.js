@@ -2,17 +2,18 @@ import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 
 import {Button, Container, Row, Col} from 'react-bootstrap';
-import useViewport from "../../hooks/useViewport";
+//import useViewport from "../../hooks/useViewport";
+import DurationSlider from './footerComponents/DurationSlider';
+import VolumeSlider from './footerComponents/VolumeSlider';
 
-import {BsFillPauseFill, BsFillPlayFill, BsSkipEndFill} from "react-icons/bs";
-import { ImVolumeMute2, ImVolumeLow, ImVolumeMedium, ImVolumeHigh} from "react-icons/im";
+import {BsChevronUp, BsFillPauseFill, BsFillPlayFill, BsSkipEndFill} from "react-icons/bs";
 
 
 import {nav_change_song_status, nav_next_song, nav_previous_song} from '../../redux/actions/navActions';
 
 
 const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_song, nav_previous_song}) => {
-    const { heightViewport, widthViewport } = useViewport();
+    //const { heightViewport, widthViewport } = useViewport();
 
     function nextSong() {
         nav_next_song();
@@ -35,25 +36,39 @@ const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_so
     
     return (
         <section  id="footerMR" >
-            <Row >
-                <Col id="footer_song_div" xs={7} lg={8} className='centerElementsX'>   
-                        <span id="song_title_footer">{currentSong.title}</span>
-                        <span id="artist_name_footer">{currentArtist.artistName}</span>
+            <Row>
+                <Col id="footer_song_div" xs={3} className='centerElementsX'> 
+                    <div className="loopHorizontalAnimation">
+                        <div><span className="song_title_footer">{currentSong.title}</span></div>
+                        <div><span className="artist_name_footer">{currentArtist.artistName}</span></div>
+                    </div>
                 </Col>
-                <Col xs={5} lg={4} id="buttons_play" className='centerElementsX footerButtons'>
-                    {
-                        widthViewport >= 480 ?
-                        <Button id="volume" className="roundedButton"><ImVolumeHigh /></Button>
-                        :""
-                    }
-                    <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>
-                    <Button id="play" onClick={changeStatus}>{
-                        currentSong.status==="play" ?
-                        <BsFillPlayFill/>
-                         :  <BsFillPauseFill/>
-                    }
-                    </Button>
-                    <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
+                <Col xs={6} id="buttons_play" className='centerElementsX footerButtons'>
+                    <Row style={{width:"100%"}}>
+                        <Row className="centerElementsX centerElementsY" >
+                            <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>
+                            <Button id="play" onClick={changeStatus}>{
+                                currentSong.status==="play" ?
+                                <BsFillPlayFill/>
+                                :  <BsFillPauseFill/>
+                            }
+                            </Button>
+                            <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
+                        </Row>
+                        <Row className="centerElementsX" style={{width: "100%"}}>
+                            <DurationSlider/>
+                        </Row>
+                    </Row>
+                </Col>
+                <Col  xs={3} className="centerElementsY">
+                    <Row className="centerElementsX" style={{width:"100%"}}>
+                        <Col xs={9} style={{display:"flex", alignItems:"center"}}>
+                            <VolumeSlider/>
+                        </Col>
+                        <Col xs={3} className="centerElementsX" style={{alignItems:"center"}}>
+                            <Button id="volume" className="roundedButton"><BsChevronUp /></Button>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </section>

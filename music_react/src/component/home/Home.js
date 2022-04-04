@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 
-import TopArtist from './TopArtist';
-import HotVideoclips from './HotVideoclips';
-import Slider from './Slider';
+import TopArtist from './homeComponents/topArtists/TopArtist';
+import HotVideoclips from './homeComponents/hotVideoclips/HotVideoclips';
+import Carrousel from './homeComponents/Carrousel';
 import ButtonMR from '../common/ButtonMR' 
 
 import VideoPromo from '../../assets/video_app_Promo.mp4';
@@ -15,6 +15,7 @@ import Image from 'react-bootstrap/Image';
 
 const Home = ({}) => {
 
+
     return (
         <div id="home">
             <section id="noticia">
@@ -22,7 +23,7 @@ const Home = ({}) => {
                     <Col lg={8} style={{paddinRight:'5em'}}>
                         <Image fluid src={NoticiaImg} alt="SHM World tour" style={{width:'100%'}}/>
                     </Col>
-                    <Col lg={4} style={{paddingTop:'1em', textAlign: 'center'}}>
+                    <Col lg={4} style={{padding:'1em', textAlign: 'center'}}>
                         <h1>SWEDISH HOUSE MAFFIA <span className="customGreen">WORLD TOUR</span></h1>
                         <p>Swedish House Mafia announced their first official tour since 2013, planning 44 dates in North America and the UK/Europe in 2022. The group timed the announcement of the Paradise Again tour dates with the release of a new swingle, featuring The Weeknd.</p>
                         <ButtonMR id="buttonShmTour" texto="See events" myHref="https://swedishhousemafia.com/"/>
@@ -31,7 +32,7 @@ const Home = ({}) => {
             </section>
             <section id="slider">
                 <Container style={{width:'80%'}}>
-                    <Slider ></Slider>
+                    <Carrousel ></Carrousel>
                 </Container>
             </section>
             <section id="top_artist">
@@ -47,7 +48,7 @@ const Home = ({}) => {
                 </Container>
             </section>
             <section id="join_our_app">
-                <div className="centerElementsX">
+                <div className="centerElementsX" >
                     <h1 style={{display : 'inline'}}>Join our <span className="customGreen">app</span></h1>
                 </div>
                 <video src={VideoPromo} width="100%"  autoPlay loop muted>

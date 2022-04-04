@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import ButtonTable from "./button_table/ButtonTable";
 
 import { useParams } from "react-router-dom";
-import {get_artist_songs} from '../../redux/actions/apiActions';
+import {get_artist_songs} from '../../../redux/actions/apiActions';
 
-import ButtonPlay from '../common/ButtonPlay';
+import ButtonPlay from '../../common/ButtonPlay';
 import { Row} from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import useScrollVertical from "../../hooks/useScrollVertical";
-import useViewport from "../../hooks/useViewport";
+import useScrollVertical from "../../../hooks/useScrollVertical";
+import useViewport from "../../../hooks/useViewport";
 
 import { BsClockFill, BsCircleFill } from "react-icons/bs";
 
-import DefaultImg from '../../assets/artistPictures/default.png';
+import DefaultImg from '../../../assets/artistPictures/default.png';
  
 const Artist_detail = ({artistSongs, get_artist_songs}) => {
     const { artistName } = useParams(); //hook para recoger params
@@ -28,7 +28,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
 
     function loadImage () {//set img dinamiclly
         try{
-           const images = require.context('../../assets/artistPictures', true);
+           const images = require.context('../../../assets/artistPictures', true);
            setProfileIMG(images('./' +artistName.toLowerCase().replace(/\s/g, '_')+'_PNG.png'));
        }catch{
            setProfileIMG(DefaultImg);
@@ -38,7 +38,6 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
     useEffect( () => {
         get_artist_songs(artistName);
         loadImage();
-        //handleBackSizeByViewPort();//set initial value depending on viewport
     }, [])
 
     function handleBackSizeByViewPort(){
@@ -60,10 +59,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
        handleBackSizeByViewPort();                
     }, [widthViewport, backOffsetFade])
 
-
-
-
-    useEffect( () => {
+    useEffect( () => {//parameters handle scroll offset
         if(scrollOffsetY == 0) {
             setBackOpacity("rgba(50, 77, 71, 0)");
             setOffsetFade(0);
@@ -120,21 +116,25 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
             </Row>
             <Row id="tableArtistDetail">
                 <Table responsive >
-                    <thead >
-                        <tr>
-                            <th style={{textAlign:'center', width:'10%'}}>#</th>
-                            <th>Name</th>
-                            <th>Album</th>
-                            <th ><BsClockFill/></th>
-                        </tr >
-                    </thead>
+                        {
+                            widthViewport >= 480 ? 
+                                <thead >
+                                    <tr>
+                                        <th style={{textAlign:'center', width:'10%'}}>#</th>
+                                        <th>Name</th>
+                                        <th>Album</th>
+                                        <th ><BsClockFill/></th>
+                                    </tr >
+                                </thead>
+                            : <thead></thead>
+                        }
                     <tbody >
                         {
-                            artistSongs && artistSongs.length > 0 ?
+                            artistSongs && artistSongs.length > 0 ? 
                                 artistSongs.map((item, index) => {
                                     return <ButtonTable key={index} indice={index} artistName={artistName} song={item}/>
                                 })
-                                : <tr><td colSpan="4">No songs found, check another artist!</td></tr>
+                            : <tr><td colSpan="4">No songs found, check another artist!</td></tr>
                         }
                     </tbody>
                 </Table>

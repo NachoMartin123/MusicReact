@@ -5,13 +5,13 @@ import {Row} from 'react-bootstrap';
 
 import { FiArrowUp } from "react-icons/fi";
 
-import {nav_current_videoclip} from "../../redux/actions/navActions";
+import {nav_set_current_videoclip} from "../../../../redux/actions/navActions";
 
-const VideoClipItem = ({songName, artistName, videoUrl, position, status, nav_current_videoclip}) => {
+const VideoClipItem = ({songName, artistName, videoUrl, position, status, nav_set_current_videoclip}) => {
 
     useEffect(() => {
          if(position==1)
-            nav_current_videoclip({
+            nav_set_current_videoclip({
                 songName: songName, 
                 artistName: artistName,
                 videoUrl: videoUrl
@@ -19,7 +19,7 @@ const VideoClipItem = ({songName, artistName, videoUrl, position, status, nav_cu
     }, []);
 
     function onClickItem(){
-        nav_current_videoclip({
+        nav_set_current_videoclip({
             songName: songName, 
             artistName: artistName,
             videoUrl: videoUrl
@@ -62,5 +62,5 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
     mapStateToProps, 
-    {nav_current_videoclip}
+    {nav_set_current_videoclip}
 )(VideoClipItem);

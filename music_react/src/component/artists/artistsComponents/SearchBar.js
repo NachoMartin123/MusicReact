@@ -20,7 +20,7 @@ const SearchBar = ({get_artist_names}) => {
         const data = {artistsFilter: values.artistsFilter}
         get_artist_names(data);
     }
-//
+
     return (
       <Container id="searchBar">
           <Form onSubmit={handleSubmit(beforeSubmit)}>

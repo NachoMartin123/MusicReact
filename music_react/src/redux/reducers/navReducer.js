@@ -19,7 +19,8 @@ const initialState = {
         songName:'', 
         artistName:'',
         videoUrl:'', //'https://www.youtube.com/embed/ovdm2yX4MA'
-    }
+    },
+    volume: 100
 }
 
 
@@ -54,7 +55,7 @@ function getNextOrPreviousSong(value, currentSongList, currentSong){
 const navState = (state = initialState, action) => {
     
     switch (action.type) {
-        case types.NAV_CURRENT_SONG: {
+        case types.NAV_SET_CURRENT_SONG: {
             return {
                 ...state,
                 currentSong: {
@@ -67,7 +68,7 @@ const navState = (state = initialState, action) => {
             }
         }
 
-        case types.NAV_CURRENT_ARTIST: {
+        case types.NAV_SET_CURRENT_ARTIST: {
             return {
                 ...state,
                 currentArtist: {
@@ -77,7 +78,7 @@ const navState = (state = initialState, action) => {
             }
         }
         
-        case types.NAV_CURRENT_SONGLIST: {
+        case types.NAV_SET_CURRENT_SONGLIST: {
             return {
                 ...state,
                 currentSongList: action.payload.currentSongList
@@ -115,19 +116,19 @@ const navState = (state = initialState, action) => {
             }
         }
 
-        case types.NAV_CURRENT_VIDEOCLIP: { 
+        case types.NAV_SET_CURRENT_VIDEOCLIP: { 
             return {
                 ...state,
                 currentVideoclip: action.payload.currentVideoclip
-                /* currentVideoclip:{ */
-                    /* ...state.currentVideoclip,  */
-                       /*  songName: action.payload.currentVideoclip.songName, 
-                        artistName: action.payload.currentVideoclip.artistName,
-                        videoUrl: action.payload.currentVideoclip.videoUrl */
-                /* }  */
             }
         }
 
+        case types.NAV_SET_VOLUME: { 
+            return {
+                ...state,
+                volume: action.payload.volume
+            }
+        }
 
         default: return state;
     }

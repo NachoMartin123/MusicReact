@@ -7,17 +7,22 @@ export const API_FILTER_ARTISTS = 'ApiFilterArtists';
 
 
 //navState actions
-export const NAV_CURRENT_SONG = 'NavCurrentSong';
-export const NAV_CURRENT_ARTIST = 'NavCurrentArtist';
-export const NAV_CURRENT_SONGLIST = 'NavCurrentSongList';
+export const NAV_SET_CURRENT_SONG = 'NavSetCurrentSong';
+export const NAV_SET_CURRENT_ARTIST = 'NavSetSetCurrentArtist';
+export const NAV_SET_CURRENT_SONGLIST = 'NavSetCurrentSongList';
 export const NAV_CHANGE_SONG_STATUS = 'NavChangeSongStatus';
 export const NAV_NEXT_SONG = 'NavNextSong';
 export const NAV_PREVIOUS_SONG = 'NavPreviousSong';
 
 export const NAV_SHOW_MODAL = 'NavShowModal';
 
-export const NAV_CURRENT_VIDEOCLIP = 'NavCurrentVideoclip';
+export const NAV_SET_CURRENT_VIDEOCLIP = 'NavSetCurrentVideoclip';
 
+export const NAV_SET_VOLUME = 'NavSetVolume';
+
+
+
+//export const NAV_GET_CURRENT_SONG = 'NavGetCurrentSong';
 
 
 

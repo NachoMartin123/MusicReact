@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Iframe from 'react-iframe';
@@ -8,8 +8,8 @@ import {Row, Col} from 'react-bootstrap';
 import VideoClipItem from './VideoclipItem';
 
 
-
 const HotVideoclips = ({currentVideoclip}) => {
+
 
     return (
       <Row style={{height:'150%'}}>

@@ -9,6 +9,9 @@
     background: $negro
     @media screen and (max-width: $mobileView)
         padding-bottom: 6em
+    .row
+        --bs-gutter-x: 0
+        
 
 #buttons_play
     background: $negro
@@ -19,25 +22,28 @@
         width: 50%
     button
         vertical-align: middle
+
     
-#song_title_footer
-    color:$negro
+.song_title_footer
+    color: $negro
     font-family: $fontSecondary
     margin-right: 0.5em
+    font-size: 15px
 
-#artist_name_footer
+.artist_name_footer
     color:$negro
     font-family: $fontTitles
 
 #footer_song_div
     background: $customVerde
     padding-top: 0.5em
+    overflow: hidden
     padding-bottom: 0.5em
     align-items: center
     text-align: center
     padding-left: 0  
     @media screen and (min-width: 576px)//skew si viewport > 576px
-        transform: skewX(45deg)
+        //transform: skewX(45deg)
         margin-left: -1.5em
     @media screen and (max-width: 576px) //fila si viewport < 576px
         width: 100%
@@ -45,10 +51,12 @@
         width: 50%
     *
         @media screen and (min-width: 576px)
-            transform: skewX(-45deg)
+            //transform: skewX(-45deg)
             align-items: center
             text-align: center
-            font-size: 30px
+            color: black
+    p
+        margin-bottom: 0
     &.before
         content: "."
         position: relative
@@ -63,39 +71,40 @@
 
 
 .roundedButton
-    background: $negroAzulado1
-    border-color: $negroAzulado1
-    width: 45px
+    background: none
+    border-color: $negro
+    width: 50px
     height: 45px
     border-radius: 25px
     font-size: 12px
     line-height: 1.42857
-    margin-right:1em
-    justify-content: center
+    //margin-right:0.25em
     text-align: center
     display: flex
     align-items: center
     justify-content: center
+    @media screen and (max-width: $mobileView)
+        margin-right: 0.25em
     &:active //active=cuando esta click sin soltar
         background: $grisSuave
-        border-color: $grisSuave
-        border-color: $grisSuave
+        border-color: $negro
         &:focus
             box-shadow: none
     &:hover //hover=al pasar por encima
-        background: lighten($grisSuave, 10%)
-        border-color: lighten($grisSuave, 10%)
-        border-color: lighten($grisSuave, 10%)
+        background: none
+        border-color: $negro
         &:focus
             box-shadow: none
     &:focus //despues de click tiene foco, click fuera y lo pierde
-        background: $negroAzulado1
-        border-color: $negroAzulado1
+        background: none
+        border-color: $negro
         box-shadow: none
         &:hover, &:active //cuando esta click sin soltar
-            background: $grisSuave
-            border-color: $grisSuave
-            border-color: $grisSuave
+            background: none
+            border-color: $negro
+        svg
+            stroke: lighten($blanco, 10%)
+
     * //iconos
         text-align: center
         width: 140%
@@ -106,12 +115,41 @@
 
 #play
     @extend .roundedButton
-    width: 60px
-    height: 60px
+    background: $blanco
+    border-color: $negroAzulado1
+    width: 46px
+    height: 46px
     border-radius: 30px
     font-size: 14px
+    color: $negro 
+    padding: 0.5em
+    @media screen and (max-width: $mobileView)
+        text-align: center
+    &:active
+        background: $blanco
+        border-color: $blanco
+        &:focus
+            background: $blanco
+            border-color: $blanco
+            //&::before
+            //    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))   
+    &:hover //hover=al pasar por encima
+        background: darken($blanco, 10%)
+        border-color: darken($blanco, 10%)
+        &:focus
+            box-shadow: none
+            background: $blanco
+            border-color: $blanco
     &:focus //despues de click tiene foco, click fuera y lo pierde
+        background: $blanco
+        border-color: $blanco
         box-shadow: none
+        &:hover, &:active //cuando esta click sin soltar
+            background: $blanco
+            //border-color: $blanco
+   
+
+        
 
 
 .btn-xl
@@ -130,3 +168,5 @@
     display: flex
     align-items: center
     justify-content: center
+    @media screen and (max-width: $mobileView)
+        padding-bottom: 0
