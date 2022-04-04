@@ -5,50 +5,55 @@ import {Button, Container, Row, Col} from 'react-bootstrap';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 
-import {nav_next_song} from "../../../redux/actions/navActions";
+import {nav_next_song, nav_change_song_status} from "../../../redux/actions/navActions";
 
 
-const DurationSlider = ({currentSong}) => {
+const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) => {
     const [totalSeconds, setTotalSeconds] = useState();
-    const [initLabel, setInitLabel] = useState("0:00");
-
+    
     const [currentSeconds, setCurrentSeconds] = useState(0);
   
     useEffect(()=>{
         setCurrentSeconds(0);
         setTotalSeconds(100);
     },[]);
+    
+    useEffect(()=>{
+        setCurrentSeconds(0);
+        var data = currentSong.duration.split(":");
+        setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
+        nav_change_song_status({status:"play"});
+    },[currentSong.title]); 
+
 
     useEffect(()=>{
-        const timer = setTimeout(() => update(), 1000) //every 1 second
-
         var data = currentSong.duration.split(":");
         setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
 
-        return () => clearTimeout(timer)
-    },[currentSong.title]);
+        var intervalId;
+        if(currentSong.status=="play"){
+            intervalId = setInterval(() => update(), 1000);
+        }
+        return () => clearInterval(intervalId);
+    }, [currentSong.status, currentSeconds]);
 
     function update(){
-        if(currentSong.duration==""){
-            setCurrentSeconds(0);
-            setTotalSeconds(100);
-        }
-        else{
-            if(currentSong.status=="play"){
-                setInitLabel(currentSeconds);
-                if(currentSeconds==totalSeconds)
-                    nav_next_song();
-                if(currentSeconds==0) 
-                    setCurrentSeconds(1);
-                else
-                    setCurrentSeconds(currentSeconds+1);
-            }
+        if(currentSong.status=="play"){
+            console.log("status: PLAY");
+            console.log("currentSeconds==totalSeconds ? "+(currentSeconds==totalSeconds));
+            if((currentSeconds===totalSeconds))
+                nav_next_song();
+            if(currentSeconds == 0)
+                setCurrentSeconds(1);
+            else
+                setCurrentSeconds(currentSeconds+1);
+
+            console.log("actual currentSeconds:"+currentSeconds+", totalSeconds: "+totalSeconds)
         }
     }
 
     function handleChange (handleValue) {
         setCurrentSeconds(parseInt(handleValue));
-        console.log("handleValue: "+handleValue+",  parseInt(handleValue)"+parseInt(handleValue))
     }
 
     function calculateStringCurrentSeconds(){
@@ -85,5 +90,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps, 
-    {nav_next_song}
+    {nav_next_song, nav_change_song_status}
 )(DurationSlider);
