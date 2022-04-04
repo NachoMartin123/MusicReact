@@ -64,7 +64,10 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
                         :  <span style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{indice+1}</span>
                     }
                     </td>
-                    <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.title}</td>
+                    <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>
+                        <p>{song.title}</p>
+                        <p>{artistName}</p>
+                    </td>
                     <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album}</td>
                     <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.duration}</td>          
                 </>

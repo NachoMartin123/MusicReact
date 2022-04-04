@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {Button, Container, Row, Col} from 'react-bootstrap';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
-import useViewport from "../../../hooks/useViewport";
 
 import { ImVolumeMute2, ImVolumeLow, ImVolumeMedium, ImVolumeHigh} from "react-icons/im";
 
@@ -12,7 +11,6 @@ import {nav_set_volume} from "../../../redux/actions/navActions";
 
 
 const VolumeSlider = ({nav_set_volume, volume}) => {
-    const { heightViewport, widthViewport } = useViewport();
     const [valueVolBeforeMute, setValueVolBeforeMute] = useState(volume);
     
     //gets called whenever the slider handle is being dragged or clicked
@@ -34,13 +32,12 @@ const VolumeSlider = ({nav_set_volume, volume}) => {
     return (
         <>
             {
-                widthViewport >= 480 ?
-                      volume == 0? <Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeMute2/></Button>
+                volume == 0? <Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeMute2/></Button>
                     : volume > 0 && volume<=33 ?<Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeLow/></Button>
                     : volume > 33 && volume<=66? <Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeMedium/></Button>
                     : <Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeHigh/></Button>
-                :""
             }
+            
             <div style={{width:"90%"}}>
                 <Slider className="slider"
                     min={0}
@@ -49,6 +46,7 @@ const VolumeSlider = ({nav_set_volume, volume}) => {
                     onChange={handleChange}
                 />
             </div>
+
         </>
     );
 }

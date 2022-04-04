@@ -4,6 +4,9 @@ Web application using React
 MOBILE VIEW WHEN VIEWPORT < 300
     - Nav change display
 
+- get artist of song mediante consulta JOIN BBDD, y no por currentArtist
+- lista de canciones de diferentes aristas
+
 TEST
 
 ArtistDetail

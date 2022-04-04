@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 
 import {Button, Container, Row, Col} from 'react-bootstrap';
-//import useViewport from "../../hooks/useViewport";
+import useViewport from "../../hooks/useViewport";
 import DurationSlider from './footerComponents/DurationSlider';
 import VolumeSlider from './footerComponents/VolumeSlider';
 
@@ -13,7 +13,7 @@ import {nav_change_song_status, nav_next_song, nav_previous_song} from '../../re
 
 
 const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_song, nav_previous_song}) => {
-    //const { heightViewport, widthViewport } = useViewport();
+    const { heightViewport, widthViewport } = useViewport();
 
     function nextSong() {
         nav_next_song();
@@ -37,13 +37,13 @@ const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_so
     return (
         <section  id="footerMR" >
             <Row>
-                <Col id="footer_song_div" xs={3} className='centerElementsX'> 
+                <Col id="footer_song_div" xs={2}  sm={3} className='centerElementsX'> 
                     <div className="loopHorizontalAnimation">
                         <div><span className="song_title_footer">{currentSong.title}</span></div>
                         <div><span className="artist_name_footer">{currentArtist.artistName}</span></div>
                     </div>
                 </Col>
-                <Col xs={6} id="buttons_play" className='centerElementsX footerButtons'>
+                <Col xs={5}  sm={6} id="buttons_play" className='centerElementsX footerButtons'>
                     <Row style={{width:"100%"}}>
                         <Row className="centerElementsX centerElementsY" >
                             <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>
@@ -60,16 +60,21 @@ const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_so
                         </Row>
                     </Row>
                 </Col>
-                <Col  xs={3} className="centerElementsY">
-                    <Row className="centerElementsX" style={{width:"100%"}}>
-                        <Col xs={9} style={{display:"flex", alignItems:"center"}}>
-                            <VolumeSlider/>
+                {
+                    widthViewport >= 576 ?
+                        <Col  id="volume_footer" xs={4} sm={3} className="centerElementsY">
+                            <Row className="centerElementsX" style={{width:"100%"}}>
+                                <Col xs={9} style={{display:"flex", alignItems:"center"}}>
+                                    <VolumeSlider/>
+                                </Col>
+                                <Col xs={3} className="centerElementsX" style={{alignItems:"center"}}>
+                                    <Button id="volume" className="roundedButton"><BsChevronUp /></Button>
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col xs={3} className="centerElementsX" style={{alignItems:"center"}}>
-                            <Button id="volume" className="roundedButton"><BsChevronUp /></Button>
-                        </Col>
-                    </Row>
-                </Col>
+                        :""
+                }
+                
             </Row>
         </section>
     );

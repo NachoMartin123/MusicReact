@@ -31,7 +31,7 @@ const ModalSoon = ({showModal, nav_show_modal}) => {
           centered
           className="myModal"
         >
-          <Modal.Header className="myModal modalHeader" style={{border:0}} closeButton>
+          <Modal.Header className="myModal modalHeader" style={{border:0}} /* closeButton */>
             <Modal.Title id="contained-modal-title-vcenter"> 
                 <img
                     src={MusicReact}
