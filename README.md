@@ -9,20 +9,34 @@ MOBILE VIEW WHEN VIEWPORT < 300
 
 TEST
 
+Usuarios?
+    - admin insert new artist/song
+    - update song
+    - create personal list as user
+
+Header
+    - Button change display
+    - change idiom
+
+
 ArtistDetail
     - sticky header table
-    - resizable
+    - obtener artista mediante consulta de id cancion JOIN artist_id
 
 Home
     - sliders description
 
 Footer
-    - Progressbar song
-    - duration song
-    - volume slide control
+    - loop horizontal scroll songname
+    - hide button (see react-bootstrap: offcanvas)
+    - CSS buttons next and before
+    - mobile view quitar < 479 (quitar y que tilte+artist=100%)
+    - hide button quitar
+    - obtener artista mediante consulta de id cancion JOIN artist_id
 
 About
     - buy me a coffe link
+    - links to linkedIn
 
 Modal
     - style CSS

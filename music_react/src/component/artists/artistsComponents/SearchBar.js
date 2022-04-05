@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {Form, InputGroup} from 'react-bootstrap';
+import {Form, InputGroup, FloatingLabel} from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
 
 import {BsSearch} from "react-icons/bs";
@@ -16,7 +16,6 @@ const SearchBar = ({get_artist_names}) => {
 
     const beforeSubmit = (values) => {
         //preventDefault no refresca la vista
-        console.log(values.artistsFilter);
         const data = {artistsFilter: values.artistsFilter}
         get_artist_names(data);
     }
@@ -27,7 +26,9 @@ const SearchBar = ({get_artist_names}) => {
             <Form.Group >
                 <InputGroup className="searchGroup">
                     <InputGroup.Text ><BsSearch/></InputGroup.Text>
-                    <Form.Control {...register("artistsFilter")}  type="text" placeholder="artist name" />
+                    <FloatingLabel controlId="floatingPassword" label="Artist name">
+                        <Form.Control {...register("artistsFilter")}  type="text" placeholder="artist name" />
+                    </FloatingLabel>
                 </InputGroup>
             </Form.Group>
           </Form>

@@ -10,19 +10,22 @@ import {nav_next_song, nav_change_song_status} from "../../../redux/actions/navA
 
 const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) => {
     const [totalSeconds, setTotalSeconds] = useState();
-    
     const [currentSeconds, setCurrentSeconds] = useState(0);
   
     useEffect(()=>{
-        setCurrentSeconds(0);
-        setTotalSeconds(100);
+        setTotalSeconds(0);
+        setCurrentSeconds(0);        
     },[]);
     
     useEffect(()=>{
         setCurrentSeconds(0);
-        var data = currentSong.duration.split(":");
-        setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
-        nav_change_song_status({status:"play"});
+        console.log("currentSong.title.trim().length: "+currentSong.title.trim().length);
+        console.log("currentSong.title.trim().length!=0"+currentSong.title.trim().length!=0);
+        if(currentSong.title.trim().length!=0){
+            var data = currentSong.duration.split(":");
+            setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
+            nav_change_song_status({status:"play"});
+        }
     },[currentSong.title]); 
 
 

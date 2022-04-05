@@ -19,7 +19,6 @@ const VolumeSlider = ({nav_set_volume, volume}) => {
     }
 
     function muteUnmute(){
-        console.log("MUTE UNMUTE");
         if(volume!=0){
             setValueVolBeforeMute(volume);
             nav_set_volume(0);

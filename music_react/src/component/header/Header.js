@@ -35,23 +35,23 @@ const Header = ({ nav_show_modal }) => {
                         : ""
                         }
                         <Nav id="navMR" style={{ width: "100%" }} className="centerElementsX">
-                            <Nav.Link style={{ color: "white" }} href="/">
+                            <Nav.Link style={{ color: "white" }} href="/" className="fw-bold">
                                 { widthViewport >= 480 ? "" : <BsFillHouseDoorFill/>}
                                 Home
                             </Nav.Link>
-                            <Nav.Link onClick={showModalTrigger}>
+                            <Nav.Link onClick={showModalTrigger} className="fw-bold">
                                 { widthViewport >= 480 ? "" : <BsMusicNoteBeamed/>}
                                 Songs
                             </Nav.Link>
-                            <Nav.Link href="/artists">
+                            <Nav.Link href="/artists" className="fw-bold">
                                 { widthViewport >= 480 ? "" : <BsFillPersonFill/>}
                                 Artists
                             </Nav.Link>
-                            <Nav.Link onClick={showModalTrigger}>
+                            <Nav.Link onClick={showModalTrigger} className="fw-bold">
                                 { widthViewport >= 480 ? "" : <BsListUl/>}
                                 Genres
                             </Nav.Link>
-                            <Nav.Link href="/about">
+                            <Nav.Link href="/about" className="fw-bold">
                                 { widthViewport >= 480 ? "" : <BsInfoCircleFill/>}
                                 About
                             </Nav.Link>

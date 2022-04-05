@@ -18,6 +18,9 @@
             width: 12px
             height: 12px
 
+.rangeslider
+    margin: 10px 0
+
 .rangeslider-horizontal 
     .rangeslider__fill 
         background-color: $customVerde
@@ -27,5 +30,25 @@
         &:after
             content: none //removes the second ball 
 
+
+@keyframes horizontalScoll
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-100%)
+
+/////////mixings for keyframes animations    
+@mixin keyframes-animation($name) 
+    @keyframes #{$name} 
+        @content
+
+@mixin animate($animation,$duration,$method,$times)
+    animation: $animation $duration $method $times
+
+
+//horizontalScoll 60s linear infinite
+@mixin carousel-animation($frames, $static, $animation-name: 'carousel')
+  
     
-        
+/*  */
+

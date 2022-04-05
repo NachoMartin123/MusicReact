@@ -28,9 +28,9 @@ const Slider = ({}) => {
                 src={SliderImg2}
                 alt="David Guetta"
                 />
-                <Carousel.Caption>
+                {/* <Carousel.Caption>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
+                </Carousel.Caption> */}
             </Carousel.Item>
             <Carousel.Item>
                 <h2>Bruno Mars & theWeekend<span className="customGreen"> new collab</span></h2>
@@ -39,9 +39,9 @@ const Slider = ({}) => {
                 src={SliderImg3}
                 alt="Collab"
                 />
-                <Carousel.Caption>
+                {/* <Carousel.Caption>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
+                </Carousel.Caption> */}
             </Carousel.Item>
         </Carousel>
     )

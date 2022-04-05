@@ -28,11 +28,13 @@
     color: $negro
     font-family: $fontSecondary
     margin-right: 0.5em
-    font-size: 15px
+    font-weight: bold
+            font-size: 15px
 
 .artist_name_footer
     color:$negro
-    font-family: $fontTitles
+    font-size: 12px
+    filter: brightness(85%)
 
 #footer_song_div
     background: $customVerde
@@ -40,8 +42,8 @@
     overflow: hidden
     padding-bottom: 0.5em
     align-items: center
-    text-align: center
     padding-left: 0  
+    text-align: center
     @media screen and (min-width: 576px)//skew si viewport > 576px
         //transform: skewX(45deg)
         margin-left: -1.5em
@@ -53,7 +55,7 @@
         @media screen and (min-width: 576px)
             //transform: skewX(-45deg)
             align-items: center
-            text-align: center
+            text-align: left
             color: black
     p
         margin-bottom: 0
@@ -117,8 +119,8 @@
     @extend .roundedButton
     background: $blanco
     border-color: $negroAzulado1
-    width: 46px
-    height: 46px
+    width: 40px
+    height: 40px
     border-radius: 30px
     font-size: 14px
     color: $negro 
