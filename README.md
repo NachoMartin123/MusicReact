@@ -28,9 +28,9 @@ ArtistDetail
 
 Footer
     - hide button (see react-bootstrap: offcanvas)
+    - hide button quitar
     - CSS buttons next and before
     - mobile view quitar < 479 (quitar y que tilte+artist=100%)
-    - hide button quitar
     - obtener artista mediante consulta de id cancion JOIN artist_id
     - filter 85%, on hover=100%
     - random song buttom

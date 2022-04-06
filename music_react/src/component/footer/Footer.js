@@ -50,77 +50,79 @@ const Footer = ({currentArtist, currentSong, nav_change_song_status, nav_next_so
     }
     
     return (
-        <section >
+        <>
             {
                 show == true ? <Button id="hideOffCanvas" onClick={handleClose} className="roundedButton"><BsChevronUp style={{transform: "rotate(180deg)"}} /></Button>
                 : <Button id="showOffCanvas" onClick={handleShow} className="roundedButton"><BsChevronUp /></Button>
-                                       
+                                    
             }
-            <Offcanvas style={{width:"100%"}} enforceFocus={"true"} scroll={"true"} autoFocus={"false"} placement={"bottom"} show={show} onHide={handleClose} >
-                <Offcanvas.Body style={{width:"100%"}} id="footerMR" >
-                    <Row>
-                        <Col sm={3} id="footer_song_div"> 
-                            <Row>
-                                <Col sm={3} style={{textAlign:"center"}}>
-                                    <BsFillFileEarmarkMusicFill style={{height:"80%", width: "80%", marginTop:"10%" ,stroke:"black"}}/>
-                                    {/* <Image style={{border: "1px solid black"}}></Image>    */}                     
-                                </Col>
-                                <Col sm={6}>
-                                    <Marquee 
-                                            pauseOnHover="true" 
-                                            gradient="false"
-                                            gradientWidth="0"
-                                            speed="10"
-                                            className="song_title_footer">
-                                                {currentSong.title=="" ? "No song selected" : currentSong.title}
-                                    </Marquee>
-                                    <Marquee 
-                                            pauseOnHover="true" 
-                                            gradient="false"
-                                            gradientWidth="0"
-                                            speed="10"
-                                            className="artist_name_footer">
-                                                {currentSong.title=="" ? "Unknown artist" : currentArtist.artistName}
-                                    </Marquee>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col xs={5}  sm={6} id="buttons_play" className='centerElementsX footerButtons'>
-                            <Row style={{width:"100%"}}>
-                                <Row className="centerElementsX centerElementsY" >
-                                    <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>
-                                    <Button id="play" onClick={changeStatus}>{
-                                        currentSong.status==="play" ?
-                                        <BsFillPlayFill/>
-                                        :  <BsFillPauseFill/>
-                                    }
-                                    </Button>
-                                    <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
+            {/* <section > */}
+                <Offcanvas id="offCanvasFooter" style={{width:"100%"}} enforceFocus={"true"} scroll={"true"} autoFocus={"false"} placement={"bottom"} show={show} onHide={handleClose} >
+                    <Offcanvas.Body style={{width:"100%"}} id="footerMR" >
+                        <Row>
+                            <Col sm={3} id="footer_song_div"> 
+                                <Row>
+                                    <Col sm={3} style={{textAlign:"center"}}>
+                                        <BsFillFileEarmarkMusicFill style={{height:"80%", width: "80%", marginTop:"10%" ,stroke:"black"}}/>
+                                        {/* <Image style={{border: "1px solid black"}}></Image>    */}                     
+                                    </Col>
+                                    <Col sm={6}>
+                                        <Marquee 
+                                                pauseOnHover="true" 
+                                                gradient="false"
+                                                gradientWidth="0"
+                                                speed="10"
+                                                className="song_title_footer">
+                                                    {currentSong.title=="" ? "No song selected" : currentSong.title}
+                                        </Marquee>
+                                        <Marquee 
+                                                pauseOnHover="true" 
+                                                gradient="false"
+                                                gradientWidth="0"
+                                                speed="10"
+                                                className="artist_name_footer">
+                                                    {currentSong.title=="" ? "Unknown artist" : currentArtist.artistName}
+                                        </Marquee>
+                                    </Col>
                                 </Row>
-                                <Row className="centerElementsX" style={{width: "100%"}}>
-                                    <DurationSlider/>
-                                </Row>
-                            </Row>
-                        </Col>
-                        {
-                            widthViewport >= 576 ?
-                                <Col  id="volume_footer" className="centerElementsY">
-                                    <Row className="centerElementsX" style={{width:"100%"}}>
-                                        <Col xs={9} style={{display:"flex", alignItems:"center"}}>
-                                            <VolumeSlider/>
-                                        </Col>
-                                        <Col xs={3} className="centerElementsX" style={{alignItems:"center"}}>
-                                            {/* space for button hide */}
-                                        </Col>
+                            </Col>
+                            <Col xs={5}  sm={6} id="buttons_play" className='centerElementsX footerButtons'>
+                                <Row style={{width:"100%"}}>
+                                    <Row className="centerElementsX centerElementsY" >
+                                        <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>
+                                        <Button id="play" onClick={changeStatus}>{
+                                            currentSong.status==="play" ?
+                                            <BsFillPlayFill/>
+                                            :  <BsFillPauseFill/>
+                                        }
+                                        </Button>
+                                        <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
                                     </Row>
-                                </Col>
-                                :""
-                        }
-                        
-                    </Row>
-                </Offcanvas.Body>
-            </Offcanvas>
-        </section>
+                                    <Row className="centerElementsX" style={{width: "100%"}}>
+                                        <DurationSlider/>
+                                    </Row>
+                                </Row>
+                            </Col>
+                            {
+                                widthViewport >= 576 ?
+                                    <Col  id="volume_footer" className="centerElementsY">
+                                        <Row className="centerElementsX" style={{width:"100%"}}>
+                                            <Col xs={9} style={{display:"flex", alignItems:"center"}}>
+                                                <VolumeSlider/>
+                                            </Col>
+                                            <Col xs={3} className="centerElementsX" style={{alignItems:"center"}}>
+                                                {/* space for button hide */}
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                    :""
+                            }
+                            
+                        </Row>
+                    </Offcanvas.Body>
+                </Offcanvas>
+            {/* </section> */}
+        </>
     );
 }
 
