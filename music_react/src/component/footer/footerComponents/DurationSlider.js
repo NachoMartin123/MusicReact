@@ -19,8 +19,6 @@ const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) =>
     
     useEffect(()=>{
         setCurrentSeconds(0);
-        console.log("currentSong.title.trim().length: "+currentSong.title.trim().length);
-        console.log("currentSong.title.trim().length!=0"+currentSong.title.trim().length!=0);
         if(currentSong.title.trim().length!=0){
             var data = currentSong.duration.split(":");
             setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
@@ -42,15 +40,12 @@ const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) =>
 
     function update(){
         if(currentSong.status=="play"){
-            //console.log("status: PLAY");
-            //console.log("currentSeconds==totalSeconds ? "+(currentSeconds==totalSeconds));
             if((currentSeconds===totalSeconds))
                 nav_next_song();
             if(currentSeconds == 0)
                 setCurrentSeconds(1);
             else
                 setCurrentSeconds(currentSeconds+1);
-            //console.log("actual currentSeconds:"+currentSeconds+", totalSeconds: "+totalSeconds)
         }
     }
 
