@@ -2,19 +2,19 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 
 import Carousel from 'react-bootstrap/Carousel';
-import SliderImg1 from "../../../assets/home/slider/ultra-music.jpg";
-import SliderImg2 from "../../../assets/home/slider/david-guetta.jpg";
-import SliderImg3 from "../../../assets/home/slider/collab.jpg";
+import CarrouselImg1 from "../../../assets/home/carrousel/ultra-music.jpg";
+import CarrouselImg2 from "../../../assets/home/carrousel/david-guetta.jpg";
+import CarrouselImg3 from "../../../assets/home/carrousel/collab.jpg";
 
 
-const Slider = ({}) => {
+const Carrousel = ({}) => {
     return (
         <Carousel>
             <Carousel.Item>
                 <h2>Ultra Music Festival <span className="customGreen">Miami Friday 25th</span></h2>
                 <img
                 className="d-block w-100"
-                src={SliderImg1}
+                src={CarrouselImg1}
                 alt="Ultra Music Festival"
                 />
                 {/* <Carousel.Caption>
@@ -25,7 +25,7 @@ const Slider = ({}) => {
                 <h2>David Guetta <span className="customGreen">new single</span></h2>
                 <img
                 className="d-block w-100"
-                src={SliderImg2}
+                src={CarrouselImg2}
                 alt="David Guetta"
                 />
                 {/* <Carousel.Caption>
@@ -36,7 +36,7 @@ const Slider = ({}) => {
                 <h2>Bruno Mars & theWeekend<span className="customGreen"> new collab</span></h2>
                 <img
                 className="d-block w-100"
-                src={SliderImg3}
+                src={CarrouselImg3}
                 alt="Collab"
                 />
                 {/* <Carousel.Caption>
@@ -68,4 +68,4 @@ const mapDispatchToProps = {}
 export default connect(
     mapStateToProps, 
     mapDispatchToProps
-)(Slider);
+)(Carrousel);

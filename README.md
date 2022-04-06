@@ -15,7 +15,7 @@ Usuarios?
     - create personal list as user
 
 Home
-    set all images carrousel same size
+    - set all images carrousel same size
 
 Header
     - Button change display
@@ -27,8 +27,7 @@ ArtistDetail
     - obtener artista mediante consulta de id cancion JOIN artist_id
 
 Footer
-    - hide button (see react-bootstrap: offcanvas)
-    - hide button quitar
+    - BUG: footer abierto pierde foto elementos cuerpo. Si se hace click fuera de Footer, se cierra
     - CSS buttons next and before
     - mobile view quitar < 479 (quitar y que tilte+artist=100%)
     - obtener artista mediante consulta de id cancion JOIN artist_id
@@ -37,11 +36,10 @@ Footer
     - me gusta si user logged y cancion tiene me gusta
 
 About
+    - CSS Common techniques (lighten, on hover 100%) 
     - buy me a coffe link
     - links to linkedIn
 
-Modal
-    - style CSS
 
 
 Docker + MongoDB 

@@ -30,7 +30,7 @@ const Home = ({}) => {
                     </Col>
                 </Row>
             </section>
-            <section id="slider">
+            <section id="carrousel">
                 <Container style={{width:'80%'}}>
                     <Carrousel ></Carrousel>
                 </Container>
