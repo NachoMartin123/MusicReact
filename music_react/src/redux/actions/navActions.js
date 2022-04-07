@@ -63,3 +63,10 @@ export const nav_set_volume = data => ({
         volume: data
     }
 })
+
+export const nav_set_footer_show = data => ({
+    type: types.NAV_SET_FOOTER_SHOW,
+    payload: {
+        footerShow: data
+    }
+})

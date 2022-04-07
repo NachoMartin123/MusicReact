@@ -65,7 +65,7 @@ const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) =>
                 currentSeconds == 0 || isNaN(currentSeconds) ? "0:00" 
                 : calculateStringCurrentSeconds() }
             </span>
-            <Slider className="slider" 
+            <Slider id="sliderVolume" className="slider" 
                 min={0}
                 max={parseInt(totalSeconds)}
                 value={currentSeconds}

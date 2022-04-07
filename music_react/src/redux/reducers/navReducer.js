@@ -20,7 +20,8 @@ const initialState = {
         artistName:'',
         videoUrl:'', //'https://www.youtube.com/embed/ovdm2yX4MA'
     },
-    volume: 100
+    volume: 100,
+    footerShow: true
 }
 
 
@@ -127,6 +128,13 @@ const navState = (state = initialState, action) => {
             return {
                 ...state,
                 volume: action.payload.volume
+            }
+        }
+
+        case types.NAV_SET_FOOTER_SHOW:{
+            return {
+                ...state,
+                footerShow: action.payload.footerShow
             }
         }
 

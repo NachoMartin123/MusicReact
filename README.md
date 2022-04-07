@@ -14,8 +14,6 @@ Usuarios?
     - update song
     - create personal list as user
 
-Home
-    - set all images carrousel same size
 
 Header
     - Button change display

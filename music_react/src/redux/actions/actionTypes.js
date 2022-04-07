@@ -20,6 +20,8 @@ export const NAV_SET_CURRENT_VIDEOCLIP = 'NavSetCurrentVideoclip';
 
 export const NAV_SET_VOLUME = 'NavSetVolume';
 
+export const NAV_SET_FOOTER_SHOW = 'NavSetFooterShow';
+
 
 
 //export const NAV_GET_CURRENT_SONG = 'NavGetCurrentSong';
