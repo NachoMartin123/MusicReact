@@ -47,10 +47,12 @@
         tbody
             tr
                 cursor: pointer
+                //margin: 1.25em
                 td
                     border-color: inherit
                     border-style: hidden
-                    margin-top: 5em
+                    vertical-align: middle
+                    //margin-top: 5em
                     p
                         margin:0
                         text-align: left
@@ -60,6 +62,12 @@
                         &:last-child 
                             font-size: 12px
                             filter: brightness(85%)
+                    svg
+                        width: 1.5em
+                        height: 1.5em
+                    > *
+                        display: flex
+                        justify-content: center
                 &:hover
                     background-color: rgba(50,78,71,1)
                     td
@@ -75,6 +83,10 @@
                     line-height:10px
                     text-indent:-99999px
 
+.table>:not(caption)>*>* //custom td padding
+    padding:0
+    //padding-right: 0.5em
+    //padding-left: 0.5em
 
 .ButtonTable
     width: 100%

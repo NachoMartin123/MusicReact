@@ -8,10 +8,9 @@ import VolumeSlider from './footerComponents/VolumeSlider';
 
 import Marquee from "react-fast-marquee";
 
-import {BsChevronUp, BsFillPauseFill, BsFillPlayFill, BsSkipEndFill} from "react-icons/bs";
+import {BsFillFileEarmarkMusicFill, BsChevronUp, BsFillPauseFill, BsFillPlayFill, BsSkipEndFill} from "react-icons/bs";
 import {nav_change_song_status, nav_next_song, nav_previous_song, nav_set_footer_show} from '../../redux/actions/navActions';
 
-import { BsFillFileEarmarkMusicFill } from "react-icons/bs";
 
 
 const Footer = ({currentArtist, currentSong, footerShow, 
@@ -73,7 +72,7 @@ const Footer = ({currentArtist, currentSong, footerShow,
                                             gradientWidth="0"
                                             speed="10"
                                             className="song_title_footer">
-                                                {currentSong.title=="" ? "No song selected" : currentSong.title}
+                                                {currentSong.title=="" ? "No song selected" : <span>{currentSong.title }</span>}
                                     </Marquee>
                                     <Marquee 
                                             pauseOnHover="true" 

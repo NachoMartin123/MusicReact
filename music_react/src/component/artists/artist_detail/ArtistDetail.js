@@ -120,8 +120,8 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                             widthViewport >= 480 ? 
                                 <thead >
                                     <tr>
-                                        <th style={{textAlign:'center', width:'10%'}}>#</th>
-                                        <th>Name</th>
+                                        <th style={{textAlign:'center', width:'5%'}}>#</th>
+                                        <th style={{paddingLeft: "1em"}}>Name</th>
                                         <th>Album</th>
                                         <th ><BsClockFill/></th>
                                     </tr >

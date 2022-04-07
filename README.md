@@ -14,22 +14,18 @@ Usuarios?
     - update song
     - create personal list as user
 
-
 Header
-    - Button change display
+    - Button change display ??
     - change idiom
-    - bug Nav>a>home no se pone verde onHover
+
 
 ArtistDetail
     - sticky header table
     - obtener artista mediante consulta de id cancion JOIN artist_id
 
 Footer
-    - BUG: footer abierto pierde foto elementos cuerpo. Si se hace click fuera de Footer, se cierra
-    - CSS buttons next and before
     - mobile view quitar < 479 (quitar y que tilte+artist=100%)
     - obtener artista mediante consulta de id cancion JOIN artist_id
-    - filter 85%, on hover=100%
     - random song buttom
     - me gusta si user logged y cancion tiene me gusta
 

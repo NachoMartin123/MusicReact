@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 
-import {BsFillCircleFill, BsFillPauseFill, BsFillPlayFill} from "react-icons/bs";
+import {Button, Image,  Container, Row, Col, Offcanvas} from 'react-bootstrap';
+
+import {BsFillFileEarmarkMusicFill, BsFillCircleFill, BsFillPauseFill, BsFillPlayFill} from "react-icons/bs";
 
 import {nav_set_current_song, nav_set_current_artist, nav_set_current_songList, nav_change_song_status} from '../../../../redux/actions/navActions';
 import useViewport from "../../../../hooks/useViewport";
@@ -51,11 +53,11 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
     }
 
     return (
-        <tr onClick={onClickButton} onMouseOver={handleMouseIn} onMouseOut={handleMouseOut}>
+        <tr onClick={onClickButton} onMouseOver={handleMouseIn} onMouseOut={handleMouseOut} >
             {
                 widthViewport >= 480 ? 
                 <>
-                    <td style={{textAlign:'center', width:'10%'}}>
+                    <td style={{textAlign:'center', fontSize:"16px"}}>
                     {
                         isClicked===true ? 
                             <BsFillPauseFill style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}/> 
@@ -65,8 +67,16 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
                     }
                     </td>
                     <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>
-                        <p>{song.title}</p>
-                        <p>{artistName}</p>
+                        <Row>
+                            <Col sm={1} style={{alignItems: "center", justifyContent: "center", textAlign: "center"}}>
+                                <BsFillFileEarmarkMusicFill style={{height:"2em", width:"2em", marginTop:"0.25em", stroke:"black"}}/>
+                                {/* <Image style={{border: "1px solid black"}}></Image>    */}          
+                            </Col>
+                            <Col >
+                                <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.title}</p>
+                                <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{artistName}</p>
+                            </Col>
+                        </Row>
                     </td>
                     <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album}</td>
                     <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.duration}</td>          
