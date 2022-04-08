@@ -30,8 +30,8 @@ const Home = ({}) => {
                     </Col>
                 </Row>
             </section>
-            <section id="carrousel">
-                <Container style={{width:'80%'}}>
+            <section id="carrousel" className="setHeightCarrousel">
+                <Container className="resizeCarrousel">
                     <Carrousel ></Carrousel>
                 </Container>
             </section>

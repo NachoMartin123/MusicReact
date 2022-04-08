@@ -46,7 +46,6 @@ export const get_artist_songs = (artistName) => ({
             {title: "For A Better Day",artist: "Avicii",album: "Stories",duration: "3:23"},
             {title: "Seek Bromance",artist: "Avicii",album: "Album2",duration: "3:23"},
             {title: "Silhouettes",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Addicted to you",artist: "Avicii",album: "Album2",duration: "3:23"},
             {title: "X You",artist: "Avicii",album: "X You",duration: "3:23"},
             {title: "Tough Love",artist: "Avicii",album: "TIM",duration: "3:23"},
             {title: "Pure grinding",artist: "Avicii",album: "Stories",duration: "3:23"},

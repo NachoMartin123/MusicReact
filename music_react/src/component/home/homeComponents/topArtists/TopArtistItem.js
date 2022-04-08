@@ -18,7 +18,7 @@ const TopArtistItem = (props) => {
     }
 
     return (
-        <Container>
+        <Container className="resizeMobileTopArtist">
             <div className="centerElementsX topArtImgContainer" 
             style={{backgroundImage:`url(${backColors})`}}>
                 <Image src={require(`../../../../assets/artistPictures/${props.artistName.toLowerCase().replace(/\s/g, '_')}.jpg`)} alt={props.artistName} />

@@ -22,7 +22,7 @@ function App() {
       <ModalSoon/>
       <Header/>
       <div >
-        <Router style={{position: "absolute", top: "10%"}}>
+        <Router > {/* style={{position: "absolute", top: "10%"}} */}
           <Routes >
             <Route path="/" element={<Home/>}/>
             <Route path="/artists" element={<Artists/>}/>

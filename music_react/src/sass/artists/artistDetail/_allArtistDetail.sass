@@ -53,21 +53,6 @@
                     border-style: hidden
                     vertical-align: middle
                     //margin-top: 5em
-                    p
-                        margin:0
-                        text-align: left
-                        &:first-child 
-                            font-weight: bold
-                            font-size: 15px
-                        &:last-child 
-                            font-size: 12px
-                            filter: brightness(85%)
-                    svg
-                        width: 1.5em
-                        height: 1.5em
-                    > *
-                        display: flex
-                        justify-content: center
                 &:hover
                     background-color: rgba(50,78,71,1)
                     td
@@ -75,18 +60,35 @@
                             border-radius: 5px 0 0 5px
                         &:last-child 
                             border-radius: 0 5px 5px 0
-                            @media screen and (max-width: $mobileView)
-                                border-radius: 5px
+                            //@media screen and (max-width: $mobileView)
+                            //    border-radius: 5px
             &:before //white separator
                 @media screen and (min-width: $mobileView+1)
                     content:""
                     line-height:10px
                     text-indent:-99999px
 
+.styleTdWebView
+    p
+        margin:0
+        text-align: left
+        &:first-child 
+            font-weight: bold
+            font-size: 15px
+        &:last-child 
+            font-size: 12px
+            filter: brightness(85%)
+    svg
+        width: 1.5em
+        height: 1.5em
+    > span
+        display: flex
+        justify-content: center
+        @media screen and (max-width: $mobileView)
+            padding: 0.5em
+
 .table>:not(caption)>*>* //custom td padding
     padding:0
-    //padding-right: 0.5em
-    //padding-left: 0.5em
 
 .ButtonTable
     width: 100%
@@ -102,6 +104,8 @@
         box-shadow: none
 
 .mobileSongList
+    display: block
+    padding: 0.25em
     p
         margin:0
         text-align: left
@@ -112,7 +116,9 @@
             font-size: 12px
             filter: brightness(85%)
     svg
-        width: 0.25em
+        //width: 0.25em
         vertical-align: middle
         margin-left: 0.5em
         margin-right: 0.5em
+        height: 0.5em
+        width: 0.5em

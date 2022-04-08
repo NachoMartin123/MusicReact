@@ -54,19 +54,20 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
 
     return (
         <tr onClick={onClickButton} onMouseOver={handleMouseIn} onMouseOut={handleMouseOut} >
+                <td className="styleTdWebView" style={{textAlign:'center', fontSize:"16px"}}>
+                    {
+                        isClicked===true ? 
+                            <BsFillPauseFill style={{textAlign:'center', color: currentSong.title!==song.title ? 'white': '#01ff95'}}/> 
+                        : isHover===true && isClicked===false ? 
+                            <BsFillPlayFill style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}/>
+                        :  <span style={{textAlign:'center', color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{indice+1}</span>
+                    }
+                </td>
             {
                 widthViewport >= 480 ? 
                 <>
-                    <td style={{textAlign:'center', fontSize:"16px"}}>
-                    {
-                        isClicked===true ? 
-                            <BsFillPauseFill style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}/> 
-                        : isHover===true && isClicked===false ? 
-                            <BsFillPlayFill style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}/>
-                        :  <span style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{indice+1}</span>
-                    }
-                    </td>
-                    <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>
+
+                    <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>
                         <Row>
                             <Col sm={1} style={{alignItems: "center", justifyContent: "center", textAlign: "center"}}>
                                 <BsFillFileEarmarkMusicFill style={{height:"2em", width:"2em", marginTop:"0.25em", stroke:"black"}}/>
@@ -78,8 +79,8 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
                             </Col>
                         </Row>
                     </td>
-                    <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album}</td>
-                    <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.duration}</td>          
+                    <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album}</td>
+                    <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.duration}</td>          
                 </>
 
                 :   <>
@@ -90,7 +91,6 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
                             </div>
                         </td>
                     </> 
-                
             }        
         </tr>
     );

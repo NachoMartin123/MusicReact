@@ -10,9 +10,8 @@ const TopArtist = (props) => {
     return (
         <div>
             <Parallax bgImage={require("../../../../assets/home/top_artist/back3.jpg")} 
-            strength={600} 
-            style={{paddingTop:"6em"}}>
-                <Container>
+            strength={600} >
+                <Container style={{paddingTop:"6em"}}>
                     <div className="inlineElements centerElementsX">
                         <hr className="hr-width15" />
                         <h1>TOP ARTIST</h1>

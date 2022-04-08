@@ -109,7 +109,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                     <div>
                     {/*  <ButtonPlay/> */}
                         <div style={{display:"flex"}}>
-                            <p style={{fontWeight: "bold"}}>Total songs:&nbsp;</p><p> {artistSongs.length}</p><BsCircleFill className="ballSeparator"/><p style={{fontWeight: "bold"}}> Total duration:&nbsp;</p><p>{totalDuration}</p>
+                            <p style={{fontWeight: "bold"}}>Total songs:&nbsp;</p><p> {artistSongs.length}</p><BsCircleFill style={{fill:"white"}} className="ballSeparator"/><p style={{fontWeight: "bold"}}> Total duration:&nbsp;</p><p>{totalDuration}</p>
                         </div>
                     </div>
                 </div>

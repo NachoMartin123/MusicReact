@@ -1,8 +1,8 @@
 # MusicReact
 Web application using React
 # To Do
-MOBILE VIEW WHEN VIEWPORT < 300
-    - Nav change display
+MOBILE VIEW WHEN VIEWPORT < 480
+
 
 - get artist of song mediante consulta JOIN BBDD, y no por currentArtist
 - lista de canciones de diferentes aristas
@@ -14,25 +14,41 @@ Usuarios?
     - update song
     - create personal list as user
 
+Song detail view????????
+
 Header
-    - Button change display ??
     - change idiom
+    - logIn && sign in buttons
+
+Home 
+    ----------------------- Carrousel set size for diferent breakpoints
+    ----------------------- bug padding parallax fixed
+    ----------------------- resize h1 and h2 for mobile view
+    ----------------------- Top artist mobile view better CSS
 
 
 ArtistDetail
     - sticky header table
     - obtener artista mediante consulta de id cancion JOIN artist_id
+    ------------------------ include number of song in mobile view
 
 Footer
+    ------------------------ tamaño Img footer fijo y no 80% 
+    - CSS Footer <576px
+    ------------------------ rewrite CSS for mobile view
+       --------------------- mobile view quitar OffCanvas y botón
+    - values entre >478 y <577
+
     - mobile view quitar < 479 (quitar y que tilte+artist=100%)
     - obtener artista mediante consulta de id cancion JOIN artist_id
     - random song buttom
-    - me gusta si user logged y cancion tiene me gusta
+    - like button (si user logged)
 
 About
-    - CSS Common techniques (lighten, on hover 100%) 
+    ------------------------- CSS Common techniques, new structure 
     - buy me a coffe link
     - links to linkedIn
+    - guia usuario con capturas de pantalla
 
 
 

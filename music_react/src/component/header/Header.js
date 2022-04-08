@@ -10,7 +10,7 @@ import { nav_show_modal } from "../../redux/actions/navActions";
 import {BsFillHouseDoorFill, BsMusicNoteBeamed, BsFillPersonFill, BsListUl, BsInfoCircleFill} from "react-icons/bs";
 
 const Header = ({ nav_show_modal }) => {
-    const { heightViewport, widthViewport } = useViewport();
+    const { mobileBreakpoint, heightViewport, widthViewport } = useViewport(); 
 
     function showModalTrigger() {
         nav_show_modal(true);
@@ -19,10 +19,10 @@ const Header = ({ nav_show_modal }) => {
     return (
         <section id="headerId">
             <Container>
-                <Navbar fixed={widthViewport >= 480 ? "top": "bottom"}>
+                <Navbar fixed={widthViewport > mobileBreakpoint ? "top": "bottom"}>
                     <Container fluid>
                         {
-                        widthViewport >= 480 ? 
+                        widthViewport > mobileBreakpoint ? 
                         <Navbar.Brand href="#home">
                             <img
                                 src={MusicReact}
@@ -36,23 +36,23 @@ const Header = ({ nav_show_modal }) => {
                         }
                         <Nav id="navMR" style={{ width: "100%" }} className="centerElementsX">
                             <Nav.Link href="/">
-                                { widthViewport >= 480 ? "" : <BsFillHouseDoorFill/>}
+                                { widthViewport >= mobileBreakpoint ? "" : <BsFillHouseDoorFill/>}
                                 Home
                             </Nav.Link>
                             <Nav.Link onClick={showModalTrigger} >
-                                { widthViewport >= 480 ? "" : <BsMusicNoteBeamed/>}
+                                { widthViewport > mobileBreakpoint ? "" : <BsMusicNoteBeamed/>}
                                 Songs
                             </Nav.Link>
                             <Nav.Link href="/artists" >
-                                { widthViewport >= 480 ? "" : <BsFillPersonFill/>}
+                                { widthViewport > mobileBreakpoint ? "" : <BsFillPersonFill/>}
                                 Artists
                             </Nav.Link>
                             <Nav.Link onClick={showModalTrigger}>
-                                { widthViewport >= 480 ? "" : <BsListUl/>}
+                                { widthViewport > mobileBreakpoint ? "" : <BsListUl/>}
                                 Genres
                             </Nav.Link>
                             <Nav.Link href="/about">
-                                { widthViewport >= 480 ? "" : <BsInfoCircleFill/>}
+                                { widthViewport > mobileBreakpoint ? "" : <BsInfoCircleFill/>}
                                 About
                             </Nav.Link>
                         </Nav>

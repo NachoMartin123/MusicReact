@@ -29,7 +29,7 @@ const VolumeSlider = ({nav_set_volume, volume}) => {
     }
     
     return (
-        <>
+        <div className="centerElementsX centerElementsY">
             {
                 volume == 0? <Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeMute2/></Button>
                     : volume > 0 && volume<=33 ?<Button id="volume" onClick={muteUnmute} className="roundedButton"><ImVolumeLow/></Button>
@@ -46,7 +46,7 @@ const VolumeSlider = ({nav_set_volume, volume}) => {
                 />
             </div>
 
-        </>
+        </div>
     );
 }
 

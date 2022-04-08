@@ -24,12 +24,16 @@
     font-family: $fontSecondary
     margin-right: 0.5em
     font-weight: bold
-            font-size: 15px
+    font-size: 15px
+    @media screen and (max-width: $mobileView)
+        font-size: 20px
 
 .artist_name_footer
     color:$negro
     font-size: 12px
     filter: brightness(85%)
+    @media screen and (max-width: $mobileView)
+        font-size: 17px
 
 #footer_song_div
     background: $negro
@@ -121,3 +125,16 @@
 /* #offCanvasFooter
     backdrop: static
     keyboard: false */
+
+.footerMobileView
+    position: fixed
+    right: 0
+    bottom: 5.5em
+    left: 0
+    z-index: 1030
+    background-color: black
+
+
+.marqueeMobileView
+    background-color: $customVerde
+    
