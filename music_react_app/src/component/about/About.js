@@ -8,8 +8,8 @@ import ButtonMR from "../common/ButtonMR";
 import Badge from "./aboutComponents/myBadge/MyBadge.js";
 import back1 from "../../assets/about/back1.jpg";
 import back2 from "../../assets/about/back2.jpg";
-import TechChart from "./aboutComponents/TechChart/TechChart";
-import MethologiesChart from "./aboutComponents/MethologiesChart/MethologiesChart";
+import LanguagesChart from "./appInfo/LanguagesChart/LanguagesChart";
+import MethologiesChart from "./appInfo/MethologiesChart/MethologiesChart";
 
 
 const About = ({}) => {
@@ -43,8 +43,8 @@ const About = ({}) => {
 						<Col sm={8} className="contentMenuAbout">
 							<Tab.Content>
 								<Tab.Pane eventKey="#link1">
-									Programing languages used to develop the app
-									<TechChart />
+									Programing languages used to develop the app:
+									<LanguagesChart />
 								</Tab.Pane>
 								<Tab.Pane eventKey="#link2">
 									Frontend and backend integration diagram

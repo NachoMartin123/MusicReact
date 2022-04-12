@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import ReactEcharts from "echarts-for-react";
 
-const TechChart = ({}) => {
+const LanguagesChart = ({}) => {
     //Import json file. Used in {options}.
-    const data = require("./dataTechChart");
+    const data = require("./dataLanguagesChart");
 
     //Array of names for legend in {options}
     const dataNames = data.map((i) => i.name);
@@ -131,4 +131,4 @@ const mapStateToProps = (state) => {
     return {};
 };
 
-export default connect(mapStateToProps, {})(TechChart);
+export default connect(mapStateToProps, {})(LanguagesChart);

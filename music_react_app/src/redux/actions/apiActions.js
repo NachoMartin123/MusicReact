@@ -26,7 +26,7 @@ export const get_artist_names = (data) => ({
 export const get_artist_songs = (artistName) => ({
     type: types.GET_ARTIST_SONGS,
     payload: {
-        artistSongs: [
+        artistSongs: [ 
             {title: "Levels",artist: "Avicii",album: "Levels",duration: "3:19"},
             {title: "Hey brother",artist: "Avicii",album: "True",duration: "3:23"},
             {title: "Wake me up",artist: "Avicii",album: "True",duration: "3:23"},

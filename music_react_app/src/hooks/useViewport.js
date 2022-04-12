@@ -12,13 +12,6 @@ function getWindowDimensions() {
 
 export default function useWindowDimensions() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-    useEffect(() => {
-        console.log("mobileBreakpoint: "+windowDimensions.mobileBreakpoint);
-        console.log("widthViewport: "+windowDimensions.widthViewport);
-        console.log("widthViewport > mobileBreakpoint : "+windowDimensions.widthViewport > windowDimensions.mobileBreakpoint);
-        console.log("===========================");
-    })
     
 
     useEffect(() => {
