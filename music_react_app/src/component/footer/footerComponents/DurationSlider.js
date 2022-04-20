@@ -5,52 +5,22 @@ import {Button, Container, Row, Col} from 'react-bootstrap';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css'
 
-import {nav_next_song, nav_change_song_status} from "../../../redux/actions/navActions";
+import {nav_set_song_current_seconds} from "../../../redux/actions/navActions";
 
 
-const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) => {
-    const [totalSeconds, setTotalSeconds] = useState();
-    const [currentSeconds, setCurrentSeconds] = useState(0);
-  
-    useEffect(()=>{
-        setTotalSeconds(0);
-        setCurrentSeconds(0);        
-    },[]);
+const DurationSlider = ({currentSong, nav_set_song_current_seconds, totalSeconds, currentSeconds}) => {
     
     useEffect(()=>{
-        setCurrentSeconds(0);
-        if(currentSong.title.trim().length!=0){
-            var data = currentSong.duration.split(":");
-            setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
-            nav_change_song_status({status:"play"});
-        }
+
     },[currentSong.title]); 
 
-
     useEffect(()=>{
-        var data = currentSong.duration.split(":");
-        setTotalSeconds(parseInt(data[1])+parseInt(data[0])*60);
+       
+    }, [currentSeconds]);
 
-        var intervalId;
-        if(currentSong.status=="play"){
-            intervalId = setInterval(() => update(), 1000);
-        }
-        return () => clearInterval(intervalId);
-    }, [currentSong.status, currentSeconds]);
-
-    function update(){
-        if(currentSong.status=="play"){
-            if((currentSeconds===totalSeconds))
-                nav_next_song();
-            if(currentSeconds == 0)
-                setCurrentSeconds(1);
-            else
-                setCurrentSeconds(currentSeconds+1);
-        }
-    }
 
     function handleChange (handleValue) {
-        setCurrentSeconds(parseInt(handleValue));
+        nav_set_song_current_seconds(parseInt(handleValue));
     }
 
     function calculateStringCurrentSeconds(){
@@ -79,13 +49,15 @@ const DurationSlider = ({currentSong, nav_next_song, nav_change_song_status}) =>
 }
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        currentSong: state.navState.currentSong
+        currentSong: state.navState.currentSong,
+        currentSeconds : state.navState.currentSeconds,
+        totalSeconds: ownProps.totalSeconds
     }
 }
 
 export default connect(
     mapStateToProps, 
-    {nav_next_song, nav_change_song_status}
+    {nav_set_song_current_seconds}
 )(DurationSlider);

@@ -13,6 +13,8 @@ export const NAV_SET_CURRENT_SONGLIST = 'NavSetCurrentSongList';
 export const NAV_CHANGE_SONG_STATUS = 'NavChangeSongStatus';
 export const NAV_NEXT_SONG = 'NavNextSong';
 export const NAV_PREVIOUS_SONG = 'NavPreviousSong';
+export const NAV_SET_SONG_CURRENT_SECONDS = 'NavSetSongCurrentSeconds';
+
 
 export const NAV_SHOW_MODAL = 'NavShowModal';
 

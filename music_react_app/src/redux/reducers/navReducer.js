@@ -21,10 +21,17 @@ const initialState = {
         videoUrl:'', //'https://www.youtube.com/embed/ovdm2yX4MA'
     },
     volume: 100,
-    footerShow: true
+    footerShow: true,
+    currentSeconds: 0
 }
 
-
+/**
+ * 
+ * @param {*} value <0 for previous song, > 0 for next song
+ * @param {*} currentSongList 
+ * @param {*} currentSong 
+ * @returns 
+ */
 function getNextOrPreviousSong(value, currentSongList, currentSong){
     try{
         var indexCurrentSong = currentSongList.findIndex(function(item, i){
@@ -48,7 +55,8 @@ function getNextOrPreviousSong(value, currentSongList, currentSong){
                 artist:'', 
                 album: '',
                 duration: '',
-                status:'play'}; 
+                status:'play'
+        }; 
     }
 }
 
@@ -97,16 +105,34 @@ const navState = (state = initialState, action) => {
         }
 
         case types.NAV_PREVIOUS_SONG: {
+            var nextSong = getNextOrPreviousSong(-1, state.currentSongList, state.currentSong);
             return {
                 ...state,
-                currentSong: getNextOrPreviousSong(-1, state.currentSongList, state.currentSong),  
+                currentSeconds: 0,
+                currentSong: {
+                    ...state.currentSong,
+                        title: nextSong.title,
+                        artist: nextSong.artist, 
+                        album: nextSong.album,
+                        duration: nextSong.duration,
+                        status:'pause'
+                },  
             }
         }
 
         case types.NAV_NEXT_SONG: {
+            var nextSong = getNextOrPreviousSong(1, state.currentSongList, state.currentSong);
             return {
                 ...state,
-                currentSong: getNextOrPreviousSong(1, state.currentSongList, state.currentSong),              
+                currentSeconds: 0, 
+                currentSong: {
+                    ...state.currentSong,
+                        title: nextSong.title,
+                        artist: nextSong.artist, 
+                        album: nextSong.album,
+                        duration: nextSong.duration,
+                        status:'pause'
+                },  
             }
         }
 
@@ -137,6 +163,14 @@ const navState = (state = initialState, action) => {
                 footerShow: action.payload.footerShow
             }
         }
+
+        case types.NAV_SET_SONG_CURRENT_SECONDS: {
+            return {
+                ...state,
+                currentSeconds: action.payload.currentSeconds
+            }
+        }
+
 
         default: return state;
     }

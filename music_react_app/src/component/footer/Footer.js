@@ -11,21 +11,52 @@ import { BsCircleFill } from "react-icons/bs";
 import Marquee from "react-fast-marquee";
 
 import {BsFillFileEarmarkMusicFill, BsChevronUp, BsFillPauseFill, BsFillPlayFill, BsSkipEndFill} from "react-icons/bs";
-import {nav_change_song_status, nav_next_song, nav_previous_song, nav_set_footer_show} from '../../redux/actions/navActions';
+import {nav_change_song_status, nav_next_song, nav_previous_song, nav_set_footer_show, 
+    nav_set_song_current_seconds} from '../../redux/actions/navActions';
 
 
+const Footer = ({currentArtist, currentSong, footerShow, nav_change_song_status, nav_next_song, 
+    nav_previous_song, nav_set_footer_show, nav_set_song_current_seconds, currentSeconds}) => {
 
-const Footer = ({currentArtist, currentSong, footerShow, 
-        nav_change_song_status, nav_next_song, nav_previous_song, nav_set_footer_show}) => {
+    const [totalSeconds, setTotalSeconds] = useState(0);
     const { mobileBreakpoint, heightViewport, widthViewport } = useViewport();
     
     const handleClose = () => nav_set_footer_show(false);
     const handleShow = () => nav_set_footer_show(true);
-  
-    useEffect(() => {
-        //nav_set_footer_show(true)
-    }, [])
-    
+
+    function getTotalSeconds(){
+        var data = currentSong.duration.split(":");
+        var totalAmount = (parseInt(data[1]))+(parseInt(data[0])*60);
+         return totalAmount;
+    }
+
+    useEffect(()=>{
+        nav_set_song_current_seconds(0);
+        if(currentSong.title.trim().length!=0){
+            /* var data = currentSong.duration.split(":");
+            var totalAmount = (parseInt(data[1]))+(parseInt(data[0])*60);
+            setTotalSeconds(totalAmount);*/
+            nav_change_song_status({status:"play"});
+        }
+    },[currentSong.title]); 
+
+    useEffect(()=>{
+        var intervalId;
+        if(currentSong.status=="play"){
+            intervalId = setInterval(() => update(), 1000);
+        }
+        return () => clearInterval(intervalId);
+    }, [currentSong.status, currentSeconds]);
+
+    function update(){
+        if(currentSong.status=="play"){
+            if(currentSeconds===getTotalSeconds())
+                nav_next_song();
+            else 
+                nav_set_song_current_seconds(parseInt(currentSeconds)+1); 
+        }
+    }
+
 
     function nextSong() {
         if(currentSong.title!=""){
@@ -77,7 +108,7 @@ const Footer = ({currentArtist, currentSong, footerShow,
                                                     gradientWidth="0"
                                                     speed="10"
                                                     className="song_title_footer">
-                                                        {currentSong.title=="" ? "No song selected" : <span>{currentSong.title }</span>}
+                                                        {currentSong.title=="" ? "No song selected" : <span className="myMarginRight">{currentSong.title }</span>}
                                             </Marquee>
                                             <Marquee 
                                                     pauseOnHover="true" 
@@ -103,17 +134,17 @@ const Footer = ({currentArtist, currentSong, footerShow,
                                             <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
                                         </Row>
                                         <Row className="centerElementsX" style={{width: "100%"}}>
-                                            <DurationSlider/>
+                                            <DurationSlider totalSeconds={getTotalSeconds()}/>
                                         </Row>
                                     </Row>
                                 </Col>
                                 {
                                     widthViewport >= 576 ?
-                                        <Col  id="volume_footer" className="centerElementsY">
-                                            <Row className="centerElementsX" /* style={{width:"100%"}} */>
-                                                {/* <Col /* xs={9}  style={{display:"flex", alignItems:"center"}}> */}
+                                        <Col id="volume_footer" className="centerElementsY">
+                                            <Row className="centerElementsX" style={{width:"100%"}} >
+                                                <Col xs={9}  style={{display:"flex", alignItems:"center"}}>
                                                     <VolumeSlider/>
-                                               {/*  </Col> */}
+                                                </Col>
                                                 
                                             </Row>
                                         </Col>
@@ -159,11 +190,13 @@ const mapStateToProps = (state) => {
         currentArtist: state.navState.currentArtist,
         currentSong: state.navState.currentSong,
         currentSongList: state.navState.currentSongList,
-        footerShow: state.navState.footerShow
+        footerShow: state.navState.footerShow,
+        currentSeconds : state.navState.currentSeconds
     }
 }
 
 export default connect(
     mapStateToProps, 
-    {nav_change_song_status, nav_next_song, nav_previous_song, nav_set_footer_show}
+    {nav_change_song_status, nav_next_song, nav_previous_song, nav_set_footer_show, 
+        nav_set_song_current_seconds}
 )(Footer);

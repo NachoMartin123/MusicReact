@@ -2,7 +2,6 @@ import * as types from "./actionTypes";
 //import axios from "axios";
 import ArtistDataService from "../../services/artist.service";
 
-import TiestoImg from '../../assets/artistPictures/tiesto.jpg';
 
 export const get_artist_names = (data) => ({
     type: types.GET_ARTISTS_NAMES,

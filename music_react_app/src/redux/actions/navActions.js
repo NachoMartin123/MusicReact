@@ -70,3 +70,11 @@ export const nav_set_footer_show = data => ({
         footerShow: data
     }
 })
+
+export const nav_set_song_current_seconds = data => ({
+    type: types.NAV_SET_SONG_CURRENT_SECONDS,
+    payload: {
+        currentSeconds: data
+    }
+})
+

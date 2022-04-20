@@ -1,7 +1,7 @@
-import React, { Component , useEffect, useState} from 'react';
+import React, { } from 'react';
 import { connect } from 'react-redux';
 
-import {Button, Container, Row, Col} from 'react-bootstrap';
+import {Button, Container} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 
 import backColors from '../../../../assets/home/top_artist/backColors.png';

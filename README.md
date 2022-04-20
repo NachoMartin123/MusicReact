@@ -33,6 +33,7 @@ Footer
     - obtener artista mediante consulta de id cancion JOIN artist_id
     - random song buttom
     - like button (si user logged)
+    - no eliminar durationSlider en mobile view, solamente no mostrarlo para que siga el punto de reproduccion
 
 About
     - buy me a coffe link

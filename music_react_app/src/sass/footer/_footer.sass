@@ -1,7 +1,6 @@
 @import './footerButtons.sass'
-@import './volumeSlider.sass'
-@import './durationSlider.sass'
-    
+@import './sliders/_sliderCommon'
+
 
 #footerMR
     margin: 0   //section tiene margin y padding en general
@@ -64,33 +63,6 @@
         z-index: 4
 
 
-.slider
-    height: 4px
-    width: inherit
-    span
-        color: white      
-
-.rangeslider-horizontal 
-    .rangeslider__handle //first big ball, just show when hover
-        width: 0px
-        height: 0px
-    &:hover
-        .rangeslider__handle
-            width: 12px
-            height: 12px
-
-.rangeslider
-    margin: 10px 0
-
-.rangeslider-horizontal 
-    .rangeslider__fill 
-        background-color: $customVerde
-
-.rangeslider-horizontal 
-    .rangeslider__handle //custom default class, ball controlling slider
-        &:after
-            content: none //removes the second ball 
-
 
 @keyframes horizontalScoll
     0%
@@ -138,3 +110,7 @@
 .marqueeMobileView
     background-color: $customVerde
     
+.offcanvas-backdrop //sets the backdrop size to zero, so it disables the backdrop
+    width: 0 
+    height: 0 
+
