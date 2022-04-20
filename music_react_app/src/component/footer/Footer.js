@@ -95,13 +95,13 @@ const Footer = ({currentArtist, currentSong, footerShow, nav_change_song_status,
                     <Offcanvas id="offCanvasFooter" style={{width:"100%"}} keyboard={false} scroll={true} backdrop={false} autoFocus={false} enforceFocus={false} placement="bottom" show={footerShow} onHide={handleClose} >
                         <Offcanvas.Body style={{width:"100%"}} id="footerMR" >
                             <Row>
-                                <Col sm={3} id="footer_song_div"> 
+                                <Col xs={3} sm={3} id="footer_song_div"> 
                                     <Row>
-                                        <Col sm={3} style={{textAlign:"center"}}>
-                                            <BsFillFileEarmarkMusicFill style={{height:"4em", width: "4em", marginTop:"10%" ,stroke:"black"}}/> 
+                                        <Col xs ={3} sm={3} style={{textAlign:"center"}}>
+                                            <BsFillFileEarmarkMusicFill style={{height:"4em", width: "4em", stroke:"black"}}/> 
                                             {/* <Image fluid="true" style={{border: "1px solid black"}}></Image> */}                     
                                         </Col>
-                                        <Col sm={6}>
+                                        <Col xs={6} sm={6}>
                                             <Marquee 
                                                     pauseOnHover="true" 
                                                     gradient="false"
@@ -121,7 +121,7 @@ const Footer = ({currentArtist, currentSong, footerShow, nav_change_song_status,
                                         </Col>
                                     </Row>
                                 </Col>
-                                <Col xs={5}  sm={6} id="buttons_play" className='centerElementsX footerButtons'>
+                                <Col xs={6}  sm={6} id="buttons_play" className='centerElementsX footerButtons'>
                                     <Row style={{width:"100%"}}>
                                         <Row className="centerElementsX centerElementsY" >
                                             <Button id="back" onClick={previousSong} className="roundedButton"><BsSkipEndFill style={{transform: "rotate(180deg)"}}/></Button>

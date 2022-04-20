@@ -24,10 +24,9 @@ const Header = ({ nav_show_modal }) => {
                         {
                         widthViewport > mobileBreakpoint ? 
                         <Navbar.Brand href="#home">
-                            <img
+                            <img id="logoNav"
                                 src={MusicReact}
-                                width="90"
-                                height="90"
+
                                 className="d-inline-block align-top"
                                 alt="React Bootstrap logo"
                             />

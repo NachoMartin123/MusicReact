@@ -69,11 +69,11 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
 
                     <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>
                         <Row>
-                            <Col sm={1} style={{alignItems: "center", justifyContent: "center", textAlign: "center"}}>
+                            <Col xs={1} sm={1} style={{alignItems: "center", justifyContent: "center", textAlign: "center"}}>
                                 <BsFillFileEarmarkMusicFill style={{height:"2em", width:"2em", marginTop:"0.25em", stroke:"black"}}/>
                                 {/* <Image style={{border: "1px solid black"}}></Image>    */}          
                             </Col>
-                            <Col >
+                            <Col>
                                 <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.title}</p>
                                 <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{artistName}</p>
                             </Col>

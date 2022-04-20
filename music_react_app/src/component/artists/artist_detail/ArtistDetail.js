@@ -121,7 +121,7 @@ const Artist_detail = ({artistSongs, get_artist_songs}) => {
                                 <thead >
                                     <tr>
                                         <th style={{textAlign:'center', width:'5%'}}>#</th>
-                                        <th style={{paddingLeft: "1em"}}>Name</th>
+                                        <th style={{paddingLeft: "8%"}}>Name</th>
                                         <th>Album</th>
                                         <th ><BsClockFill/></th>
                                     </tr >
