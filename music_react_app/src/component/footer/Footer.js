@@ -133,7 +133,7 @@ const Footer = ({currentArtist, currentSong, footerShow, nav_change_song_status,
                                             </Button>
                                             <Button id="next" onClick={nextSong} className="roundedButton"><BsSkipEndFill /></Button>
                                         </Row>
-                                        <Row className="centerElementsX" style={{width: "100%"}}>
+                                        <Row className="centerElementsX">
                                             <DurationSlider totalSeconds={getTotalSeconds()}/>
                                         </Row>
                                     </Row>

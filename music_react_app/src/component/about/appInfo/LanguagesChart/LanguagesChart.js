@@ -39,15 +39,15 @@ const LanguagesChart = ({}) => {
                 },
             },
         }, */
-        title: {
+        /* title: {
             text: "Languages",
             left: "center",
             top: 20,
             textStyle: {
-                color: "white",
+                color: "black",
                 paddingTop: "2em"
             },
-        }, 
+        },  */
         graphic: [
             {
                 type: "group",
@@ -76,7 +76,7 @@ const LanguagesChart = ({}) => {
             //y: "50px",
             data: dataNames,
             textStyle: {
-                color: "#fff",
+                color: "black",
             },
         },
         series: [

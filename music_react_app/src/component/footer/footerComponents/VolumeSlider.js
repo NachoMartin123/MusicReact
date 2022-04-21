@@ -52,7 +52,7 @@ const VolumeSlider = ({nav_set_volume, volume}) => {
 
 
 const mapStateToProps = (state) => {
-    return {
+    return { 
         volume: state.navState.volume
     }
 }

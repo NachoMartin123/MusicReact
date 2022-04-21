@@ -19,7 +19,6 @@ const MethologiesChart = ({}) => {
                             { name: "Adobe XD" },
                             { name: "Adobe Illustrator" },
                             { name: "Adobe Photoshop" },
-                            { name: "DelimitedTextConverter" },
                         ],
                     },
                     {
@@ -63,8 +62,9 @@ const MethologiesChart = ({}) => {
     //Chart style
     const style = {
         height: "55vh",
-        width: "100%",
+        width: "90%",
         marginRight: "0",
+        marginLeft: "10%",
     };
 
     const options = {

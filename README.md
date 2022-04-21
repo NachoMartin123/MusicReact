@@ -27,18 +27,17 @@ ArtistDetail
     - obtener artista mediante consulta de id cancion JOIN artist_id
     
 Footer
-    - CSS Footer <576px
-    - values entre >478 y <577
-    - mobile view quitar < 479 (quitar y que tilte+artist=100%)
     - obtener artista mediante consulta de id cancion JOIN artist_id
     - random song buttom
     - like button (si user logged)
-    - no eliminar durationSlider en mobile view, solamente no mostrarlo para que siga el punto de reproduccion
+
 
 About
     - buy me a coffe link
     - Fill About parts
     - guia usuario con capturas de pantalla
+
+Default no found view
 
 
 
