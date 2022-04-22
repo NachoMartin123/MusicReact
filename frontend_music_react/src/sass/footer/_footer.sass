@@ -1,0 +1,116 @@
+@import './footerButtons.sass'
+@import './sliders/_sliderCommon'
+
+
+#footerMR
+    margin: 0   //section tiene margin y padding en general
+    padding: 0
+    width: 100%
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+    //position: fixed
+    left: 0
+    bottom: 0
+    z-index: 5 //esta por encima de todos los otros elementos
+    background: $negro
+    @media screen and (max-width: $mobileView)
+        padding-bottom: 6em
+    .row
+        --bs-gutter-x: 0
+
+.song_title_footer
+    color: $negro
+    font-family: $fontSecondary
+    margin-right: 0.5em
+    font-weight: bold
+    font-size: 15px
+    @media screen and (max-width: $mobileView)
+        font-size: 20px
+
+.artist_name_footer
+    color:$negro
+    font-size: 12px
+    filter: brightness(85%)
+    @media screen and (max-width: $mobileView)
+        font-size: 17px
+
+#footer_song_div
+    background: $negro
+    overflow: hidden
+    align-items: center
+    padding-left: 0  
+    text-align: center
+    //@media screen and (min-width: 576px)//skew si viewport > 576px
+        //margin-left: -1.5em
+    @media screen and (max-width: 576px) //fila si viewport < 576px
+        width: 100%
+    @media screen and (max-width: $mobileView)
+        width: 50%
+    *
+        @media screen and (min-width: $mobileView)
+            //transform: skewX(-45deg)
+            align-items: center
+            text-align: left
+            color: white
+    p
+        margin-bottom: 0
+    &.before
+        content: "."
+        position: relative
+        background: $blanco
+        top:0
+        bottom: 0
+        z-index: 4
+
+
+
+@keyframes horizontalScoll
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-100%)
+
+/////////mixings for keyframes animations    
+@mixin keyframes-animation($name) 
+    @keyframes #{$name} 
+        @content
+
+@mixin animate($animation,$duration,$method,$times)
+    animation: $animation $duration $method $times
+
+
+//horizontalScoll 60s linear infinite
+@mixin carousel-animation($frames, $static, $animation-name: 'carousel')
+  
+    
+/*  */
+
+/////////////offcavas custom classes
+.offcanvas-backdrop.show 
+    opacity: 0
+
+.offcanvas-bottom 
+    right: auto
+    left: auto
+    height: auto
+
+/* #offCanvasFooter
+    backdrop: static
+    keyboard: false */
+
+.footerMobileView
+    position: fixed
+    right: 0
+    bottom: 5.5em
+    left: 0
+    z-index: 1030
+    background-color: black
+
+
+.marqueeMobileView
+    background-color: $customVerde
+    
+.offcanvas-backdrop //sets the backdrop size to zero, so it disables the backdrop
+    width: 0 
+    height: 0 
+

@@ -1,0 +1,122 @@
+#buttons_play
+    background: $negro
+    @media screen and (max-width: 576px)
+        width: 100%
+    @media screen and (max-width: $mobileView)
+        width: 50%
+    button
+        vertical-align: middle
+
+.roundedButton
+    background: none
+    border-color: $negro
+    width: 50px
+    height: 45px
+    font-size: 12px
+    display: flex
+    align-items: center
+    justify-content: center
+    @media screen and (max-width: $mobileView)
+        margin-right: 0.25em
+    svg //iconos
+        color: $lightBlanco
+        text-align: center
+        width: 140%
+        height: 140%
+        vertical-align: middle
+        align-items: center
+        justify-content: center
+    &:active //active=cuando esta click sin soltar
+        background: $lightBlanco
+        border-color: $negro
+        &:focus
+            box-shadow: none
+    &:hover //hover=al pasar por encima
+        background: none
+        border-color: $negro
+        svg
+            color: $blanco
+        &:focus
+            box-shadow: none
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        background: none
+        border-color: $negro
+        box-shadow: none
+        &:hover, &:active //cuando esta click sin soltar
+            background: none
+            border-color: $negro
+        svg
+            stroke: lighten($blanco, 10%)
+
+
+
+#play
+    @extend .roundedButton
+    background: $lightBlanco
+    border-color: $negroAzulado1
+    width: 40px
+    height: 40px
+    border-radius: 30px
+    font-size: 14px
+    color: $negro 
+    padding: 0.5em
+    @media screen and (max-width: $mobileView)
+        text-align: center
+    svg
+        color: $negro
+    &:active
+        background: $blanco
+        border-color: $blanco
+        &:focus
+            background: $blanco
+            border-color: $blanco
+    &:hover //hover=al pasar por encima
+        background: $blanco
+        border-color: $blanco
+        &:focus
+            box-shadow: none
+            background: $blanco
+            border-color: $blanco
+        svg
+            color: $negro
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        background: $blanco
+        border-color: $blanco
+        box-shadow: none
+        &:hover, &:active //cuando esta click sin soltar
+            background: $blanco
+            //border-color: $blanco
+   
+
+        
+
+
+.btn-xl
+    width: 70px
+    height: 70px
+    padding: 10px 16px
+    border-radius: 35px
+    font-size: 24px
+    line-height: 1.33
+
+.footerButtons
+    padding-right: 0 
+    padding-top: 0
+    padding-bottom: 0
+    padding-left: 0 
+    display: flex
+    align-items: center
+    justify-content: center
+    @media screen and (max-width: $mobileView)
+        padding-bottom: 0
+
+
+#hideOffCanvas
+    @extend #play
+    position: fixed
+    right: 30px
+    bottom: 60px
+    z-index: 99999
+    border-color: rgb(0 0 0 / 15%)
+
+

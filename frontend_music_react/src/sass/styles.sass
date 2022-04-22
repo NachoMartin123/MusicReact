@@ -1,0 +1,95 @@
+@import './variables'
+@import './header/header'
+@import './footer/footer'
+@import './about/allAbout'
+@import './artists/allArtists'
+@import './home/allHome'
+@import './common/allCommon'
+
+
+$xs576: 576px //<576
+//$md: 768px
+//$lg: 992px
+//$xl: 1200px
+//$xxl: 1400px
+
+$px1300: 1300px
+
+//  @media screen and (max-width: $small) {
+//  @media screen and (min-width: $medium) {
+
+
+body
+    background-color: $negroAzulado1
+    padding-right: 0 !important//offcanvas footer class adds margin-right: 17px
+    overflow: auto !important //offcanvas makes bug, overflow:hidden == hides vertical scrollbar
+    p
+        color: $blanco
+        text-align: center
+
+    h1, h2
+        font-family: $fontTitles
+        color: $blanco
+        text-align: center
+    h1
+        font-size: 75px
+        @media screen and (max-width: $px1300)
+            font-size: 65px 
+        @media screen and (max-width: $mobileView)
+            font-size: 40px 
+    h2
+        font-size: 60px
+        @media screen and (max-width: $px1300)
+            font-size: 50px 
+        @media screen and (max-width: $mobileView)
+            font-size: 40px 
+    h3
+        font-size: 55px
+        font-family: $fontSecondary
+        color: $blanco
+        text-align: center
+        @media screen and (max-width: $px1300)
+            font-size: 40px 
+    section
+        margin-bottom: 0em
+        padding-bottom: 12em
+        @media screen and (max-width: $mobileView)
+            padding-bottom: 7em
+
+
+.centerElementsX
+    //width:100%
+    display: flex
+    justify-content: center
+    text-align: center
+
+.centerElementsY
+    margin: 0
+    top: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.alignRight
+    margin-left: auto 
+    margin-right: 0
+
+.titleSecondary
+    font-family: $fontSecondary
+    font-weight: 300
+
+
+.inlineElements
+    display: flex
+    flex-direction: row
+    align-items: center
+        
+.customGreen
+    color: $customVerde
+
+.colorNegro
+    color: $negro
+
+.myMarginRight
+    margin-right: 25px
+

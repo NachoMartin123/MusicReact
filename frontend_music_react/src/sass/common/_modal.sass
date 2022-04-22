@@ -1,0 +1,50 @@
+.modal-title
+    display: flex
+
+.modal-content
+    background: rgb(50,76,71)
+    background: linear-gradient(180deg, rgba(50,76,71,1) 10%, $grisSuave 100%)
+ 
+
+.modal-header 
+    justify-content: left
+    align-items: baseline
+    h4
+        font-family: $fontTitles
+        color: $blanco
+        display: flex
+        text-align: center
+        align-items: center
+        font-size: 30px
+
+.btn-close
+    background-color: $blanco
+    border-radius: 10px
+
+
+.modal-body
+    font-family: $fontSecondary
+    h4
+        color: $blanco
+
+.buttonModal
+    background-color: $customVerde
+    color: $negro
+    font-family: $fontTitles
+    border: 0
+    border-radius: 30px
+    &:hover
+        border-color: $customVerde
+        color: $negro
+        background-color: $customVerde
+        filter: brightness(110%)
+    &:active //cuando esta click sin soltar
+        background-color: $customVerde
+        filter: brightness(80%)
+        border-color: lighten($customVerde, 10%) !important
+    &:focus //despues de click tiene foco, click fuera y lo pierde
+        color: $negro
+        background-color: $customVerde
+        border-color: $customVerde
+        box-shadow: none
+

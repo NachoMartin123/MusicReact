@@ -1,0 +1,39 @@
+#carrousel button 
+    height: 10px
+    width: 80px
+    &[aria-current=true] 
+        background-color: $customVerde
+
+#carrousel img
+    height: 100%
+    //width: 100%
+    //height: 35em
+    @media screen and (min-width: 1400px)
+        width: 90%
+    
+.resizeCarrousel
+    width: 80%
+    @media screen and (max-width: $mobileView)
+        width: 100%
+
+.setHeightCarrousel
+    @media screen and (max-width: $mobileView)
+        height: 30em
+
+.react-parallax-bgimage //resize background parallax image
+    @media screen and (max-width: 767px)
+        height: 2087px!important
+
+/*     @media screen and (max-width: 1400px)
+        top: -13em 
+    @media screen and (max-width: 1200px)
+        top: -11em 
+    @media screen and (max-width: 992px)
+        top: -7em 
+        left: -1.1em
+    @media screen and (max-width: 767px)
+        margin-right: 0.25em */
+
+            
+         
+    

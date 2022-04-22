@@ -1,0 +1,127 @@
+#imgBackArtistDetail
+    background-repeat: no-repeat
+    //background-position-x: 50%
+    background-position: 50% 55%
+    background-blend-mode: darken
+    transition: all 1s
+    *
+        text-align: left
+
+    
+.gradientBack
+    background: rgb(50,76,71)
+    background: linear-gradient(0deg, rgba(50,76,71,1) 75%, rgba(134,201,190,1) 100%)
+    .row
+        --bs-gutter-x: 0
+    
+
+.ballSeparator
+    width: 0.5em  
+    margin-top: 0.25em 
+    margin-right: 0.5em
+    margin-left: 0.5em 
+    color: $blanco
+
+
+#tableArtistDetail 
+    padding-bottom: 5em 
+    margin-left: 0px
+    padding-left: 2em
+    padding-right: 2em
+    background: rgb(38,38,38)
+    background: linear-gradient(0deg, rgba(38,38,38,1) 85%, rgba(50,78,71,1) 100%) 
+    width: 100%
+    @media screen and (max-width: $mobileView)
+        padding-bottom: 10em 
+        padding-left: 0em
+        padding-right: 0em
+    table
+        color: $blanco
+        thead
+            tr
+                th
+                    padding-top: 1em
+                    padding-bottom: 1em
+                    position: sticky
+                    //top: 30px
+        tbody
+            tr
+                cursor: pointer
+                //margin: 1.25em
+                td
+                    border-color: inherit
+                    border-style: hidden
+                    vertical-align: middle
+                    //margin-top: 5em
+                &:hover
+                    background-color: rgba(50,78,71,1)
+                    td
+                        &:first-child 
+                            border-radius: 5px 0 0 5px
+                        &:last-child 
+                            border-radius: 0 5px 5px 0
+                            //@media screen and (max-width: $mobileView)
+                            //    border-radius: 5px
+            &:before //white separator
+                @media screen and (min-width: $mobileView+1)
+                    content:""
+                    line-height:10px
+                    text-indent:-99999px
+
+.styleTdWebView
+    p
+        margin:0
+        margin-left: 15px
+        text-align: left
+        &:first-child 
+            font-weight: bold
+            font-size: 15px
+        &:last-child 
+            font-size: 12px
+            filter: brightness(85%)
+    svg
+        width: 1.5em
+        height: 1.5em
+    > span
+        display: flex
+        justify-content: center
+        @media screen and (max-width: $mobileView)
+            padding: 0.5em
+
+            
+
+.table>:not(caption)>*>* //custom td padding
+    padding:0
+
+.ButtonTable
+    width: 100%
+    padding:0
+    color: $blanco    
+    background: none
+    border: none
+    *
+        width: 100%
+        background: none 
+    &:hover, &:active, &:focus
+        background: none
+        box-shadow: none
+
+.mobileSongList
+    display: block
+    padding: 0.25em
+    p
+        margin:0
+        text-align: left
+        &:first-child 
+            font-weight: bold
+            font-size: 15px
+        &:last-child 
+            font-size: 12px
+            filter: brightness(85%)
+    svg
+        //width: 0.25em
+        vertical-align: middle
+        margin-left: 0.5em
+        margin-right: 0.5em
+        height: 0.5em
+        width: 0.5em
