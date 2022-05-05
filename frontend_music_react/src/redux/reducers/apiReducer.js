@@ -7,7 +7,8 @@ const initialState = {
     artistsNames: [],
     artistSongs:[],
     isArtistCreated: false,
-    artistsFilter: ''
+    artistsFilter: '',
+    loading: false
 }
 
 function filterArtistNames(oldArtitstNames, nameFilter) {
@@ -24,8 +25,8 @@ const apiState = (state = initialState, action) => {
             return {
                 ...state,
                 artistsFilter: action.payload.artistsFilter,
-                artistsNames: filterArtistNames(action.payload.artistsNames, action.payload.artistsFilter)
-
+                artistsNames: filterArtistNames(action.payload.artistsNames.data, action.payload.artistsFilter),
+                loading: action.payload.loading,
             }
         }
         case types.GET_ARTIST_SONGS: {
@@ -42,25 +43,9 @@ const apiState = (state = initialState, action) => {
             }
         }
 
-        /* case types.API_FILTER_ARTISTS: {
-            return {
-                ...state, 
-                artistsFilter: action.payload.artistsFilter,
-                artistsNames: filterArtistNames(state.artistsNames, action.payload.artistsFilter)
-            }
-        } */
-        
-        /*
         case types.SENDING_REQUEST: {
             return {
                 ...state,
-                loading: action.payload.loading,
-            }
-        }
-        case types.REQUEST_DATA: {
-            return {
-                ...state,
-                list: action.payload.list,
                 loading: action.payload.loading,
             }
         }
@@ -71,6 +56,30 @@ const apiState = (state = initialState, action) => {
                 loading: action.payload.loading,
             }
         }
+
+        
+        /*
+        case types.SENDING_REQUEST: {
+            return {
+                ...state,
+                loading: action.payload.loading,
+            }
+        }
+        case types.REQUEST_ERROR: {
+            return {
+                ...state,
+                error: action.payload.error,
+                loading: action.payload.loading,
+            }
+        }
+        case types.REQUEST_DATA: {
+            return {
+                ...state,
+                list: action.payload.list,
+                loading: action.payload.loading,
+            }
+        }
+
         case types.REQUEST_POST_DATA: {
             return {
                 ...state,

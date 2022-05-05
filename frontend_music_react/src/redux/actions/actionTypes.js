@@ -26,8 +26,8 @@ export const NAV_SET_FOOTER_SHOW = 'NavSetFooterShow';
 
 
 
-//export const NAV_GET_CURRENT_SONG = 'NavGetCurrentSong';
-
+export const SENDING_REQUEST = 'SendingRequest';
+export const REQUEST_ERROR = 'RequestError';
 
 
 

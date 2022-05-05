@@ -1,26 +1,9 @@
 import * as types from "./actionTypes";
-//import axios from "axios";
+import axios from "axios";
 import ArtistDataService from "../../services/artist.service";
 
 
-export const get_artist_names = (data) => ({
-    type: types.GET_ARTISTS_NAMES,
-    payload: {
-        artistsFilter: data.artistsFilter,
-        artistsNames: [
-            { nombre: "Avicii"},
-            { nombre: "Tiesto"},
-            { nombre: "Daft Punk"},
-            { nombre: "Martin Garrix"},
-            { nombre: "artist1"},
-            { nombre: "artist2"},
-            { nombre: "artist3"},
-            { nombre: "artist4"},
-            { nombre: "The Chainsmokers"},
-            { nombre: "artist6"},
-        ],
-    },
-});
+
 
 export const get_artist_songs = (artistName) => ({
     type: types.GET_ARTIST_SONGS,
@@ -99,7 +82,54 @@ export const request_post_data = (data) => ({
     },
 });
 
+export const sending_request = () => ({
+    type: types.SENDING_REQUEST,
+    payload: {
+        loading: true,
+    }
+})
+export const request_error = error => ({
+    type: types.REQUEST_ERROR,
+    payload: {
+        error: error,
+        loading: false,
+    }
+})
 
+
+//========================== GET ARTISTS =================================
+
+
+export const get_artist_names = (firstData) => dispatch => {
+    dispatch(sending_request());
+    return getArtistsRequest()
+        .then(data => {
+            dispatch(request_artist_names(data, firstData.artistsFilter));
+        })
+        .catch( error => {
+            dispatch(request_error(error));
+        })
+}
+
+const getArtistsRequest = () => {
+    var a = axios
+    .get(
+        'http://localhost:5000/artists'
+    )
+    .then( res  =>  res)
+    .catch( error => error);
+    console.log(a);
+    return a;
+}
+
+export const request_artist_names = (data, artistsFilter) => ({
+    type: types.GET_ARTISTS_NAMES,
+    payload: {
+        artistsFilter: artistsFilter,
+        artistsNames : data.data,
+        loading: false,
+    },
+});
 
 /* const postArtist = (artistToInsert) => {
     return axios
@@ -146,6 +176,8 @@ const getData = () => {
         .then( res  =>  res)
         .catch( error => error)
 }
+
+
 
 export const fetchData = () => dispatch => {
     dispatch(sending_request());
