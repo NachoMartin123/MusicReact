@@ -1,31 +1,40 @@
 version: "3"
 services:
-  frontend-music-react:
-    image: frontend-music-react
-    stdin_open: true
-    ports: 
-      - "3000:3000"
-    networks:
-      - mern-app
-  backend-music-react:
-    image: backend-music-react
-    ports:
-      - "5000:5000"
-    networks:
-      - mern-app
-    depends_on:
-      - mongo
+#  frontend-music-react:
+#    #image: frontend-music-react
+#    build: ./frontend_music_react
+#    stdin_open: true
+#    tty: true
+#    ports: 
+#      - "3000:3000"
+#    volumes: #localDir: containerDir EJ copiar carpeta src solo: C:\User\nacho\....\Github\musicreact\frontend\src: WORKDIR/src
+#    - ./frontend_music_react/src:/app/src
+#    environment:
+#      - CHOKIDAR_USEPOLLING=true
+#     - CI=true
+#    networks:
+#      - mern-app
+#  backend-music-react:
+#    #image: backend-music-react
+#    build: ./backend_music_react
+#    ports:
+#      - "5000:5000"
+#    networks:
+#      - mern-app
+#    depends_on:
+#      - mongo
   mongo:
     image: mongo:3.6.19-xenial
     ports:
       - "27017:27017"
-    networks:
-      - mern-app
-    volumes:
-      - mongo-data:/data/db
-networks:
-  mern-app:
-    driver: bridge
-volumes:
-  mongo-data:
-    driver: local
+#    networks:
+#      - mern-app
+#    volumes:
+#      - mongo-data:/data/db
+#networks:
+#  mern-app:
+#    driver: bridge
+#volumes:
+#  mongo-data:
+#    driver: local
+

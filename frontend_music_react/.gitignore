@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+Dockerfile
+.gitignore
+MakeFile
+README.md
 
 # testing
 /coverage

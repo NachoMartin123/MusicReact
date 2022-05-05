@@ -1,23 +1,45 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
-const db = require('./db')
-const movieRouter = require('./routes/movie-router')
+require('express-async-errors');//brings use of "await" calls in express
 
 const app = express()
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+//app.use(methodOverride());
+//app.use(cookieParser());
+//app.use(express.static(__dirname + '/public'));
+
+const db = require('./db')
 const apiPort = 5000
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
-app.use(bodyParser.json())
+app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
+
+db.on('connected', function () {  
+    console.log(`Database connection open to ${db.connectionString} listening in port ${apiPort}`);
+}); 
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+db.on('disconnected', function () {  
+    console.log('Database disconnected'); 
+});
 
-app.use('/api', movieRouter)
+//=======================================================================================
+//================================== routes middleware ==================================
+const ArtistRouter = require("./routes/artist-router");
+const SongRouter = require("./routes/song-router");
+const UserRouter = require("./routes/user-router");
 
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
+app.use('/', ArtistRouter);
+app.use('/', SongRouter);
+app.use('/', UserRouter);
+
+
+
+
+
+
+

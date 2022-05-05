@@ -2,8 +2,9 @@ build:
 	cd backend_music_react && $(MAKE) build 
 	cd frontend_music_react && $(MAKE) build
 
-run:
+up:
 	docker-compose up
 
-stop:
+
+down:
 	docker-compose down

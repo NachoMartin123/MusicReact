@@ -1,6 +1,6 @@
-const Movie = require('../models/movie-model')
+const Artist = require('../models/artist-model')
 
-createMovie = (req, res) => {
+/* createMovie = (req, res) => {
     const body = req.body
 
     if (!body) {
@@ -100,26 +100,26 @@ getMovieById = async (req, res) => {
         }
         return res.status(200).json({ success: true, data: movie })
     }).catch(err => console.log(err))
-}
+} */
 
 getMovies = async (req, res) => {
-    await Movie.find({}, (err, movies) => {
+    await Artist.find({}, (err, artists) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
-        if (!movies.length) {
+        if (!artists.length) {
             return res
                 .status(404)
                 .json({ success: false, error: `Movie not found` })
         }
-        return res.status(200).json({ success: true, data: movies })
+        return res.status(200).json({ success: true, data: artists })
     }).catch(err => console.log(err))
 }
 
 module.exports = {
-    createMovie,
+/*     createMovie,
     updateMovie,
-    deleteMovie,
-    getMovies,
-    getMovieById,
+    deleteMovie, */
+    getMovies/* ,
+    getMovieById, */
 }
