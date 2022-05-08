@@ -75,11 +75,11 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
                             </Col>
                             <Col>
                                 <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.title}</p>
-                                <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{artistName}</p>
+                                <p style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album.artist.nombre}</p>
                             </Col>
                         </Row>
                     </td>
-                    <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album}</td>
+                    <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.album.nombre}</td>
                     <td className="styleTdWebView" style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>{song.duration}</td>          
                 </>
 
@@ -87,7 +87,7 @@ const ButtonTable = ({indice, artistName, song,nav_set_current_song, nav_set_cur
                         <td style={{color: currentSong.title!==song.title ? 'white': '#01ff95'}}>
                             <div className="mobileSongList">
                                 <p>{song.title}</p>
-                                <p>{artistName}<BsFillCircleFill/>{song.album}</p>
+                                <p>{song.album.artist.nombre}<BsFillCircleFill/>{song.album.nombre}</p>
                             </div>
                         </td>
                     </> 

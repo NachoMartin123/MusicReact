@@ -46,36 +46,35 @@ createSong = (req, res) => {
 */
 
 getSongsByArtistName = async (req, res) => {
-    const body = req.body
+    var artistNameWithBlank = req.params.artistName.replace("_", " ");
 
-    if (!body) {
-        return res.status(400).json({
-            success: false,
-            error: 'You must provide an artist name',
+    console.log("getSongsByArtistName --- artistNameWithBlank:   *"+artistNameWithBlank+"*")
+    
+    await SongModel.find({})
+        .populate({
+            path : 'album',
+            populate : {
+                path : 'artist',
+                /* match: { 
+                    nombre:  "Avicii" 
+                } */
+            }
         })
-    }
-
-    console.log("getSongsByArtistName - req.body: "+req.body);
-
-    SongModel
-        .find({})
-        .populate("album")
-        .populate("artist")
-        .where("artist.nombre")
-        .equals(req.body.artistName)
-        .then(() => {
-            return res.status(201).json({
-                success: true,
-                data: songs
-                //message: 'song list of '
-            })
+        .then((songs) => {
+            var filteredSongs =  songs.filter(song => song.album.artist.nombre == artistNameWithBlank);
+            console.log("==============================================================")
+            console.log("filteredSongs: "+ filteredSongs)
+            //console.log(songs);
+            if (!songs.length) {
+                return res
+                    .status(404)
+                    .json({ success: false, error: `No songs found for artist `+ artistNameWithBlank})
+            }
+            return res.status(200).json({ success: true, data: filteredSongs })
         })
-        .catch(error => {
-            return res.status(400).json({
-                error,
-                //message: 'Song -'+song.title+'- not created!',
-            })
-        })
+        .catch(err => console.log(err))
+        
+    
 }
  
 module.exports = {

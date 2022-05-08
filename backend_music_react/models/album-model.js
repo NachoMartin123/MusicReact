@@ -12,12 +12,7 @@ const AlbumSchema = new Schema(
         artist: { 
             type: Schema.Types.ObjectId, 
             ref: 'Artist'
-        }/* ,
-        songs: [
-            { 
-                type: mongoose.Schema.Types.ObjectId, 
-                ref: 'Song' }
-        ]*/, 
+        },
         dateRelease: Date
     },
     { timestamps: true },

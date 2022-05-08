@@ -52,10 +52,15 @@ async function seedAlbums() {
     
     console.log('Seeding albums ' /* + db.dbName */ + '...');
 
-    const Avicii = await ArtistModel.findOne({ name: 'Avicii' });
-    const DaftPunk = await ArtistModel.findOne({ name: 'Daft Punk' });
-    const Tiesto = await ArtistModel.findOne({ name: 'Tiesto' });
-    const MartinGarrix = await ArtistModel.findOne({ name: 'Martin Garrix' });
+    const Avicii = await ArtistModel.findOne({ nombre: 'Avicii' });
+    const DaftPunk = await ArtistModel.findOne({ nombre: 'Daft Punk' });
+    const Tiesto = await ArtistModel.findOne({ nombre: 'Tiesto' });
+    const MartinGarrix = await ArtistModel.findOne({ nombre: 'Martin Garrix' });
+
+    console.log("Avicii._id"+Avicii._id);
+    console.log("DaftPunk._id"+DaftPunk._id);
+    console.log("Tiesto._id"+Tiesto._id);
+    console.log("MartinGarrix._id"+MartinGarrix._id);
 
     var albumsToInsert = [
         { nombre: 'TIM', artist: Avicii._id },
@@ -182,9 +187,9 @@ async function clearData() {
 }
 
 async function insertData() {
-/*     await seedArtists();
+/*      await seedArtists();
     await seedAlbums();
-    await seedSongs();  */
+    await seedSongs();   */
 
     const author = await AlbumModel.find({nombre: "True"})
         .populate("artist");//populate nameProperty in Schema

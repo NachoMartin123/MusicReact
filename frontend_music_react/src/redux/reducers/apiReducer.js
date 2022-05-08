@@ -32,7 +32,8 @@ const apiState = (state = initialState, action) => {
         case types.GET_ARTIST_SONGS: {
             return {
                 ...state,
-                artistSongs: action.payload.artistSongs
+                artistSongs: action.payload.artistSongs.data,
+                loading: action.payload.loading
             }
         }
         

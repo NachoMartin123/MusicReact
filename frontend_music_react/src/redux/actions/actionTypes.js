@@ -1,6 +1,6 @@
 //apiState actions
 export const GET_ARTISTS_NAMES = 'ArtitsNames';
-export const GET_ARTIST_SONGS = 'ArtitsSongs';
+export const GET_ARTIST_SONGS = 'ArtistSongs';
 
 export const CREATE_ARTIST = 'CreateArtist';
 export const API_FILTER_ARTISTS = 'ApiFilterArtists';

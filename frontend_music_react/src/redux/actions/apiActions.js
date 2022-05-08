@@ -4,70 +4,6 @@ import ArtistDataService from "../../services/artist.service";
 
 
 
-
-export const get_artist_songs = (artistName) => ({
-    type: types.GET_ARTIST_SONGS,
-    payload: {
-        artistSongs: [ 
-            {title: "Levels",artist: "Avicii",album: "Levels",duration: "3:19"},
-            {title: "Hey brother",artist: "Avicii",album: "True",duration: "3:23"},
-            {title: "Wake me up",artist: "Avicii",album: "True",duration: "3:23"},
-            {title: "All you need is love",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Dancing in my head",artist: "Avicii",album: "Album1",duration: "3:23"},
-            {title: "Lovers on the sun",artist: "Avicii",album: "Album1",duration: "3:23"},
-            {title: "You Be Love (ft Billy Raffoul)",artist: "Avicii",album: "AVICI (01)",duration: "3:23"},
-            {title: "Without you ft Sandro Cavazza",artist: "AVICI (01)",album: "Album1",duration: "3:23"},
-            {title: "Our love",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Addicted to you",artist: "Avicii",album: "True",duration: "3:23"},
-            {title: "I could be the one",artist: "Avicii",album: "Album1",duration: "3:23"},
-            {title: "Sunset Jesus",artist: "Avicii",album: "Stories",duration: "3:23"},
-            {title: "The Nights",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Fade Into Darkness",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "You make me",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Broken Arrows",artist: "Avicii",album: "Stories",duration: "3:23"},
-            {title: "For A Better Day",artist: "Avicii",album: "Stories",duration: "3:23"},
-            {title: "Seek Bromance",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Silhouettes",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "X You",artist: "Avicii",album: "X You",duration: "3:23"},
-            {title: "Tough Love",artist: "Avicii",album: "TIM",duration: "3:23"},
-            {title: "Pure grinding",artist: "Avicii",album: "Stories",duration: "3:23"},
-            {title: "Taste the feeling ft Conrad Sewell",artist: "Avicii",album: "Album2",duration: "3:23"},
-            {title: "Bad Reputation",artist: "Avicii",album: "TIM",duration: "3:23"},
-
-            {title: "One More Time",artist: "Daft Punk",album: "Album3",duration: "3:23"},
-            {title: "Get Lucky",artist: "Daft Punk",album: "Album3",duration: "3:23"},
-            {title: "Around the world",artist: "Daft Punk",album: "Album3",duration: "3:23"},
-            {title: "Harder, Better, Faster, Stronger",artist: "Daft Punk",album: "Album4",duration: "3:23"},
-            {title: "I Feel It Coming",artist: "Daft Punk",album: "Album4",duration: "3:23"},
-            {title: "Da funk",artist: "Daft Punk",album: "Album4",duration: "3:23"},
-
-            {title: "Red lights",artist: "Tiesto",album: "Album5",duration: "3:23"},
-            {title: "Wasted",artist: "Tiesto",album: "Album5",duration: "3:23"},
-            {title: "Ritual",artist: "Tiesto",album: "Album6",duration: "3:23"},
-            {title: "The Business",artist: "Tiesto",album: "Album6",duration: "3:23"},
-            {title: "Boom",artist: "Tiesto",album: "Album5",duration: "3:23"},
-            {title: "Jackie Chan",artist: "Tiesto",album: "Album6",duration: "3:23"},
-
-            {title: "Together",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "Animals",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "Scare to be lonely",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
-            {title: "Summer days",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
-            {title: "Home",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "High on life",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
-            {title: "No sleep",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "These are the times",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
-            {title: "So far away",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "Pizza",artist: "Martin Garrix",album: "Album8",duration: "3:23"},
-            {title: "The Only Way Is Up",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "Forbidden voices",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "Dont look down",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-            {title: "In the Name of Love",artist: "Martin Garrix",album: "Album7",duration: "3:23"},
-        ].filter(obj => {
-            return obj.artist.toLowerCase().replace(/\s/g, '_') === artistName.toLowerCase().replace(/\s/g, '_');
-          }),
-    },
-});
-
 export const createArtist = (artistToInsert) => (dispatch) => {
     return ArtistDataService.create(artistToInsert).then((data) => {
         dispatch(request_post_data(artistToInsert));
@@ -118,7 +54,6 @@ const getArtistsRequest = () => {
     )
     .then( res  =>  res)
     .catch( error => error);
-    console.log(a);
     return a;
 }
 
@@ -130,6 +65,40 @@ export const request_artist_names = (data, artistsFilter) => ({
         loading: false,
     },
 });
+
+
+//========================== GET SONGS ARTIST DETAIL =================================
+
+export const get_artist_songs = (artistName) => dispatch => {
+    dispatch(sending_request());
+    return getSongByArtistsRequest(artistName)
+        .then(data => {
+            dispatch(request_artist_songs(data));
+        })
+        .catch( error => {
+            dispatch(request_error(error));
+        })
+}
+
+const getSongByArtistsRequest = (artistName) => {
+    var artistNameNoBlank = artistName.replace(" ", "_");
+    var a = axios
+    .get(
+        'http://localhost:5000/artist_detail/'+artistNameNoBlank
+    )
+    .then( res  =>  res)
+    .catch( error => error);
+    return a;
+}
+
+export const request_artist_songs = (data) => ({
+    type: types.GET_ARTIST_SONGS,
+    payload: {
+        artistSongs : data.data,
+        loading: false,
+    },
+});
+
 
 /* const postArtist = (artistToInsert) => {
     return axios
