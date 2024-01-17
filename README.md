@@ -1,6 +1,16 @@
 # MusicReact
 Web application using React
 
+# Prototypes made with Adobe XD
+
+![Inicio – slider1](https://github.com/NachoMartin123/MusicReact/assets/25524899/c4af0c5c-d05b-49da-9d1f-720b3923c7d5)
+![Artists](https://github.com/NachoMartin123/MusicReact/assets/25524899/144830ef-35dc-4753-b3ba-97893508cfb8)
+![Artists– mobile](https://github.com/NachoMartin123/MusicReact/assets/25524899/13357c54-efca-4fa4-a6d8-1607d2578953)
+![Artist detail](https://github.com/NachoMartin123/MusicReact/assets/25524899/d9586e34-7c16-408c-85e1-a0d959292978)
+![Artist detail – mobile](https://github.com/NachoMartin123/MusicReact/assets/25524899/c4bab02a-d099-445c-97f9-23b276691331)
+![About 1](https://github.com/NachoMartin123/MusicReact/assets/25524899/9fd281c7-b12f-442f-b7dd-294548b41bc0)
+
+
 ### `make build`
 build the docker images for backend, frontend and mongodb. 
 
