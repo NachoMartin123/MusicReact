@@ -1,8 +1,8 @@
 # MusicReact
-Web application using React
+Web application using React 17.0.2, Bootstrap 5.1.3, JQuery 3.6.0, mongodb 4.4.1, mongoose 6.2.4, redux 4.1.2, sass 1.49.8
 
 # DEMO
-
+https://drive.google.com/file/d/1Y84fua0yW5lxX8psRQ6H6kr5s0fVZRjJ/view?usp=drive_link
 
 # Prototypes made with Adobe XD
 
